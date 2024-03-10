@@ -1,0 +1,132 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Task1",
+      "duration": 5,
+      "deadline": 10,
+      "period": 15,
+      "inports": [],
+      "outports": ["W"]
+    },
+    {
+      "id": 2,
+      "name": "Task2",
+      "duration": 7,
+      "deadline": 12,
+      "period": 18,
+      "inports": [],
+      "outports": ["X"]
+    },
+    {
+      "id": 3,
+      "name": "Task3",
+      "duration": 6,
+      "deadline": 20,
+      "period": 25,
+      "inports": ["A"],
+      "outports": ["W"]
+    },
+    {
+      "id": 4,
+      "name": "Task4",
+      "duration": 4,
+      "deadline": 18,
+      "period": 20,
+      "inports": ["A", "B"],
+      "outports": ["X"]
+    },
+    {
+      "id": 5,
+      "name": "Task5",
+      "duration": 3,
+      "deadline": 15,
+      "period": 25,
+      "inports": ["C"],
+      "outports": ["X", "Y"]
+    },
+    {
+      "id": 6,
+      "name": "Task6",
+      "duration": 8,
+      "deadline": 25,
+      "period": 30,
+      "inports": ["B", "D"],
+      "outports": ["W"]
+    },
+    {
+      "id": 7,
+      "name": "Task7",
+      "duration": 4,
+      "deadline": 18,
+      "period": 25,
+      "inports": ["A"],
+      "outports": ["X"]
+    },
+    {
+      "id": 8,
+      "name": "Task8",
+      "duration": 9,
+      "deadline": 30,
+      "period": 40,
+      "inports": ["A", "B"],
+      "outports": []
+    }
+  ],
+  "links": [
+    {
+      "fromTask": 1,
+      "fromPort": "W",
+      "toTask": 3,
+      "toPort": "A"
+    },
+    {
+      "fromTask": 1,
+      "fromPort": "W",
+      "toTask": 4,
+      "toPort": "A"
+    },
+    {
+      "fromTask": 2,
+      "fromPort": "X",
+      "toTask": 4,
+      "toPort": "B"
+    },
+    {
+      "fromTask": 3,
+      "fromPort": "W",
+      "toTask": 5,
+      "toPort": "C"
+    },
+    {
+      "fromTask": 4,
+      "fromPort": "X",
+      "toTask": 6,
+      "toPort": "D"
+    },
+    {
+      "fromTask": 5,
+      "fromPort": "X",
+      "toTask": 7,
+      "toPort": "A"
+    },
+    {
+      "fromTask": 5,
+      "fromPort": "Y",
+      "toTask": 6,
+      "toPort": "B"
+    },
+    {
+      "fromTask": 7,
+      "fromPort": "X",
+      "toTask": 8,
+      "toPort": "A"
+    },
+    {
+      "fromTask": 6,
+      "fromPort": "W",
+      "toTask": 8,
+      "toPort": "B"
+    }
+  ]
+}
