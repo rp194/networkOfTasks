@@ -15,21 +15,180 @@ digraph state_space {
   1 -> 6 [label = "A>T[2]", weight=1];
   2 -> 7 [label = "+1", weight=1];
   3 -> 8 [label = "+1", weight=1];
-  5 -> "5 invalidate" [label = "+1"];
-  "5 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  5 -> 9 [label = "+1", weight=1];
   6 -> "6 invalidate" [label = "+1"];
   "6 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  7 -> 9 [label = "U>T[1,]", weight=1];
-  8 -> 10 [label = "U>T[2,]", weight=1];
-  9 -> "9 invalidate" [label = "+1"];
-  "9 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  9 -> 11 [label = "A>T[2]", weight=1];
-  10 -> "10 invalidate" [label = "+1"];
-  "10 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  10 -> 12 [label = "A>T[1]", weight=1];
-  11 -> 13 [label = "+1", weight=1];
-  12 -> 14 [label = "+1", weight=1];
-  13 -> 0 [label = "U>T[2,]"];
-  14 -> 0 [label = "U>T[1,]"];
-  0 [shape=diamond]
+  7 -> 10 [label = "+1", weight=1];
+  8 -> 11 [label = "U>T[2,]", weight=1];
+  9 -> 12 [label = "+1", weight=1];
+  10 -> 13 [label = "U>T[1,]", weight=1];
+  11 -> "11 invalidate" [label = "+1"];
+  "11 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  11 -> 14 [label = "A>T[1]", weight=1];
+  12 -> 15 [label = "U>T[1,]", weight=1];
+  13 -> 16 [label = "+1", weight=1];
+  13 -> 17 [label = "A>T[2]", weight=1];
+  14 -> 18 [label = "+2", weight=1];
+  15 -> "15 invalidate" [label = "+1"];
+  "15 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  15 -> 19 [label = "A>T[2]", weight=1];
+  15 -> 20 [label = "A>T[1]", weight=1];
+  16 -> "16 invalidate" [label = "+1"];
+  "16 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  16 -> 21 [label = "A>T[2]", weight=1];
+  16 -> 22 [label = "A>T[1]", weight=1];
+  17 -> 23 [label = "+1", weight=1];
+  18 -> 24 [label = "U>T[1,]", weight=1];
+  19 -> 25 [label = "+1", weight=1];
+  20 -> "20 invalidate" [label = "+1"];
+  "20 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  21 -> "21 invalidate" [label = "+1"];
+  "21 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  22 -> "22 invalidate" [label = "+1"];
+  "22 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  23 -> 26 [label = "U>T[2,]", weight=1];
+  24 -> 27 [label = "+1", weight=1];
+  24 -> 28 [label = "A>T[1]", weight=1];
+  25 -> 27 [label = "U>T[2,]", weight=1];
+  26 -> 29 [label = "+1", weight=1];
+  26 -> 30 [label = "A>T[1]", weight=1];
+  27 -> "27 invalidate" [label = "+1"];
+  "27 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  27 -> 31 [label = "A>T[1]", weight=1];
+  27 -> 32 [label = "A>T[2]", weight=1];
+  28 -> 33 [label = "+1", weight=1];
+  29 -> "29 invalidate" [label = "+1"];
+  "29 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  29 -> 34 [label = "A>T[1]", weight=1];
+  29 -> 35 [label = "A>T[2]", weight=1];
+  30 -> 36 [label = "+1", weight=1];
+  31 -> "31 invalidate" [label = "+1"];
+  "31 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  32 -> "32 invalidate" [label = "+1"];
+  "32 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  33 -> "33 invalidate" [label = "+1"];
+  "33 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  34 -> 37 [label = "+1", weight=1];
+  35 -> "35 invalidate" [label = "+1"];
+  "35 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  36 -> 38 [label = "+1", weight=1];
+  37 -> 39 [label = "+1", weight=1];
+  38 -> 40 [label = "U>T[1,]", weight=1];
+  39 -> 41 [label = "U>T[1,]", weight=1];
+  40 -> 42 [label = "+1", weight=1];
+  40 -> 43 [label = "A>T[2]", weight=1];
+  41 -> 44 [label = "+1", weight=1];
+  41 -> 45 [label = "A>T[2]", weight=1];
+  41 -> 46 [label = "A>T[1]", weight=1];
+  42 -> "42 invalidate" [label = "+1"];
+  "42 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  42 -> 47 [label = "A>T[2]", weight=1];
+  42 -> 48 [label = "A>T[1]", weight=1];
+  43 -> 49 [label = "+1", weight=1];
+  44 -> "44 invalidate" [label = "+1"];
+  "44 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  44 -> 50 [label = "A>T[2]", weight=1];
+  44 -> 51 [label = "A>T[1]", weight=1];
+  45 -> 52 [label = "+1", weight=1];
+  46 -> 53 [label = "+1", weight=1];
+  47 -> "47 invalidate" [label = "+1"];
+  "47 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  48 -> "48 invalidate" [label = "+1"];
+  "48 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  49 -> 54 [label = "U>T[2,]", weight=1];
+  50 -> "50 invalidate" [label = "+1"];
+  "50 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  51 -> "51 invalidate" [label = "+1"];
+  "51 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  52 -> 55 [label = "U>T[2,]", weight=1];
+  53 -> "53 invalidate" [label = "+1"];
+  "53 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  54 -> 56 [label = "+1", weight=1];
+  54 -> 57 [label = "A>T[1]", weight=1];
+  55 -> "55 invalidate" [label = "+1"];
+  "55 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  55 -> 58 [label = "A>T[1]", weight=1];
+  56 -> "56 invalidate" [label = "+1"];
+  "56 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  56 -> 59 [label = "A>T[1]", weight=1];
+  57 -> 60 [label = "+2", weight=1];
+  58 -> 61 [label = "+1", weight=1];
+  59 -> 62 [label = "+1", weight=1];
+  60 -> 63 [label = "U>T[1,]", weight=1];
+  61 -> 64 [label = "+1", weight=1];
+  62 -> 65 [label = "+1", weight=1];
+  63 -> 66 [label = "+1", weight=1];
+  63 -> 67 [label = "A>T[2]", weight=1];
+  64 -> 68 [label = "U>T[1,]", weight=1];
+  65 -> 68 [label = "U>T[1,]", weight=1];
+  66 -> "66 invalidate" [label = "+1"];
+  "66 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  66 -> 69 [label = "A>T[2]", weight=1];
+  66 -> 70 [label = "A>T[1]", weight=1];
+  67 -> 71 [label = "+1", weight=1];
+  68 -> 72 [label = "+1", weight=1];
+  68 -> 73 [label = "A>T[2]", weight=1];
+  68 -> 74 [label = "A>T[1]", weight=1];
+  69 -> "69 invalidate" [label = "+1"];
+  "69 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  70 -> "70 invalidate" [label = "+1"];
+  "70 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  71 -> 75 [label = "U>T[2,]", weight=1];
+  72 -> "72 invalidate" [label = "+1"];
+  "72 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  72 -> 76 [label = "A>T[2]", weight=1];
+  72 -> 77 [label = "A>T[1]", weight=1];
+  73 -> 78 [label = "+1", weight=1];
+  74 -> 79 [label = "+1", weight=1];
+  75 -> 80 [label = "+1", weight=1];
+  75 -> 81 [label = "A>T[1]", weight=1];
+  76 -> "76 invalidate" [label = "+1"];
+  "76 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  77 -> "77 invalidate" [label = "+1"];
+  "77 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  78 -> 82 [label = "U>T[2,]", weight=1];
+  79 -> "79 invalidate" [label = "+1"];
+  "79 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  80 -> "80 invalidate" [label = "+1"];
+  "80 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  80 -> 83 [label = "A>T[1]", weight=1];
+  81 -> 84 [label = "+2", weight=1];
+  82 -> "82 invalidate" [label = "+1"];
+  "82 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  82 -> 85 [label = "A>T[1]", weight=1];
+  83 -> 86 [label = "+2", weight=1];
+  84 -> 87 [label = "U>T[1,]", weight=1];
+  85 -> 88 [label = "+2", weight=1];
+  86 -> 89 [label = "U>T[1,]", weight=1];
+  87 -> 90 [label = "+1", weight=1];
+  88 -> 89 [label = "U>T[1,]", weight=1];
+  89 -> 91 [label = "+1", weight=1];
+  89 -> 92 [label = "A>T[2]", weight=1];
+  89 -> 93 [label = "A>T[1]", weight=1];
+  90 -> "90 invalidate" [label = "+1"];
+  "90 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  90 -> 94 [label = "A>T[2]", weight=1];
+  90 -> 95 [label = "A>T[1]", weight=1];
+  91 -> "91 invalidate" [label = "+1"];
+  "91 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  91 -> 96 [label = "A>T[2]", weight=1];
+  91 -> 97 [label = "A>T[1]", weight=1];
+  92 -> 98 [label = "+1", weight=1];
+  93 -> 99 [label = "+1", weight=1];
+  94 -> "94 invalidate" [label = "+1"];
+  "94 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  95 -> "95 invalidate" [label = "+1"];
+  "95 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  96 -> "96 invalidate" [label = "+1"];
+  "96 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  97 -> "97 invalidate" [label = "+1"];
+  "97 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  98 -> 100 [label = "U>T[2,]", weight=1];
+  99 -> "99 invalidate" [label = "+1"];
+  "99 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  100 -> "100 invalidate" [label = "+1"];
+  "100 invalidate" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  100 -> 101 [label = "A>T[1]", weight=1];
+  101 -> 102 [label = "+2", weight=1];
+  102 -> 24 [label = "U>T[1,]"];
 }

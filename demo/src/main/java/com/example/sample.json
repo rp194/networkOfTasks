@@ -3,20 +3,28 @@
     {
       "id": 1,
       "name": "Task1",
-      "duration": 1,
-      "deadline": 2,
-      "period": 2,
+      "duration": 2,
+      "deadline": 3,
+      "period": 3,
       "inports": [],
-      "outports": []
+      "outports": [5]
     },
     {
       "id": 2,
       "name": "Task2",
       "duration": 1,
-      "deadline": 2,
-      "period": 2,
-      "inports": [],
+      "deadline": 4,
+      "period": 4,
+      "inports": [1],
       "outports": []
+    }
+  ],
+  "links": [
+    {
+      "fromTask": 1,
+      "fromPort": 5,
+      "toTask": 2,
+      "toPort": 1
     }
   ]
 }

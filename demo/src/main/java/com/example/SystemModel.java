@@ -3,21 +3,24 @@ package com.example;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
-import java.util.List;
+import java.util.TreeSet;
 import java.util.Map.Entry;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class SystemModel implements TasksLinksPorts {
+public class SystemModel implements InitializingConfigs {
     private ArrayList<Task> tasks = new ArrayList<>();
     private ArrayList<Link> links = new ArrayList<>();
     private ArrayList<State> states = new ArrayList<>();
+    private Map<Integer, Task> taskMap = new HashMap<>();
+    private HashSet<Integer> sensorIds = new HashSet<>();
     private HashMap<Long, HashSet<Integer>> hashTable = new HashMap<>();
     private HashMap<Integer, ArrayList<String>> transitions = new HashMap<>();
-    int currentStateTime = -1;
+    private int currentStateTime = -1;
     private int nextStateId;
     private final String LOG_FILE_PATH = 
     "E:\\Documents\\java_codes\\networkOfTasks\\demo\\src\\main\\java\\com\\example\\log.txt";
@@ -25,7 +28,8 @@ public class SystemModel implements TasksLinksPorts {
     "E:\\Documents\\java_codes\\networkOfTasks\\demo\\src\\main\\java\\com\\example\\dot.dot";
 
     public SystemModel(int numberOfProcessors) throws Exception {
-        TasksLinksPorts.loadTasksAndLinks();        
+        InitializingConfigs.loadTasksAndLinks();        
+        InitializingConfigs.loadConstraints();
         this.tasks = new ArrayList<Task>(taskList);
         this.links = new ArrayList<Link>(linkList);
         this.initializeEventQueue(numberOfProcessors);
@@ -34,14 +38,28 @@ public class SystemModel implements TasksLinksPorts {
     private void initializeEventQueue(int numberOfProcessors) {
         int eventTime = 0;
         nextStateId = 0;
-        HashMap<Integer ,ArrayList<Integer>> tasksChanges = new HashMap<>();
+        int taskSetSize = tasks.size();
+        HashMap<Integer, TaskBody> tasksChanges = new HashMap<>(taskSetSize);
         PriorityQueue<EventSet> initEventSetQueue = new PriorityQueue<>();
+        initializeTasksAndDetermineSensors();        
         State initState = new State();
         String transitionLog = "A>T[";
         for (Task task : tasks) {
             int taskId = task.getId();
             addEvent(initEventSetQueue, new Event(taskId, eventTime, Event.EventType.ARRIVAL));
-            updateTheTasksChanges(tasksChanges, taskId, -1);
+            HashMap<Integer, HashMap<Integer, TreeSet<Integer>>> initialData = null;
+            if (task.getInPorts().length > 0) {
+                initialData = new HashMap<>();
+            }
+            for (int port : task.getInPorts()) {
+                HashMap<Integer, TreeSet<Integer>> dataOnPort = new HashMap<>();
+                for (int sensorId : sensorIds) {
+                    dataOnPort.put(sensorId, null);
+                }
+                initialData.put(port, dataOnPort);
+            }
+            TaskBody taskBody = new TaskBody(taskId, false, initialData);
+            tasksChanges.put(taskId, taskBody);
             transitionLog += taskId + ",";
         }
         transitionLog += "]";
@@ -54,9 +72,6 @@ public class SystemModel implements TasksLinksPorts {
             int stateSize = states.size();
             if (stateSize <= stateIterator) {
                 break;
-            }
-            if (stateSize % 10000 ==0) {
-                System.out.println(stateSize);
             }
             State currentState = states.get(stateIterator);
             currentStateTime = currentState.getStateTime();
@@ -72,70 +87,38 @@ public class SystemModel implements TasksLinksPorts {
     private void eventSetHandler(State currentState) {
         int idleProcessors = currentState.getIdleProcessors();
         PriorityQueue<EventSet> futureQueue = new PriorityQueue<>();
-        HashMap<Integer, ArrayList<Integer>> tasksChanges = new HashMap<>();
-        ArrayList<Event> pastUpdates = new ArrayList<>();
+        HashMap<Integer, TaskBody> tasksChanges = new HashMap<>();
+        TreeSet<Event> pastUpdates = new TreeSet<>();
         ArrayList<Event> pastArrivals = new ArrayList<>();
-        for(EventSet eventSet : currentState.getEventSetQueue()) {
-            if (eventSet.getEventSetTime() <= currentState.getStateTime()) {
-                pastUpdates.addAll(eventSet.getUpdates());
-                pastArrivals.addAll(eventSet.getArrivals());
-                // ArrayList<Event> setOfUpdates = eventSet.getUpdates();
-                // ArrayList<Event> setOfArrivals = eventSet.getArrivals();
-                // for(Event event : setOfUpdates) {    
-                //     pastUpdates.add(event);
-                // }
-                // for(Event event : setOfArrivals) {
-                //     pastArrivals.add(event);
-                // }
-            } else {
-                ArrayList<Event> setOfEvents = eventSet.getAllEvents();
-                for(Event event : setOfEvents) {
-                    addEvent(futureQueue, event);
-                }
-            }
-        }
+        PriorityQueue<EventSet> stateQueue = currentState.getEventSetQueue();
+        separatePastEvents(stateQueue, pastUpdates, pastArrivals, futureQueue);
 
         if(!pastUpdates.isEmpty()) {
+            TreeSet<Event> wpastUpdates = (TreeSet<Event>) pastUpdates.descendingSet();
             PriorityQueue<EventSet> futureAndArrivals = new PriorityQueue<>(futureQueue);
             for (Event arrivalEvent : pastArrivals) {
                 addEvent(futureAndArrivals, arrivalEvent);
             }
             String transitionLog = "U>T[";
-            for(Event pastUpdate: pastUpdates) {
-                processtheUpdate(pastUpdate, tasksChanges);        
+            for(Event pastUpdate: wpastUpdates) {
+                processTheUpdate(currentState, pastUpdate, tasksChanges);
                 idleProcessors += 1;
                 transitionLog += pastUpdate.getTaskId() + ",";
-
             }
             transitionLog += "]";
+
             stateHandler(currentState, currentStateTime, idleProcessors, tasksChanges, futureAndArrivals, transitionLog);
             return;
         }
 
-        // if (idleProcessors == 0) {
-        //     ArrayList<EventSet> sortedQueue = new ArrayList<> (currentState.getEventSetQueue());
-        //     for (EventSet eventSet : sortedQueue) {
-        //         if (!eventSet.getUpdates().isEmpty()) {
-        //             int nextStateTime = eventSet.getEventSetTime();
-        //             String transitionLog = "+" + (nextStateTime - currentStateTime);
-        //             stateHandler(currentState, nextStateTime, idleProcessors, tasksChanges, futureQueue, transitionLog);
-        //             break;
-        //         }
-        //     }
-        // }
-        // else
          if(!pastArrivals.isEmpty()) {
-            
-            for(Event pastArrival : pastArrivals){
-                addEvent(futureQueue, pastArrival);
-            }
             String transitionLog = "+1";
-            stateHandler(currentState, currentStateTime + 1, idleProcessors, tasksChanges, futureQueue, transitionLog);
+            stateHandler(currentState, currentStateTime + 1, idleProcessors, tasksChanges, stateQueue, transitionLog);
             if(idleProcessors > 0) {
                 transitionLog = "";
                 for (Event pastArrival : pastArrivals) {
                     transitionLog = "A>T[" + pastArrival.getTaskId() + "]";
-                    processTheArrival(pastArrival, futureQueue, currentState,tasksChanges, transitionLog);
+                    processTheArrival(pastArrival, stateQueue, currentState,tasksChanges, transitionLog);
                 }
             }
         } else {   
@@ -145,68 +128,154 @@ public class SystemModel implements TasksLinksPorts {
         }
     }
 
-    private void processtheUpdate(Event updateEvent, HashMap<Integer, ArrayList<Integer>> tasksChanges) {                    
-        int taskId = updateEvent.getTaskId();
-        Task task = getTaskById(taskId);
-        updateTheTasksChanges(tasksChanges, taskId, 0);
-        for (Link link : links) {
-            if (link.getFromTask() == task.getId()) {
-                Task nextTask = getTaskById(link.getToTask());
-                Port inPort = link.getToPort();
-                int inPortNumber = nextTask.getInPortIndex(inPort);
-                updateTheTasksChanges(tasksChanges, nextTask.getId(), inPortNumber);
+    private void initializeTasksAndDetermineSensors() {
+        for (Task task : tasks) {
+            taskMap.put(task.getId(), task);
+            if (task.getInPorts().length == 0) {
+                sensorIds.add(task.getId());
+            }
+        }
+    }    
+
+    private void separatePastEvents(PriorityQueue<EventSet> stateQueue, TreeSet<Event> pastUpdates, ArrayList<Event> pastArrivals, PriorityQueue<EventSet> futureQueue) {
+        for (EventSet eventSet : stateQueue) {
+            if (eventSet.getEventSetTime() <= currentStateTime) {
+                pastUpdates.addAll(eventSet.getUpdates());
+                pastArrivals.addAll(eventSet.getArrivals());
+            } else {
+                futureQueue.add(eventSet);
             }
         }
     }
 
-   
-    private void processTheArrival(Event currentArrival, PriorityQueue<EventSet> futureQueue, State currentState,
-    HashMap<Integer, ArrayList<Integer>> tasksChanges, String transitionLog) {
+    private void processTheUpdate(State currentState, Event updateEvent, HashMap<Integer, TaskBody> tasksChanges) {
+        int taskId = updateEvent.getTaskId();
+        HashMap<Integer, TreeSet<Integer>> resultedOutput;
+        TaskBody tt = currentState.getTaskBody(taskId);
+        TaskBody taskBody = tasksChanges.computeIfAbsent(taskId, k -> new TaskBody(tt));
+        taskBody.setExecuted(true);
+        if (actuators.contains(taskId)) {
+            taskBody.setTaskID(0);
+        }
+        if (sensorIds.contains(taskId)) {
+            resultedOutput = createSensorData(taskId, currentStateTime);
+            taskBody.setTaskID(0);
+            // taskBody.putData(0, resultedOutput);
+            // HashMap<Integer, HashMap<Integer, TreeSet<Integer>>> taskData = taskBody.getDataDelivered();
+            // HashMap<Integer, TreeSet<Integer>> dataOnPort = taskData.computeIfAbsent(int.O, k -> new HashMap<>());
+            // TreeSet<Integer> setOfData = dataOnPort.computeIfAbsent(taskId, k -> new TreeSet<>());
+            // setOfData.add(currentStateTime);
+        } else {
+            resultedOutput = currentState.getTaskBody(taskId).integrateInputData();
+        }
+                
+        for (Link link : links) {
+            if (link.getFromTask() == taskId) {
+                Task nextTask = getTaskById(link.getToTask());
+                int nextInPort = link.getToPort();
+                int nextTaskId = nextTask.getId();
+                tasksChanges.compute(nextTaskId, (k, v) -> {
+                    if (v == null) {
+                        v = new TaskBody(currentState.getTaskBody(nextTaskId));
+                    }
+                    // HashMap<Integer, TreeSet<Integer>> dataForNextTask1 = v.getDataDelivered().computeIfAbsent(nextInPort, k1 -> new HashMap<>());
+                    HashMap<Integer, TreeSet<Integer>> dataForNextTask = new HashMap<>();
+                    v.getDataDelivered().put(nextInPort, dataForNextTask);
+                    for (int sensorId : resultedOutput.keySet()) {
+                        dataForNextTask.compute(sensorId, (k2, v2) -> {
+                            // if (v2 == null) {
+                            v2 = new TreeSet<>();
+                            // }
+                            v2.addAll(resultedOutput.get(sensorId));
+                            return v2;
+                        });
+                    }
+                    return v;
+                });
+            }
+        }   
+    }
+
+    private HashMap<Integer, TreeSet<Integer>> createSensorData(int taskId, int timestamp) {
+        HashMap<Integer, TreeSet<Integer>> data = new HashMap<>();
+        TreeSet<Integer> set = new TreeSet<>();
+        set.add(timestamp);
+        data.put(taskId, set);
+        return data;
+      }
+
+    private void processTheArrival(Event currentArrival, PriorityQueue<EventSet> stateQueue, State currentState,
+    HashMap<Integer, TaskBody> tasksChanges, String transitionLog) {
         int idleProcessors = currentState.getIdleProcessors();
         int taskId = currentArrival.getTaskId();
         Task task = getTaskById(taskId);
         int taskPeriod = task.getPeriod();
-        PriorityQueue<EventSet> finalQueue = new PriorityQueue<>();
-        for(EventSet eventSet : futureQueue) {
-            ArrayList<Event> copyEventSet = eventSet.getAllEvents();
-            for(Event event : copyEventSet) {
-                if(!event.equals(currentArrival)) {
-                    addEvent(finalQueue, event);
-                }
-            }
-        }
-        Event resultedArrivalEvent = new Event();
-        resultedArrivalEvent = new Event(task.getId(), nextArrival(taskPeriod, currentStateTime), Event.EventType.ARRIVAL);
+        PriorityQueue<EventSet> finalQueue = new PriorityQueue<>(stateQueue);
+        removeEvent(finalQueue, currentArrival);
+        Event resultedArrivalEvent = new Event(task.getId(), nextArrival(taskPeriod, currentStateTime), Event.EventType.ARRIVAL);
         addEvent(finalQueue, resultedArrivalEvent);
-        // updateTheTasksChanges(tasksChanges, taskId, -1);
         idleProcessors -= 1;
         Event resultedUpdateEvent = schedule(task, currentStateTime);
         addEvent(finalQueue, resultedUpdateEvent);
+        tasksChanges.compute(taskId, (k, v) -> {
+            if (v == null) {
+                v = new TaskBody(currentState.getTaskBody(taskId));
+            }
+            v.setExecuted(false);
+            return v;
+        });
         stateHandler(currentState, currentStateTime, idleProcessors, tasksChanges, finalQueue, transitionLog);
     }
 
-    private void updateTheTasksChanges(HashMap<Integer, ArrayList<Integer>> tasksChanges, int taskId, int value) {
-        tasksChanges.compute(taskId, (k, v) -> {
-            if (v == null) {
-                v = new ArrayList<>();
+    private void updateEventSet(PriorityQueue<EventSet> stateQueue, Event event, boolean addEvent) {
+        EventSet targetEventSet = null;
+        for (EventSet eventSet : stateQueue) {
+            if (eventSet.getEventSetTime() == event.getTime()) {
+                targetEventSet = eventSet;
+                break;
             }
-            v.add(value);
-            return v;
-        });
-    }
-
-    private void addEvent(PriorityQueue<EventSet> priorityQueue, Event newEvent) {
-        EventSet targetEventSet = priorityQueue.stream()
-                .filter(eventSet -> eventSet.getEventSetTime() == newEvent.getTime())
-                .findFirst()
-                .orElse(null);
+        }    
         if (targetEventSet != null) {
-            targetEventSet.insertEvent(newEvent);
-        } else {
-            targetEventSet = new EventSet(newEvent.getTime());
-            targetEventSet.insertEvent(newEvent);
-            priorityQueue.add(targetEventSet);
+            Event.EventType eventType = event.getType();
+            HashSet<Event> updateEvents = new HashSet<>(targetEventSet.getUpdates());
+            HashSet<Event> arrivalEvents = new HashSet<>(targetEventSet.getArrivals());
+            EventSet newEventSet = new EventSet(event.getTime());
+            if (addEvent) {
+                switch (eventType) {
+                    case ARRIVAL:
+                        arrivalEvents.add(event);
+                        break;
+                    case UPDATE:
+                        updateEvents.add(event);
+                        break;
+                }
+            } else {
+                switch (eventType) {
+                    case ARRIVAL:
+                        arrivalEvents.remove(event);
+                        break;
+                    case UPDATE:
+                        updateEvents.remove(event);
+                        break;
+                }
+            }    
+            newEventSet.setArrivals(arrivalEvents);
+            newEventSet.setUpdates(updateEvents);
+            stateQueue.remove(targetEventSet);
+            stateQueue.add(newEventSet);
+        } else if (addEvent) {
+            targetEventSet = new EventSet(event.getTime());
+            targetEventSet.insertEvent(event);
+            stateQueue.add(targetEventSet);
         }
+    }
+    
+    private void addEvent(PriorityQueue<EventSet> stateQueue, Event newEvent) {
+        updateEventSet(stateQueue, newEvent, true);
+    }
+    
+    private void removeEvent(PriorityQueue<EventSet> stateQueue, Event currentEvent) {
+        updateEventSet(stateQueue, currentEvent, false);
     }
 
     private Event schedule(Task task, int currentTime) {
@@ -220,72 +289,54 @@ public class SystemModel implements TasksLinksPorts {
     }
 
     private Task getTaskById(int taskId) {
-        for (Task task : tasks) {
-            if (task.getId() == taskId) {
-                return task;
-            }
-        }
-        return null;
+        return taskMap.get(taskId);
     }
 
     private void 
-    stateHandler(State currentState, int newStateTime, int idleProcessors, HashMap<Integer, ArrayList<Integer>> changes, PriorityQueue<EventSet> resultedQueue, String transitionLog) {
+    stateHandler(State currentState, int newStateTime, int idleProcessors, HashMap<Integer, TaskBody> changes, PriorityQueue<EventSet> resultedQueue, String transitionLog) {
         State newState = new State(currentState, nextStateId, newStateTime, idleProcessors, changes, resultedQueue);
-        State foundWrapper  = findWrapper(newState, newStateTime);
+        State foundWrapper  = findWrapper(newState);
         int sourceId = currentState.getStateID();
         if (foundWrapper == null) {
-            states.add(newState);
-            Long newHashCode = newState.longHashCode();
-            HashSet<Integer> sIDs = 
-            hashTable.get(newHashCode) == null ? new HashSet<>() : hashTable.get(newHashCode);
-            sIDs.add(nextStateId);
-            if (!hashTable.containsKey(newHashCode)) {
-                hashTable.put(newHashCode, sIDs);
-            }
-            String transitionMessage = nextStateId + "#" + transitionLog;
-            if (!this.transitions.containsKey(sourceId)) {
-                
-                ArrayList<String> destination = new ArrayList<>();
-                destination.add(transitionMessage);
-                this.transitions.put(sourceId, destination);
-            } else {
-                this.transitions.get(sourceId).add(transitionMessage);
-            }
-            
-            nextStateId += 1;
+            addNewState(newState, sourceId, transitionLog);
         } else {
-            foundWrapper.insertNewSource(newState.getSourceIds());
-            int foundWrapperId = foundWrapper.getStateID();
-            String transitionMessage = foundWrapperId + "#" + transitionLog;
-            if (!this.transitions.containsKey(sourceId)) {
-                ArrayList<String> destination = new ArrayList<>();
-                destination.add(transitionMessage);
-                this.transitions.put(sourceId, destination);
-            } else {
-                this.transitions.get(sourceId).add(transitionMessage);
-            }
+            linkToSimilarState(foundWrapper, newState, sourceId, transitionLog);
         }
-        // if (!iterationOfStates.containsKey(iteration)) {
-        //     ArrayList<Integer> tempState = new ArrayList<>();
-        //     tempState.add(nextStateId);
-        //     iterationOfStates.put(iteration, tempState);
-        //     } else {
-        //     iterationOfStates.get(iteration).add(nextStateId);
-        //     }
-    
     }
     
-    private State findWrapper(State newState, int newStateTime) {
-        int newIdleCPUs = newState.getIdleProcessors();
+    private void addNewState(State newState, int sourceId, String transitionLog) {
+        states.add(newState);
         Long newHashCode = newState.longHashCode();
-        HashMap<Integer, HashMap<Object, Object>> newTasksBody = newState.getTasksBody();
+        HashSet<Integer> sIDs = 
+        hashTable.get(newHashCode) == null ? new HashSet<>() : hashTable.get(newHashCode);
+        sIDs.add(nextStateId);
+        if (!hashTable.containsKey(newHashCode)) {
+            hashTable.put(newHashCode, sIDs);
+        }
+        String transitionMessage = nextStateId + "#" + transitionLog;
+        addNewTransition(sourceId, transitionMessage);
+        nextStateId += 1;
+    }
+
+    private void linkToSimilarState(State foundWrapper, State newState, int sourceId, String transitionLog) {
+        foundWrapper.insertNewSource(newState.getSourceIds());
+        int foundWrapperId = foundWrapper.getStateID();
+        String transitionMessage = foundWrapperId + "#" + transitionLog;
+        addNewTransition(sourceId, transitionMessage);
+    }
+
+   private void addNewTransition(int sourceId, String transitionMessage) {
+       transitions.computeIfAbsent(sourceId, k -> new ArrayList<>()).add(transitionMessage);
+   }
+
+    private State findWrapper(State newState) {
+        Long newHashCode = newState.longHashCode();
         PriorityQueue<EventSet> resultedQueue = newState.getEventSetQueue();
-        int resultedQueueSize = resultedQueue.size();
         HashSet<Integer> previousStateIDs = hashTable.get(newHashCode);
         if (previousStateIDs != null) {
             for (int previousStateID : previousStateIDs) {
                 State previousState = states.get(previousStateID);
-                if (isWrapper(newIdleCPUs, resultedQueueSize, newStateTime, newTasksBody, resultedQueue, previousState)) {
+                if (isWrapper(newState, previousState, resultedQueue)) {
                     return previousState;
                 }
             }
@@ -293,17 +344,19 @@ public class SystemModel implements TasksLinksPorts {
         return null;   
     }
 
-    private boolean isWrapper(int newIdleCPUs, int newSize, int newStateTime, HashMap<Integer, HashMap<Object, Object>> newTasksBody, PriorityQueue<EventSet> newQueue, State previousState) {
-        int previousSize = previousState.getEventSetQueue().size();
-        if (previousSize == 0) {
+    private boolean isWrapper(State newState, State previousState, PriorityQueue<EventSet> newQueue) {
+        if (previousState.getEventSetQueue().isEmpty()) {
             return true;
         }
-        if (newIdleCPUs != previousState.getIdleProcessors()) {
+        int previousSize = previousState.getEventSetQueue().size();
+        if (newState.getIdleProcessors() != previousState.getIdleProcessors() ||
+                newState.getEventSetQueue().size() != previousSize) {
             return false;
         }
-        if (newSize != previousSize) {
-            return false;
-        }
+        
+        int newStateTime = newState.getStateTime();
+        HashMap<Integer, TaskBody> newTasksBody = newState.getTasksBody();
+
         int previousStateTime = previousState.getStateTime();
         int diffTime = newStateTime - previousStateTime;
         if (!previousState.isTasksBodyEqual(newTasksBody, diffTime)) {
@@ -327,7 +380,7 @@ public class SystemModel implements TasksLinksPorts {
         return true;
     }
 
-    private boolean compareEvents(List<Event> list1, List<Event> list2) {
+    private boolean compareEvents(HashSet<Event> list1, HashSet<Event> list2) {
         if (list1.size() != list2.size()) {
             return false;
         }
@@ -346,20 +399,10 @@ public class SystemModel implements TasksLinksPorts {
         return true;
     }
 
-
     public State getsStateById(int id) {
         for (State state: states) {
             if (state.getStateID()==id) {
                 return state;
-            }
-        }
-        return null;
-    }
-
-    public EventSet getEventSetByTime(PriorityQueue<EventSet> queue, int time) {
-        for (EventSet eventSet : queue) {
-            if (eventSet.getEventSetTime() == time) {
-                return eventSet;
             }
         }
         return null;
@@ -392,6 +435,7 @@ public class SystemModel implements TasksLinksPorts {
     }
 
     public void createDotFile() {
+        
         clearLogFile(Dot_FILE_PATH);
         try {
             FileWriter fileWriter = new FileWriter(Dot_FILE_PATH, true);
@@ -400,7 +444,7 @@ public class SystemModel implements TasksLinksPorts {
             bufferedWriter.write("digraph state_space {");
             bufferedWriter.write("\n"
                                     + "  size = \"1,1.9\";\n"
-                                    + "  ratio=\"fill\";\n"                                  
+                                    + "  ratio=\"fill\";\n"
                                     + "  node [shape=box, fontsize=90, style=filled, fillcolor=lightblue, width=2, height=1];\n"
                                     + "  edge [fontsize=80, style=bold];\n"
                                     + "  splines = true;\n"
@@ -434,16 +478,18 @@ public class SystemModel implements TasksLinksPorts {
             bufferedWriter.write("\n}");
             bufferedWriter.close();
             fileWriter.close();
+
         } catch (IOException e) {
             e.printStackTrace();
+
         }
     }
-
+   
     private void loopCheck(int cID, int sID, HashSet<Integer> turningStates) {
-        loopCheck1(cID, sID, turningStates, new ArrayList<Integer>());
+        loopCheckRecursive(cID, sID, turningStates, new HashSet<>());
     }
 
-    private void loopCheck1(int cID, int sID, HashSet<Integer> turningStates, ArrayList<Integer> visited) {
+    private void loopCheckRecursive(int cID, int sID, HashSet<Integer> turningStates, HashSet<Integer> visited) {
         if (cID == 0 || cID < sID || visited.contains(cID) || turningStates.contains(sID)) {
             return;
         }        
@@ -454,7 +500,7 @@ public class SystemModel implements TasksLinksPorts {
             return;
         } else {
             for (int ancOfCID : cIDsOfCID) {
-                loopCheck1(ancOfCID, sID, turningStates, visited);
+                loopCheckRecursive(ancOfCID, sID, turningStates, visited);
             }
         }
     }

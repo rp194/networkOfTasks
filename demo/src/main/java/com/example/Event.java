@@ -3,7 +3,7 @@ package com.example;
 public class Event implements Ports, Comparable<Event> {
   private int taskId;
   private int eventTime;
-  public static enum EventType {START, ARRIVAL, UPDATE};
+  public static enum EventType {ARRIVAL, UPDATE};
   private EventType eventType;
   public Event(int taskId, int eventTime, EventType eventType) {
     this.taskId = taskId;

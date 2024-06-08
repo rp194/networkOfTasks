@@ -32,6 +32,7 @@ public class AppTest implements Ports
     public void shouldAnswerWithTrue()
     {
         assertTrue( true );
+        
     }
 
 

@@ -1,12 +1,12 @@
 package com.example;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 public class EventSet implements Comparable<EventSet> {
   private int eventSetTime;
-  private ArrayList<Event> updates = new ArrayList<>();
-  private ArrayList<Event> arrivals = new ArrayList<>();
-  private ArrayList<Event> starts = new ArrayList<>();
-  private ArrayList<Event> allEvents = new ArrayList<>();  
+  private HashSet<Event> updates = new HashSet<>();
+  private HashSet<Event> arrivals = new HashSet<>();
+  private HashSet<Event> starts = new HashSet<>();
+  private HashSet<Event> allEvents = new HashSet<>();  
 
   public EventSet(int time) {
     this.eventSetTime = time;
@@ -20,10 +20,15 @@ public class EventSet implements Comparable<EventSet> {
         break;
       case ARRIVAL:
         arrivals.add(event);
-        break;
-      case START:
-        starts.add(event);
     }
+  }
+
+  public void setArrivals(HashSet<Event> arrivalEvents) {
+    this.arrivals = arrivalEvents;
+  }
+
+  public void setUpdates(HashSet<Event> updateEvents) {
+    this.updates = updateEvents;
   }
   
   public void remove(Event currentEvent) {
@@ -34,9 +39,6 @@ public class EventSet implements Comparable<EventSet> {
         break;
       case ARRIVAL:
         arrivals.remove(currentEvent);
-        break;
-      case START:
-        starts.remove(currentEvent);
     }
 
   }
@@ -45,20 +47,19 @@ public class EventSet implements Comparable<EventSet> {
     return eventSetTime;
   }
 
-  public ArrayList<Event> getAllEvents(){
+  public HashSet<Event> getAllEvents(){
     return allEvents;
   }
 
-
-  public ArrayList<Event> getUpdates() {
+  public HashSet<Event> getUpdates() {
     return updates;
   }
 
-  public ArrayList<Event> getArrivals() {
+  public HashSet<Event> getArrivals() {
     return arrivals;
   }
 
-  public ArrayList<Event> getStarts() {
+  public HashSet<Event> getStarts() {
     return starts;
   }
 
@@ -66,14 +67,27 @@ public class EventSet implements Comparable<EventSet> {
     return allEvents.size();
   }
 
+  @Override
+  public int hashCode() {
+    return eventSetTime;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+      if (this == obj) {
+          return true;
+      }
+      if (obj == null || getClass() != obj.getClass()) {
+          return false;
+      }
+      EventSet other = (EventSet) obj;
+      return eventSetTime == other.eventSetTime;
+  }
 
   @Override
   public int compareTo(EventSet specifiedObject) {
       int timeComparison = Integer.compare(this.eventSetTime, specifiedObject.getEventSetTime());
       return timeComparison;
   }
-
-
-
 
 }

@@ -1,13 +1,12 @@
 package com.example;
 
-public class Link implements TasksLinksPorts {
+public class Link implements InitializingConfigs {
   private int fromTask;
   private int toTask;
-  // public enum Port {A, B, C, D, W, X, Y,Z};
-  private Port fromPort;
-  private Port toPort;
+  private int fromPort;
+  private int toPort;
 
-  public Link(int fromTask, Port fromPort, int toTask, Port toPort) {
+  public Link(int fromTask, int fromPort, int toTask, int toPort) {
     this.fromTask = fromTask;
     this.fromPort = fromPort;
     this.toTask = toTask;
@@ -39,12 +38,12 @@ public class Link implements TasksLinksPorts {
   }
 
 
-  public Port getFromPort() {
+  public int getFromPort() {
     return this.fromPort;
   }
 
 
-  public Port getToPort() {
+  public int getToPort() {
     return this.toPort;
   }
 

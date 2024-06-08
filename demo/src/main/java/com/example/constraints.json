@@ -1,0 +1,19 @@
+{
+  "timing": [
+    {
+      "number" : 1,
+      "value" : 1
+    },
+    {
+      "number" : 2,
+      "value" : 1
+    },
+    {
+      "number" : 3,
+      "value" : 1
+    }
+  ],
+  "eventSensors" : [1],
+  "statusSensors" : [],
+  "actuators" : [2]
+}

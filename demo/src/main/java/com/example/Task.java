@@ -2,16 +2,16 @@ package com.example;
 
 import java.util.Arrays;
 
-public class Task implements TasksLinksPorts {
+public class Task implements InitializingConfigs {
     private int id;
     private String name;
     private int duration;
     private int deadline;
     private int period;
-    private Port[] inPorts;
-    private Port[] outPorts;
+    private int[] inPorts;
+    private int[] outPorts;
 
-    public Task(int id, String name, int duration, int deadline, int period, Port[] inPorts, Port[] outPorts) {
+    public Task(int id, String name, int duration, int deadline, int period, int[] inPorts, int[] outPorts) {
         this.id = id;
         this.name = name;
         this.duration = duration;
@@ -41,15 +41,15 @@ public class Task implements TasksLinksPorts {
         return period;
     }
 
-    public Port[] getInPorts() {
+    public int[] getInPorts() {
         return Arrays.copyOf(inPorts, inPorts.length);
     }
 
-    public Port[] getOutPorts() {
+    public int[] getOutPorts() {
         return Arrays.copyOf(outPorts, outPorts.length);
     }
 
-    public int getInPortIndex(Port inPort) {
+    public int getInPortIndex(int inPort) {
         for (int i=0; i<inPorts.length; i++) {
             if (this.inPorts[i] == inPort) {
                 return i+1;
