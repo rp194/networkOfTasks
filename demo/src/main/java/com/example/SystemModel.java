@@ -11,6 +11,7 @@ import java.util.Map.Entry;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.AbstractMap.SimpleImmutableEntry;
 
 public class SystemModel implements InitializingConfigs {
     private ArrayList<Task> tasks = new ArrayList<>();
@@ -47,18 +48,13 @@ public class SystemModel implements InitializingConfigs {
         for (Task task : tasks) {
             int taskId = task.getId();
             addEvent(initEventSetQueue, new Event(taskId, eventTime, Event.EventType.ARRIVAL));
-            HashMap<Integer, HashMap<Integer, TreeSet<Integer>>> initialData = null;
-            if (task.getInPorts().length > 0) {
-                initialData = new HashMap<>();
-            }
+            HashMap<SimpleImmutableEntry<Integer, Integer>, TreeSet<Integer>> initialData = new HashMap<>();
             for (int port : task.getInPorts()) {
-                HashMap<Integer, TreeSet<Integer>> dataOnPort = new HashMap<>();
                 for (int sensorId : sensorIds) {
-                    dataOnPort.put(sensorId, null);
+                    initialData.put(new SimpleImmutableEntry<>(port, sensorId), new TreeSet<>());
                 }
-                initialData.put(port, dataOnPort);
             }
-            TaskBody taskBody = new TaskBody(taskId, false, initialData);
+            TaskBody taskBody = new TaskBody(taskId, new HashMap<>(), initialData);
             tasksChanges.put(taskId, taskBody);
             transitionLog += taskId + ",";
         }
@@ -153,13 +149,11 @@ public class SystemModel implements InitializingConfigs {
         HashMap<Integer, TreeSet<Integer>> resultedOutput;
         TaskBody tt = currentState.getTaskBody(taskId);
         TaskBody taskBody = tasksChanges.computeIfAbsent(taskId, k -> new TaskBody(tt));
-        taskBody.setExecuted(true);
-        if (actuators.contains(taskId)) {
-            taskBody.setTaskID(0);
-        }
+        HashMap<Integer, TreeSet<Integer>> executedData =  tt.integrateInputData();
+        taskBody.setExecutedData(executedData);
+        taskBody.setTaskID(0);
         if (sensorIds.contains(taskId)) {
             resultedOutput = createSensorData(taskId, currentStateTime);
-            taskBody.setTaskID(0);
             // taskBody.putData(0, resultedOutput);
             // HashMap<Integer, HashMap<Integer, TreeSet<Integer>>> taskData = taskBody.getDataDelivered();
             // HashMap<Integer, TreeSet<Integer>> dataOnPort = taskData.computeIfAbsent(int.O, k -> new HashMap<>());
@@ -178,31 +172,29 @@ public class SystemModel implements InitializingConfigs {
                     if (v == null) {
                         v = new TaskBody(currentState.getTaskBody(nextTaskId));
                     }
-                    // HashMap<Integer, TreeSet<Integer>> dataForNextTask1 = v.getDataDelivered().computeIfAbsent(nextInPort, k1 -> new HashMap<>());
-                    HashMap<Integer, TreeSet<Integer>> dataForNextTask = new HashMap<>();
-                    v.getDataDelivered().put(nextInPort, dataForNextTask);
                     for (int sensorId : resultedOutput.keySet()) {
-                        dataForNextTask.compute(sensorId, (k2, v2) -> {
-                            // if (v2 == null) {
-                            v2 = new TreeSet<>();
-                            // }
-                            v2.addAll(resultedOutput.get(sensorId));
-                            return v2;
-                        });
+                        SimpleImmutableEntry<Integer, Integer> entryKey = new SimpleImmutableEntry<>(nextInPort, sensorId);
+                        TreeSet<Integer> dataForNextTask = new TreeSet<>();
+                        v.getDataDelivered().put(entryKey, dataForNextTask);
+                        dataForNextTask.addAll(resultedOutput.get(sensorId));
                     }
                     return v;
                 });
             }
-        }   
+        }
+        
     }
+
+
+
 
     private HashMap<Integer, TreeSet<Integer>> createSensorData(int taskId, int timestamp) {
         HashMap<Integer, TreeSet<Integer>> data = new HashMap<>();
         TreeSet<Integer> set = new TreeSet<>();
         set.add(timestamp);
         data.put(taskId, set);
-        return data;
-      }
+        return data;  
+    }
 
     private void processTheArrival(Event currentArrival, PriorityQueue<EventSet> stateQueue, State currentState,
     HashMap<Integer, TaskBody> tasksChanges, String transitionLog) {
@@ -221,7 +213,6 @@ public class SystemModel implements InitializingConfigs {
             if (v == null) {
                 v = new TaskBody(currentState.getTaskBody(taskId));
             }
-            v.setExecuted(false);
             return v;
         });
         stateHandler(currentState, currentStateTime, idleProcessors, tasksChanges, finalQueue, transitionLog);
@@ -294,6 +285,7 @@ public class SystemModel implements InitializingConfigs {
 
     private void 
     stateHandler(State currentState, int newStateTime, int idleProcessors, HashMap<Integer, TaskBody> changes, PriorityQueue<EventSet> resultedQueue, String transitionLog) {
+        int cuid = currentState.getStateID();
         State newState = new State(currentState, nextStateId, newStateTime, idleProcessors, changes, resultedQueue);
         State foundWrapper  = findWrapper(newState);
         int sourceId = currentState.getStateID();
@@ -353,13 +345,27 @@ public class SystemModel implements InitializingConfigs {
                 newState.getEventSetQueue().size() != previousSize) {
             return false;
         }
-        
         int newStateTime = newState.getStateTime();
         HashMap<Integer, TaskBody> newTasksBody = newState.getTasksBody();
-
         int previousStateTime = previousState.getStateTime();
         int diffTime = newStateTime - previousStateTime;
-        if (!previousState.isTasksBodyEqual(newTasksBody, diffTime)) {
+        HashMap<Integer, HashSet<Integer>> previousUnsatisfiedStatus = previousState.getUnsatisfiedStatusVersions();
+        HashMap<Integer, HashSet<Integer>> newUnsatisfiedStatus = newState.getUnsatisfiedStatusVersions();
+        if (previousUnsatisfiedStatus.size() != newUnsatisfiedStatus.size()) {
+            return false;
+        }
+        for (Entry<Integer, HashSet<Integer>> previousUnsatisfiedEntry : previousUnsatisfiedStatus.entrySet()) {
+            int sensorId = previousUnsatisfiedEntry.getKey();
+            if (!newUnsatisfiedStatus.containsKey(sensorId)) {
+                return false;
+            }
+            boolean isEqual = newState
+            .compareData(previousUnsatisfiedEntry.getValue(), newUnsatisfiedStatus.get(sensorId), diffTime);
+            if (!isEqual) { 
+                return false;
+            }
+        }
+        if (!previousState.isTasksBodyEqual(newState, newTasksBody, diffTime)) {
             return false;
         }
         PriorityQueue<EventSet> previousCopy = new PriorityQueue<>(previousState.getEventSetQueue());
@@ -409,6 +415,12 @@ public class SystemModel implements InitializingConfigs {
     }
         
     public void createLogFile() {
+        System.out.println(hashTable.size());
+        for (HashSet<Integer> value : hashTable.values()) {
+            if (value.size() != 1) {
+                System.out.println(value);
+            }
+        }
         clearLogFile(LOG_FILE_PATH);
         try {
             FileWriter fileWriter = new FileWriter(LOG_FILE_PATH, true);
@@ -435,7 +447,7 @@ public class SystemModel implements InitializingConfigs {
     }
 
     public void createDotFile() {
-        
+        System.out.println(hashTable.size());
         clearLogFile(Dot_FILE_PATH);
         try {
             FileWriter fileWriter = new FileWriter(Dot_FILE_PATH, true);
@@ -478,7 +490,6 @@ public class SystemModel implements InitializingConfigs {
             bufferedWriter.write("\n}");
             bufferedWriter.close();
             fileWriter.close();
-
         } catch (IOException e) {
             e.printStackTrace();
 

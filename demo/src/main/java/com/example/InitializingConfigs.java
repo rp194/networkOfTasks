@@ -75,15 +75,16 @@ public interface InitializingConfigs {
         for (int i = 0; i < eventSensorArray.length(); i++) {
           eventSensors.add((int) eventSensorArray.get(i));
         }
-        JSONArray statusSensorArray = (JSONArray) jsonObject.get("statusSensors");
-        for (int i = 0; i < statusSensorArray.length(); i++) {
-          statusSensors.add((int) statusSensorArray.get(i));
-        }
-        JSONArray actuatorArray = (JSONArray) jsonObject.get("actuators");
-        for (int i = 0; i < actuatorArray.length(); i++) {
-          actuators.add((int) actuatorArray.get(i));
-        }
       }
+      JSONArray statusSensorArray = (JSONArray) jsonObject.get("statusSensors");
+      for (int i = 0; i < statusSensorArray.length(); i++) {
+        statusSensors.add((int) statusSensorArray.get(i));
+      }
+      JSONArray actuatorArray = (JSONArray) jsonObject.get("actuators");
+      for (int i = 0; i < actuatorArray.length(); i++) {
+        actuators.add((int) actuatorArray.get(i));
+      }
+      
     } catch (Exception e) {
       e.printStackTrace();
     }

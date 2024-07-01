@@ -6,14 +6,14 @@
     },
     {
       "number" : 2,
-      "value" : 1
+      "value" : 2
     },
     {
       "number" : 3,
       "value" : 1
     }
   ],
-  "eventSensors" : [1],
-  "statusSensors" : [],
-  "actuators" : [2]
+  "eventSensors" : [],
+  "statusSensors" : [1],
+  "actuators" : [3]
 }
