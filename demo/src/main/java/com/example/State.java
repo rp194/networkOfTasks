@@ -22,8 +22,6 @@ public class State implements InitializingConfigs {
   private int idleProcessors;
   private PriorityQueue<EventSet> eventSetQueue = new PriorityQueue<>();
   private HashMap<Integer, HashSet<Integer>> producedEventSensorsData = new HashMap<>();
-  private HashMap<Integer, HashSet<Integer>> producedStatusSensorsData = new HashMap<>();
-  private HashMap<String, HashSet<Integer>> actuatorsWithStatusData = new HashMap<>();
 
   public State() {/*:)) */}
 
@@ -39,17 +37,13 @@ public class State implements InitializingConfigs {
     } else {
       this.sourceIds.add(source.getStateID());
       copyProducedSensorsData(this.producedEventSensorsData, source.getProducedEventSensorsData());
-      // copyProducedSensorsData(this.producedStatusSensorsData, source.getProducedStatusSensorsData());
-      copyProducedSensorsData(this.actuatorsWithStatusData, source.getActuatorsWithStatusData());
-      this.producedStatusSensorsData = source.getUnsatisfiedStatusVersions();
     }
 
     copyTasksBody(source, tasksChanges);
 
     executionAndSchedulityRegulator(source);
     policiesChecker(source);
-  } 
-
+  }
 
   private <K, V> void 
   copyProducedSensorsData(HashMap<K, HashSet<V>> producedSensorsData1, HashMap<K, HashSet<V>> producedSensorsData2) {
@@ -77,22 +71,34 @@ public class State implements InitializingConfigs {
       }
       else if (tasksChanges.get(key).getTaskID() == 0) {
         tasksChanges.get(key).setTaskID(key);
+        int taskDuaration = getTaskById(key).getDuration();
+        HashMap<Integer, TreeSet<Integer>> executionData = tasksBody.get(key).integrateInputData();
+        int[] minMax = new int[2];
+        if (timingConstraints.get(3) != null) {
+          findMinAndMax(executionData, minMax);
+          Integer min = minMax[0];
+          Integer max = minMax[1];
+          if (max - min > timingConstraints.get(3)) {
+            this.eventSetQueue.clear();
+            return;
+          }
+        }  
         if (eventSensors.contains(key)) {
           addVersion(producedEventSensorsData, key, stateTime);
         }
-        else if (statusSensors.contains(key)) {
-          addVersion(producedStatusSensorsData, key, stateTime);
-        }
         else if (actuators.contains(key)) {
           HashMap<Integer, TreeSet<Integer>> finalStageData = sourceTaskBody.integrateInputData();
-          for (Entry<Integer, HashSet<Integer>> producedSensorDataEntry : producedEventSensorsData.entrySet()) {
-            Integer eventSensorId = producedSensorDataEntry.getKey();
-            HashSet<Integer> eventSensorVersions =  producedSensorDataEntry.getValue();
+          for (Entry<Integer, HashSet<Integer>> producedEventSensorDataEntry : producedEventSensorsData.entrySet()) {
+            Integer eventSensorId = producedEventSensorDataEntry.getKey();
+            HashSet<Integer> eventSensorVersions =  producedEventSensorDataEntry.getValue();
             for (int version : eventSensorVersions) {
               if (finalStageData.get(eventSensorId) != null) {
                 if (finalStageData.get(eventSensorId).contains(version)) {
-                  if (stateTime - version <= timingConstraints.get(1)) {
+                  if (stateTime + taskDuaration - version <= timingConstraints.get(1)) {
                     eventSensorVersions.remove(version);
+                    if (eventSensorVersions.size() == 0) {
+                      producedEventSensorsData.remove(eventSensorId);
+                    }
                   }
                   else {
                     this.eventSetQueue.clear();
@@ -105,13 +111,11 @@ public class State implements InitializingConfigs {
 
           for (Entry<Integer, TreeSet<Integer>> finalDataEntry : finalStageData.entrySet()) {
             Integer sensorId = finalDataEntry.getKey();
-            if (producedStatusSensorsData.containsKey(sensorId)) {
+            if (statusSensors.contains(sensorId)) {
               for (Integer version : finalDataEntry.getValue()) {
-                if (!isConstraintFulfilled(sensorId, version, actuators.size())) {
-                  if (!updateStatus(sensorId, version, key)) {
-                    this.eventSetQueue.clear();
-                    return;
-                  }
+                if (stateTime + taskDuaration - version > timingConstraints.get(2)) {
+                  this.eventSetQueue.clear();
+                  return;
                 }
               }
             }
@@ -120,7 +124,6 @@ public class State implements InitializingConfigs {
       }
     }
   }
-
 
   public int getStateID() {
     return this.stateId;
@@ -150,14 +153,6 @@ public class State implements InitializingConfigs {
     return producedEventSensorsData;
   }
 
-  public HashMap<Integer, HashSet<Integer>> getProducedStatusSensorsData() {
-    return producedStatusSensorsData;
-  }
-
-  public HashMap<String, HashSet<Integer>> getActuatorsWithStatusData() {
-    return actuatorsWithStatusData;
-  }
-  
   private void executionAndSchedulityRegulator(State source) {
     for (EventSet eventSet : this.eventSetQueue) {
       for (Event updateEvent : eventSet.getUpdates()) {
@@ -200,23 +195,17 @@ public class State implements InitializingConfigs {
       }
     }
 
-    for (Map.Entry<Integer, HashSet<Integer>> entry : source.getProducedStatusSensorsData().entrySet()) {
-      Integer sensorId = entry.getKey();
-      HashSet<Integer> versions = entry.getValue();
-      for (int version : versions) {
-        if (!isConstraintFulfilled(sensorId, version, actuators.size())) {
-          if (stateTime - version > timingConstraints.get(2)) {
-            this.eventSetQueue.clear();
-            return;
-          }
-        }
+    for (Entry<Integer, HashSet<Integer>> unsatisfiedVersionsEntry : producedEventSensorsData.entrySet()) {
+      Integer sensorId = unsatisfiedVersionsEntry.getKey();
+      HashSet<Integer> unsatisfiedVersions = unsatisfiedVersionsEntry.getValue();
+      for (Integer version : unsatisfiedVersions) {
         boolean isExpired = true;
         boolean foundNonNull = false;
         for (TaskBody taskBody : tasksBody.values()) {
-          TreeSet<Integer> executedVersions = taskBody.integrateInputData().get(sensorId);
-          if (executedVersions != null) {
+        TreeSet<Integer> executionVersions = taskBody.integrateInputData().get(sensorId);
+          if (executionVersions != null) {
             foundNonNull = true;
-            if (executedVersions.contains(version)) {
+            if (executionVersions.contains(version)) {
               isExpired = false;
               break;
             }
@@ -226,19 +215,7 @@ public class State implements InitializingConfigs {
           this.eventSetQueue.clear();
           return;
         }
-      }
-    }
-
-    for (TaskBody taskBody : tasksBody.values()) {
-      HashMap<Integer, TreeSet<Integer>> executedData = taskBody.getExecutedData();
-      int[] minMax = new int[2];
-      findMinAndMax(executedData, minMax);
-      Integer min = minMax[0];
-      Integer max = minMax[1];
-      if (max - min > timingConstraints.get(3)) {
-        this.eventSetQueue.clear();
-        return;
-      }      
+      }    
     }
   }
   
@@ -276,31 +253,6 @@ public class State implements InitializingConfigs {
     minMax[1] = max;
   }
   
-  private boolean updateStatus(int sensorId, int version, int finalTaskId) {
-    if (stateTime - version > timingConstraints.get(2)) {
-      return false;
-    }
-    String key = sensorId + "_" + version;
-    actuatorsWithStatusData.putIfAbsent(key, new HashSet<>());
-    actuatorsWithStatusData.get(key).add(finalTaskId);
-    if (isConstraintFulfilled(sensorId, version, actuators.size())) {
-      producedStatusSensorsData.get(sensorId).remove(version);
-      if (producedStatusSensorsData.get(sensorId).size() == 0) {
-        producedStatusSensorsData.remove(sensorId);
-      }
-    }
-    return true;
-  }
-
-  public boolean isConstraintFulfilled(int sensorId, int version, int numOfFinalTasks) {
-    String key = sensorId + "_" + version;
-    if (!actuatorsWithStatusData.containsKey(key)) {
-        return false;
-    }
-    HashSet<Integer> executedTasks = actuatorsWithStatusData.get(key);
-    return executedTasks.size() == numOfFinalTasks;
-  }
-
   public Task getTaskById(int taskId) {
     for (Task task : taskList) {
         if (task.getId() == taskId) {
@@ -316,22 +268,6 @@ public class State implements InitializingConfigs {
 
   public void insertNewSource(HashSet<Integer> newSourceIds) {
     sourceIds.addAll(newSourceIds);
-  }
-
-  public HashMap<Integer, HashSet<Integer>> getUnsatisfiedStatusVersions() {
-    HashMap<Integer, HashSet<Integer>> result = new HashMap<>();
-    int actuatorSize = actuators.size();
-    for (Entry<Integer, HashSet<Integer>> statusEntry : producedStatusSensorsData.entrySet()) {
-      Integer sensorId = statusEntry.getKey();
-      HashSet<Integer> innerSet = new HashSet<>();
-      result.put(sensorId, innerSet);
-      for (int version : statusEntry.getValue()) {
-        if (!isConstraintFulfilled(sensorId, version, actuatorSize)) {
-          innerSet.add(version);
-        }
-      }
-    }
-    return result;
   }
 
   @Override
@@ -371,25 +307,6 @@ public class State implements InitializingConfigs {
       Integer newTaskId = newTaskBodyEntry.getKey();
       TaskBody thisTaskBody = tasksBody.get(newTaskId);
       TaskBody newTaskBody = newTaskBodyEntry.getValue();
-      HashMap<Integer, TreeSet<Integer>> thisExecutedData = thisTaskBody.getExecutedData();
-      HashMap<Integer, TreeSet<Integer>> newExecutedData = newTaskBody.getExecutedData();
-      if (newExecutedData == null && thisExecutedData == null) {
-        return true;
-      }
-      else if (newExecutedData == null || thisExecutedData == null) {
-        return false;
-      }
-      TreeSet<Integer> sensorIds = new TreeSet<>();
-      sensorIds.addAll(thisExecutedData.keySet());
-      sensorIds.addAll(newExecutedData.keySet());
-      for (Integer sensorId : sensorIds) {
-        if (!thisExecutedData.containsKey(sensorId) || !newExecutedData.containsKey(sensorId)) {
-          return false;
-        }
-        if (!compareData(thisExecutedData.get(sensorId), newExecutedData.get(sensorId), diff)) {
-          return false;
-        }
-      }
       HashMap<SimpleImmutableEntry<Integer, Integer>, TreeSet<Integer>> thisData = thisTaskBody.getDataDelivered();
       HashMap<SimpleImmutableEntry<Integer, Integer>, TreeSet<Integer>> newData = newTaskBody.getDataDelivered();
       if (newData != null) {
@@ -452,28 +369,7 @@ public class State implements InitializingConfigs {
         }
       }
 
-      ArrayList<Map.Entry<Integer, HashSet<Integer>>> sortedStatusEntries = 
-      new ArrayList<>(producedStatusSensorsData.entrySet());
-      sortedStatusEntries.sort(Comparator.comparing(Entry::getKey));
-      for (Entry<Integer, HashSet<Integer>> statusEntry : sortedStatusEntries) {
-        int sensorId = statusEntry.getKey();
-        result = 31 * result + sensorId;
-        TreeSet<Integer> sortedVersions = new TreeSet<>(statusEntry.getValue());
-        for (int version : sortedVersions) {
-          result = 31 * result + stateTime - version;
-        }
-      }
-
       TaskBody taskBodyValue = tasksBody.get(tId);
-      if (taskBodyValue.getExecutedData() != null) {
-        for (Entry<Integer, TreeSet<Integer>> executedDataEntry : taskBodyValue.getExecutedData().entrySet()) {
-          result = 31 * result + executedDataEntry.getKey();
-          for (Integer version : executedDataEntry.getValue()) {
-            result = 31 * result + stateTime - version;
-          }
-        }
-      }
-
       HashMap<SimpleImmutableEntry<Integer, Integer>, TreeSet<Integer>> taskData = taskBodyValue.getDataDelivered();
       if (taskData != null) {
         ArrayList<Map.Entry<SimpleImmutableEntry<Integer, Integer>, TreeSet<Integer>>> sortedEntries = 

@@ -54,7 +54,7 @@ public class SystemModel implements InitializingConfigs {
                     initialData.put(new SimpleImmutableEntry<>(port, sensorId), new TreeSet<>());
                 }
             }
-            TaskBody taskBody = new TaskBody(taskId, new HashMap<>(), initialData);
+            TaskBody taskBody = new TaskBody(taskId, initialData);
             tasksChanges.put(taskId, taskBody);
             transitionLog += taskId + ",";
         }
@@ -144,14 +144,17 @@ public class SystemModel implements InitializingConfigs {
         }
     }
 
+    private HashMap<Integer, TreeSet<Integer>> createSensorData(int taskId, int timestamp) {
+        HashMap<Integer, TreeSet<Integer>> data = new HashMap<>();
+        TreeSet<Integer> set = new TreeSet<>();
+        set.add(timestamp);
+        data.put(taskId, set);
+        return data;  
+    }
+
     private void processTheUpdate(State currentState, Event updateEvent, HashMap<Integer, TaskBody> tasksChanges) {
         int taskId = updateEvent.getTaskId();
         HashMap<Integer, TreeSet<Integer>> resultedOutput;
-        TaskBody tt = currentState.getTaskBody(taskId);
-        TaskBody taskBody = tasksChanges.computeIfAbsent(taskId, k -> new TaskBody(tt));
-        HashMap<Integer, TreeSet<Integer>> executedData =  tt.integrateInputData();
-        taskBody.setExecutedData(executedData);
-        taskBody.setTaskID(0);
         if (sensorIds.contains(taskId)) {
             resultedOutput = createSensorData(taskId, currentStateTime);
             // taskBody.putData(0, resultedOutput);
@@ -185,17 +188,6 @@ public class SystemModel implements InitializingConfigs {
         
     }
 
-
-
-
-    private HashMap<Integer, TreeSet<Integer>> createSensorData(int taskId, int timestamp) {
-        HashMap<Integer, TreeSet<Integer>> data = new HashMap<>();
-        TreeSet<Integer> set = new TreeSet<>();
-        set.add(timestamp);
-        data.put(taskId, set);
-        return data;  
-    }
-
     private void processTheArrival(Event currentArrival, PriorityQueue<EventSet> stateQueue, State currentState,
     HashMap<Integer, TaskBody> tasksChanges, String transitionLog) {
         int idleProcessors = currentState.getIdleProcessors();
@@ -209,12 +201,8 @@ public class SystemModel implements InitializingConfigs {
         idleProcessors -= 1;
         Event resultedUpdateEvent = schedule(task, currentStateTime);
         addEvent(finalQueue, resultedUpdateEvent);
-        tasksChanges.compute(taskId, (k, v) -> {
-            if (v == null) {
-                v = new TaskBody(currentState.getTaskBody(taskId));
-            }
-            return v;
-        });
+        TaskBody taskBody = tasksChanges.computeIfAbsent(taskId, k -> new TaskBody(currentState.getTaskBody(taskId)));
+        taskBody.setTaskID(0);
         stateHandler(currentState, currentStateTime, idleProcessors, tasksChanges, finalQueue, transitionLog);
     }
 
@@ -349,18 +337,18 @@ public class SystemModel implements InitializingConfigs {
         HashMap<Integer, TaskBody> newTasksBody = newState.getTasksBody();
         int previousStateTime = previousState.getStateTime();
         int diffTime = newStateTime - previousStateTime;
-        HashMap<Integer, HashSet<Integer>> previousUnsatisfiedStatus = previousState.getUnsatisfiedStatusVersions();
-        HashMap<Integer, HashSet<Integer>> newUnsatisfiedStatus = newState.getUnsatisfiedStatusVersions();
-        if (previousUnsatisfiedStatus.size() != newUnsatisfiedStatus.size()) {
+        HashMap<Integer, HashSet<Integer>> previousEventSensorsData = previousState.getProducedEventSensorsData();
+        HashMap<Integer, HashSet<Integer>> newEventSensorsData = newState.getProducedEventSensorsData();
+        if (previousEventSensorsData.size() != newEventSensorsData.size()) {
             return false;
         }
-        for (Entry<Integer, HashSet<Integer>> previousUnsatisfiedEntry : previousUnsatisfiedStatus.entrySet()) {
-            int sensorId = previousUnsatisfiedEntry.getKey();
-            if (!newUnsatisfiedStatus.containsKey(sensorId)) {
+        for (Entry<Integer, HashSet<Integer>> previousEntry : previousEventSensorsData.entrySet()) {
+            int sensorId = previousEntry.getKey();
+            if (!newEventSensorsData.containsKey(sensorId)) {
                 return false;
             }
             boolean isEqual = newState
-            .compareData(previousUnsatisfiedEntry.getValue(), newUnsatisfiedStatus.get(sensorId), diffTime);
+            .compareData(previousEntry.getValue(), newEventSensorsData.get(sensorId), diffTime);
             if (!isEqual) { 
                 return false;
             }
@@ -470,7 +458,7 @@ public class SystemModel implements InitializingConfigs {
                     loopCheck(cID, sID, turningStates);
                     bufferedWriter.write("  " + cID + " -> ");
                     if(getsStateById(Integer.parseInt(transitionMessage[0])).getEventSetQueue().size() == 0) {
-                        String invalidState = "\"" + cID + " invalidate\"";
+                        String invalidState = "\"" + cID + "X\"";
                         bufferedWriter.write(invalidState);
                         bufferedWriter.write(" [label = \"" + transitionMessage[1] + "\"];\n  ");
                         bufferedWriter.write(invalidState + " [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]");
