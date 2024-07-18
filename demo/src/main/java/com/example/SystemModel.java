@@ -21,6 +21,7 @@ public class SystemModel implements InitializingConfigs {
     private HashSet<Integer> sensorIds = new HashSet<>();
     private HashMap<Long, HashSet<Integer>> hashTable = new HashMap<>();
     private HashMap<Integer, ArrayList<String>> transitions = new HashMap<>();
+    private HashSet<Integer> turningStates = new HashSet<>();
     private int currentStateTime = -1;
     private int nextStateId;
     private final String LOG_FILE_PATH = 
@@ -64,7 +65,8 @@ public class SystemModel implements InitializingConfigs {
 
     public void stateSpaceGenerator(int endTime) {
         int stateIterator = 0;
-        while(true) {
+        while (true) {
+        // while(turningStates.size() < 2) {
             int stateSize = states.size();
             if (stateSize <= stateIterator) {
                 break;
@@ -157,11 +159,6 @@ public class SystemModel implements InitializingConfigs {
         HashMap<Integer, TreeSet<Integer>> resultedOutput;
         if (sensorIds.contains(taskId)) {
             resultedOutput = createSensorData(taskId, currentStateTime);
-            // taskBody.putData(0, resultedOutput);
-            // HashMap<Integer, HashMap<Integer, TreeSet<Integer>>> taskData = taskBody.getDataDelivered();
-            // HashMap<Integer, TreeSet<Integer>> dataOnPort = taskData.computeIfAbsent(int.O, k -> new HashMap<>());
-            // TreeSet<Integer> setOfData = dataOnPort.computeIfAbsent(taskId, k -> new TreeSet<>());
-            // setOfData.add(currentStateTime);
         } else {
             resultedOutput = currentState.getTaskBody(taskId).integrateInputData();
         }
@@ -317,6 +314,15 @@ public class SystemModel implements InitializingConfigs {
             for (int previousStateID : previousStateIDs) {
                 State previousState = states.get(previousStateID);
                 if (isWrapper(newState, previousState, resultedQueue)) {
+                    HashSet<Integer> localRetuningStates = new HashSet<>();
+                    for (int cId : previousState.getSourceIds()) {
+                        loopCheck(cId, previousStateID, localRetuningStates);
+                        if (localRetuningStates.size() != 0) {
+                            System.out.println(turningStates);
+                            turningStates.addAll(localRetuningStates);
+                            break;
+                        }
+                    }
                     return previousState;
                 }
             }
@@ -485,10 +491,10 @@ public class SystemModel implements InitializingConfigs {
     }
    
     private void loopCheck(int cID, int sID, HashSet<Integer> turningStates) {
-        loopCheckRecursive(cID, sID, turningStates, new HashSet<>());
+        loopCheckRecursive(cID, sID, turningStates, new ArrayList<>());
     }
 
-    private void loopCheckRecursive(int cID, int sID, HashSet<Integer> turningStates, HashSet<Integer> visited) {
+    private void loopCheckRecursive(int cID, int sID, HashSet<Integer> turningStates, ArrayList<Integer> visited) {
         if (cID == 0 || cID < sID || visited.contains(cID) || turningStates.contains(sID)) {
             return;
         }        

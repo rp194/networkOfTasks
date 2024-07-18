@@ -2,2367 +2,10595 @@
 S>0
 	C>-1,
 	@0
-	P:2
+	P:3
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
-	A>T2@0
+	A>T3@0
 	A>T1@0
+	A>T2@0
 
 S>1
 	C>0,
 	@1
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@0
+	A>T1@0
+	A>T2@0
+
+S>2
+	C>0,
+	@0
 	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[]
-	Q: 
-	A>T2@0
-	A>T1@0
-
-S>2
-	C>0,
-	@0
-	P:1
-	T[]:
-	T1
-	T2
+	T3
 		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
 	A>T1@0
-	A>T2@2
-	U>T2@1
+	A>T2@0
+	A>T3@2
+	U>T3@1
 
 S>3
 	C>0,
 	@0
-	P:1
+	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
+	A>T3@0
 	A>T2@0
 	A>T1@3
 	U>T1@1
 
 S>4
-	C>64,128,1,69,133,6,73,74,138,14,78,
-	15,79,83,21,85,86,91,28,156,93,30,159,
-	32,96,162,35,101,165,38,168,41,171,119,122,
-	60,125,
-	@2
+	C>0,
+	@0
 	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
+	A>T3@0
+	A>T1@0
+	A>T2@2
+	U>T2@1
 
 S>5
-	C>1,
-	@1
-	P:1
+	C>512,1,513,514,515,516,517,6,7,519,8,
+	520,521,15,527,528,17,529,18,530,532,533,22,
+	535,24,536,538,27,539,29,541,543,32,544,33,
+	545,34,546,36,38,550,554,555,557,558,559,560,
+	561,50,562,51,563,564,565,566,567,569,570,59,
+	572,573,574,576,65,577,578,67,579,580,581,70,
+	582,71,72,584,585,587,76,589,80,594,83,84,
+	85,598,599,600,90,602,91,603,92,605,94,95,
+	607,96,608,97,609,98,611,100,612,101,613,102,
+	614,103,108,109,110,112,116,119,121,122,124,127,
+	129,130,132,136,139,158,159,166,170,177,186,187,
+	188,189,193,194,201,202,203,209,210,211,219,220,
+	222,224,225,226,227,231,233,234,236,237,238,245,
+	248,251,252,253,254,258,260,261,262,264,265,267,
+	268,270,271,272,273,274,275,276,277,278,279,283,
+	285,286,290,291,296,297,298,300,301,302,303,304,
+	305,306,307,308,315,316,318,319,321,325,333,346,
+	348,353,354,355,357,363,364,365,366,367,368,369,
+	370,372,374,378,379,380,381,385,386,388,390,391,
+	393,395,396,398,399,400,401,408,409,411,413,414,
+	421,422,424,425,428,429,430,432,433,434,439,440,
+	442,443,447,449,450,451,453,459,462,463,464,465,
+	467,468,470,475,485,490,492,493,494,497,499,501,
+	502,507,508,509,511,
+	@2
+	P:3
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
-	A>T1@0
-	U>T2@2
-	A>T2@2
 
 S>6
 	C>1,
 	@1
-	P:1
+	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
+	A>T1@0
 	A>T2@0
-	A>T1@3
-	U>T1@2
+	U>T3@2
+	A>T3@2
 
 S>7
-	C>2,
-	@1
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[]
-	Q: 
-	A>T1@0
-	A>T2@2
-	U>T2@1
-
-S>8
-	C>2,3,
-	@0
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[]
-	Q: 
-	U>T1@1
-	U>T2@1
-	A>T1@3
-	A>T2@2
-
-S>9
-	C>3,
-	@1
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[]
-	Q: 
-	A>T2@0
-	A>T1@3
-	U>T1@1
-
-S>10
-	C>5,
-	@2
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[]
-	Q: 
-	A>T1@0
-	U>T2@2
-	A>T2@2
-
-S>11
-	C>5,6,
-	@1
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[]
-	Q: 
-	A>T1@3
-	U>T1@2
-	U>T2@2
-	A>T2@2
-
-S>12
-	C>7,
+	C>1,
 	@1
 	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
-	A>T1@0
-	A>T2@2
+	A>T3@0
+	A>T2@0
+	A>T1@3
+	U>T1@2
 
-S>13
-	C>8,
+S>8
+	C>1,
 	@1
-	P:0
+	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
+	A>T3@0
+	A>T1@0
+	U>T2@2
+	A>T2@2
+
+S>9
+	C>2,
+	@1
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@0
+	A>T2@0
+	A>T3@2
+	U>T3@1
+
+S>10
+	C>2,3,
+	@0
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@0
+	U>T1@1
+	U>T3@1
+	A>T1@3
+	A>T3@2
+
+S>11
+	C>2,4,
+	@0
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@0
+	A>T3@2
+	A>T2@2
+	U>T2@1
+	U>T3@1
+
+S>12
+	C>3,
+	@1
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@0
+	A>T2@0
+	A>T1@3
+	U>T1@1
+
+S>13
+	C>3,4,
+	@0
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@0
 	U>T1@1
 	U>T2@1
 	A>T1@3
 	A>T2@2
 
 S>14
-	C>130,135,9,140,
+	C>4,
 	@1
 	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[1]
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@0
+	A>T1@0
+	A>T2@2
+	U>T2@1
+
+S>15
+	C>6,7,
+	@1
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
 	A>T2@0
 	A>T1@3
-
-S>15
-	C>10,12,
-	@2
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[]
-	Q: 
-	A>T1@0
-	A>T2@2
+	U>T3@2
+	U>T1@2
+	A>T3@2
 
 S>16
-	C>11,
-	@2
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[]
-	Q: 
-	U>T1@2
-	U>T2@2
-	A>T2@2
-	A>T1@3
-
-S>17
-	C>12,
+	C>6,8,
 	@1
 	P:1
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
+	A>T1@0
+	U>T2@2
+	U>T3@2
+	A>T2@2
+	A>T3@2
+
+S>17
+	C>7,8,
+	@1
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@0
 	A>T1@3
 	U>T1@2
+	U>T2@2
 	A>T2@2
 
 S>18
-	C>145,149,153,13,
+	C>9,
 	@1
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T2@2
-	A>T1@3
-
-S>19
-	C>14,
-	@1
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T1@3
-	U>T2@2
-	A>T2@2
-
-S>20
-	C>15,
-	@2
-	P:1
+	P:3
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[]
-	Q: 
-	A>T2@2
-	U>T1@3
-	A>T1@3
-
-S>21
-	C>15,
-	@2
-	P:1
-	T[]:
-	T1
-	T2
+	T3
 		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
 	A>T1@0
-	A>T2@4
-	U>T2@3
+	A>T2@0
+	A>T3@2
 
-S>22
-	C>16,161,166,23,169,155,172,158,
-	@2
-	P:2
+S>19
+	C>10,
+	@1
+	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[2]
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
+	A>T2@0
+	U>T1@1
+	U>T3@1
+	A>T1@3
+	A>T3@2
+
+S>20
+	C>10,11,13,
+	@0
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@1
+	U>T1@1
+	U>T3@1
+	A>T1@3
 	A>T2@2
+	A>T3@2
+
+S>21
+	C>11,
+	@1
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@0
+	A>T3@2
+	A>T2@2
+	U>T2@1
+	U>T3@1
+
+S>22
+	C>12,
+	@1
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@0
+	A>T2@0
 	A>T1@3
 
 S>23
-	C>17,
+	C>13,
+	@1
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@0
+	U>T1@1
+	U>T2@1
+	A>T1@3
+	A>T2@2
+
+S>24
+	C>14,
+	@1
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@0
+	A>T1@0
+	A>T2@2
+
+S>25
+	C>16,17,15,
+	@1
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T2@2
+	U>T3@2
+	U>T1@2
+	A>T2@2
+	A>T3@2
+
+S>26
+	C>16,
 	@2
 	P:1
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
+	A>T1@0
+	U>T2@2
+	U>T3@2
+	A>T2@2
+	A>T3@2
+
+S>27
+	C>18,
+	@1
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@0
+	A>T1@3
+	U>T1@2
+	A>T3@2
+
+S>28
+	C>18,
+	@1
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@0
+	U>T2@2
+	A>T3@2
+	A>T2@2
+
+S>29
+	C>19,
+	@1
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@0
+	A>T1@3
+	A>T3@2
+
+S>30
+	C>20,
+	@1
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@1
+	U>T1@1
+	U>T3@1
+	A>T1@3
+	A>T2@2
+	A>T3@2
+
+S>31
+	C>21,
+	@1
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@0
+	A>T3@2
+	A>T2@2
+
+S>32
+	C>22,
+	@1
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@0
+	A>T1@3
+	U>T3@2
+	A>T3@2
+
+S>33
+	C>22,
+	@1
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@0
+	A>T1@3
+	U>T2@2
+	A>T2@2
+
+S>34
+	C>23,
+	@1
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@0
+	A>T1@3
+	A>T2@2
+
+S>35
+	C>24,
+	@1
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@0
+	U>T3@2
+	A>T2@2
+	A>T3@2
+
+S>36
+	C>24,
+	@1
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@0
+	A>T1@3
 	U>T1@2
 	A>T2@2
+
+S>37
+	C>25,
+	@2
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@2
+	U>T3@2
+	U>T1@2
+	A>T2@2
+	A>T3@2
 	A>T1@3
 
-S>24
-	C>18,25,
+S>38
+	C>40,26,46,31,
+	@2
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@0
+	A>T2@2
+	A>T3@2
+
+S>39
+	C>27,28,
+	@1
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T2@2
+	U>T1@2
+	A>T2@2
+	A>T3@2
+
+S>40
+	C>28,
+	@2
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@0
+	U>T2@2
+	A>T3@2
+	A>T2@2
+
+S>41
+	C>29,
+	@1
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T2@2
+	A>T2@2
+	A>T3@2
+
+S>42
+	C>30,
+	@1
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	A>T3@2
+	A>T1@3
+
+S>43
+	C>31,
+	@1
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T1@2
+	A>T3@2
+	A>T2@2
+
+S>44
+	C>32,33,
+	@1
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T3@2
+	U>T2@2
+	A>T2@2
+	A>T3@2
+
+S>45
+	C>34,
+	@1
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T3@2
+	A>T2@2
+	A>T3@2
+
+S>46
+	C>35,
+	@2
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@0
+	U>T3@2
+	A>T2@2
+	A>T3@2
+
+S>47
+	C>35,36,
+	@1
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T1@2
+	U>T3@2
+	A>T2@2
+	A>T3@2
+
+S>48
+	C>52,37,55,58,
+	@2
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	A>T3@2
+	A>T1@3
+
+S>49
+	C>38,
+	@2
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	A>T3@2
+	U>T1@3
+	A>T1@3
+
+S>50
+	C>38,
+	@2
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@0
+	A>T3@2
+	A>T2@4
+	U>T2@3
+
+S>51
+	C>38,
+	@2
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@0
+	A>T2@2
+	A>T3@4
+	U>T3@3
+
+S>52
+	C>39,
+	@2
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@2
+	U>T1@2
+	A>T2@2
+	A>T3@2
+	A>T1@3
+
+S>53
+	C>41,
 	@2
 	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[1]
-	Q: 
-	A>T2@2
-	A>T1@3
-
-S>25
-	C>19,
-	@2
-	P:1
-	T[]:
-	T1
-	T2
+	T3
 		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
 	Q: 
 	U>T2@2
 	A>T2@2
+	A>T3@2
 	A>T1@3
-
-S>26
-	C>20,
-	@3
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[]
-	Q: 
-	A>T2@2
-	U>T1@3
-	A>T1@3
-
-S>27
-	C>20,21,
-	@2
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[]
-	Q: 
-	U>T2@3
-	U>T1@3
-	A>T1@3
-	A>T2@4
-
-S>28
-	C>22,
-	@3
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[2]
-	Q: 
-	A>T2@2
-	A>T1@3
-
-S>29
-	C>22,
-	@2
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[2]
-	Q: 
-	A>T2@4
-	U>T2@3
-	A>T1@3
-
-S>30
-	C>24,
-	@3
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T2@2
-	A>T1@3
-
-S>31
-	C>24,
-	@2
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T2@4
-	U>T2@3
-	A>T1@3
-
-S>32
-	C>177,26,173,175,
-	@3
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[3]
-	Q: 
-	A>T2@2
-	A>T1@3
-
-S>33
-	C>27,
-	@3
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[]
-	Q: 
-	U>T2@3
-	U>T1@3
-	A>T1@3
-	A>T2@4
-
-S>34
-	C>28,
-	@3
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[2]
-	Q: 
-	A>T1@3
-	U>T2@4
-	A>T2@4
-
-S>35
-	C>28,
-	@3
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[2]
-	Q: 
-	A>T2@2
-	A>T1@6
-	U>T1@4
-
-S>36
-	C>29,
-	@3
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[2]
-	Q: 
-	U>T2@3
-	A>T1@3
-	A>T2@4
-
-S>37
-	C>30,
-	@3
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T1@3
-	U>T2@4
-	A>T2@4
-
-S>38
-	C>30,
-	@3
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T2@2
-	A>T1@6
-	U>T1@4
-
-S>39
-	C>31,
-	@3
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	U>T2@3
-	A>T1@3
-	A>T2@4
-
-S>40
-	C>32,
-	@3
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[3]
-	Q: 
-	A>T1@3
-	U>T2@4
-	A>T2@4
-
-S>41
-	C>32,
-	@3
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[3]
-	Q: 
-	A>T2@2
-	A>T1@6
-	U>T1@4
-
-S>42
-	C>33,179,180,181,
-	@3
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[3]
-	Q: 
-	A>T1@3
-	A>T2@4
-
-S>43
-	C>34,
-	@4
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[2]
-	Q: 
-	A>T1@3
-	U>T2@4
-	A>T2@4
-
-S>44
-	C>34,35,
-	@3
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[2]
-	Q: 
-	U>T1@4
-	U>T2@4
-	A>T2@4
-	A>T1@6
-
-S>45
-	C>36,
-	@3
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[2]
-	Q: 
-	A>T1@3
-	A>T2@4
-
-S>46
-	C>37,
-	@4
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T1@3
-	U>T2@4
-	A>T2@4
-
-S>47
-	C>37,38,
-	@3
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	U>T2@4
-	U>T1@4
-	A>T2@4
-	A>T1@6
-
-S>48
-	C>39,
-	@3
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T1@3
-	A>T2@4
-
-S>49
-	C>40,
-	@4
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[3]
-	Q: 
-	A>T1@3
-	U>T2@4
-	A>T2@4
-
-S>50
-	C>40,41,
-	@3
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[3]
-	Q: 
-	U>T1@4
-	U>T2@4
-	A>T2@4
-	A>T1@6
-
-S>51
-	C>49,42,
-	@4
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[3]
-	Q: 
-	A>T1@3
-	A>T2@4
-
-S>52
-	C>42,
-	@3
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[3]
-	Q: 
-	A>T1@6
-	U>T1@4
-	A>T2@4
-
-S>53
-	C>43,45,
-	@4
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[2]
-	Q: 
-	A>T1@3
-	A>T2@4
 
 S>54
-	C>44,
-	@4
-	P:0
+	C>57,42,
+	@2
+	P:3
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[2]
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
 	Q: 
-	U>T1@4
-	U>T2@4
-	A>T2@4
-	A>T1@6
+	A>T2@2
+	A>T3@2
+	A>T1@3
 
 S>55
-	C>45,
-	@3
-	P:1
+	C>43,
+	@2
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[2]
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
-	A>T1@6
-	U>T1@4
-	A>T2@4
+	U>T1@2
+	A>T3@2
+	A>T2@2
+	A>T1@3
 
 S>56
-	C>48,46,
-	@4
-	P:2
+	C>44,
+	@2
+	P:1
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
 	Q: 
+	U>T3@2
+	U>T2@2
+	A>T2@2
+	A>T3@2
 	A>T1@3
-	A>T2@4
 
 S>57
-	C>47,
-	@4
-	P:0
+	C>45,
+	@2
+	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
 	Q: 
-	U>T2@4
-	U>T1@4
-	A>T2@4
-	A>T1@6
+	U>T3@2
+	A>T2@2
+	A>T3@2
+	A>T1@3
 
 S>58
-	C>48,
-	@3
+	C>47,
+	@2
 	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[1]
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
-	A>T1@6
-	U>T1@4
-	A>T2@4
+	U>T1@2
+	U>T3@2
+	A>T2@2
+	A>T3@2
+	A>T1@3
 
 S>59
-	C>50,
-	@4
-	P:0
+	C>48,
+	@3
+	P:3
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[3]
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
 	Q: 
-	U>T1@4
-	U>T2@4
-	A>T2@4
-	A>T1@6
+	A>T2@2
+	A>T3@2
+	A>T1@3
 
 S>60
-	C>51,
-	@5
+	C>48,
+	@2
 	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[3]
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
 	Q: 
-	A>T1@3
+	A>T3@2
 	A>T2@4
+	U>T2@3
+	A>T1@3
 
 S>61
-	C>51,
-	@4
-	P:1
+	C>48,
+	@2
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[3]
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
 	Q: 
-	A>T2@4
-	A>T1@6
-	U>T1@5
+	A>T2@2
+	A>T3@4
+	U>T3@3
+	A>T1@3
 
 S>62
-	C>51,
-	@4
-	P:1
+	C>49,
+	@3
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[3]
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
+	A>T2@2
+	A>T3@2
+	U>T1@3
 	A>T1@3
-	A>T2@6
-	U>T2@5
 
 S>63
-	C>52,
-	@4
+	C>49,50,
+	@2
 	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[3]
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
-	U>T1@4
+	U>T2@3
+	U>T1@3
+	A>T1@3
+	A>T3@2
 	A>T2@4
-	A>T1@6
 
 S>64
-	C>53,
-	@5
-	P:2
+	C>49,51,
+	@2
+	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[2]
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
+	U>T1@3
+	U>T3@3
 	A>T1@3
-	A>T2@4
+	A>T2@2
+	A>T3@4
 
 S>65
-	C>53,
-	@4
+	C>50,51,
+	@2
 	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[2]
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
+	A>T1@0
 	A>T2@4
-	A>T1@6
-	U>T1@5
+	A>T3@4
+	U>T3@3
+	U>T2@3
 
 S>66
-	C>53,
-	@4
-	P:1
+	C>498,500,53,56,
+	@2
+	P:3
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[2]
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
 	Q: 
+	A>T2@2
+	A>T3@2
 	A>T1@3
-	A>T2@6
-	U>T2@5
 
 S>67
-	C>68,54,72,57,59,63,
-	@4
+	C>54,
+	@3
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	A>T3@2
+	A>T1@3
+
+S>68
+	C>54,
+	@2
 	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[4]
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
 	Q: 
+	A>T3@2
 	A>T2@4
-	A>T1@6
+	U>T2@3
+	A>T1@3
 
-S>68
-	C>55,
-	@4
-	P:1
+S>69
+	C>54,
+	@2
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	A>T3@4
+	U>T3@3
+	A>T1@3
+
+S>70
+	C>59,
+	@3
+	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
 	Q: 
-	U>T1@4
+	A>T3@2
+	A>T1@3
+	U>T2@4
 	A>T2@4
-	A>T1@6
 
-S>69
-	C>56,
-	@5
+S>71
+	C>59,
+	@3
 	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[1]
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
 	Q: 
+	A>T2@2
 	A>T1@3
-	A>T2@4
-
-S>70
-	C>56,
-	@4
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T2@4
-	A>T1@6
-	U>T1@5
-
-S>71
-	C>56,
-	@4
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T1@3
-	A>T2@6
-	U>T2@5
+	U>T3@4
+	A>T3@4
 
 S>72
-	C>58,
-	@4
-	P:1
+	C>59,
+	@3
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[1]
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
 	Q: 
-	U>T1@4
-	A>T2@4
+	A>T2@2
+	A>T3@2
 	A>T1@6
+	U>T1@4
 
 S>73
 	C>60,
-	@5
-	P:1
+	@3
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[3]
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
 	Q: 
+	A>T3@2
 	A>T2@4
-	U>T1@6
-	A>T1@6
+	U>T2@3
+	A>T1@3
 
 S>74
-	C>60,
-	@5
+	C>60,61,
+	@2
 	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[3]
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
 	Q: 
+	A>T2@4
+	A>T3@4
+	U>T3@3
+	U>T2@3
 	A>T1@3
-	U>T2@6
-	A>T2@6
 
 S>75
 	C>61,
-	@5
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[3]
-	Q: 
-	A>T2@4
-	A>T1@6
-	U>T1@5
-
-S>76
-	C>61,62,
-	@4
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[3]
-	Q: 
-	A>T1@6
-	A>T2@6
-	U>T2@5
-	U>T1@5
-
-S>77
-	C>62,
-	@5
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[3]
-	Q: 
-	A>T1@3
-	A>T2@6
-	U>T2@5
-
-S>78
-	C>64,
-	@5
-	P:1
+	@3
+	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	A>T3@4
+	U>T3@3
+	A>T1@3
+
+S>76
+	C>62,
+	@3
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	A>T3@2
+	A>T1@3
+
+S>77
+	C>63,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@3
+	U>T1@3
+	A>T1@3
+	A>T3@2
+	A>T2@4
+
+S>78
+	C>64,65,63,
+	@2
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
 	A>T2@4
-	U>T1@6
-	A>T1@6
+	A>T3@4
+	U>T2@3
+	U>T3@3
+	U>T1@3
+	A>T1@3
 
 S>79
 	C>64,
-	@5
+	@3
 	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[2]
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
+	U>T1@3
+	U>T3@3
 	A>T1@3
-	U>T2@6
-	A>T2@6
+	A>T2@2
+	A>T3@4
 
 S>80
-	C>65,
-	@5
-	P:1
+	C>66,
+	@3
+	P:3
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[2]
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
 	Q: 
-	A>T2@4
-	A>T1@6
-	U>T1@5
+	A>T2@2
+	A>T3@2
+	A>T1@3
 
 S>81
-	C>65,66,
-	@4
-	P:0
+	C>66,
+	@2
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[2]
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
 	Q: 
-	A>T1@6
-	A>T2@6
-	U>T2@5
-	U>T1@5
+	A>T3@2
+	A>T2@4
+	U>T2@3
+	A>T1@3
 
 S>82
 	C>66,
-	@5
-	P:1
+	@2
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[2]
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
 	Q: 
+	A>T2@2
+	A>T3@4
+	U>T3@3
 	A>T1@3
-	A>T2@6
-	U>T2@5
 
 S>83
 	C>67,
-	@5
+	@3
 	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[4]
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
 	Q: 
+	A>T3@2
+	A>T1@3
+	U>T2@4
 	A>T2@4
-	A>T1@6
 
 S>84
 	C>67,
-	@4
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[4]
-	Q: 
-	A>T1@6
-	A>T2@6
-	U>T2@5
-
-S>85
-	C>69,
-	@5
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T2@4
-	U>T1@6
-	A>T1@6
-
-S>86
-	C>69,
-	@5
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T1@3
-	U>T2@6
-	A>T2@6
-
-S>87
-	C>70,
-	@5
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T2@4
-	A>T1@6
-	U>T1@5
-
-S>88
-	C>70,71,
-	@4
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T1@6
-	A>T2@6
-	U>T1@5
-	U>T2@5
-
-S>89
-	C>71,
-	@5
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	A>T1@3
-	A>T2@6
-	U>T2@5
-
-S>90
-	C>73,74,
-	@5
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[3]
-	Q: 
-	U>T1@6
-	U>T2@6
-	A>T1@6
-	A>T2@6
-
-S>91
-	C>80,87,75,
-	@5
+	@3
 	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[5]
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
 	Q: 
+	A>T2@2
+	A>T1@3
+	U>T3@4
+	A>T3@4
+
+S>85
+	C>67,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	A>T3@2
+	A>T1@6
+	U>T1@4
+
+S>86
+	C>68,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@2
 	A>T2@4
+	U>T2@3
+	A>T1@3
+
+S>87
+	C>68,69,
+	@2
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@4
+	A>T2@4
+	U>T3@3
+	U>T2@3
+	A>T1@3
+
+S>88
+	C>69,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	A>T3@4
+	U>T3@3
+	A>T1@3
+
+S>89
+	C>70,71,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T3@4
+	U>T2@4
+	A>T2@4
+	A>T3@4
+
+S>90
+	C>70,72,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@2
+	U>T1@4
+	U>T2@4
+	A>T2@4
+	A>T1@6
+
+S>91
+	C>71,72,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	U>T3@4
+	U>T1@4
+	A>T3@4
 	A>T1@6
 
 S>92
-	C>76,
-	@5
-	P:0
+	C>534,568,73,556,
+	@3
+	P:3
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[3]
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
 	Q: 
-	U>T2@5
-	U>T1@5
-	A>T1@6
-	A>T2@6
+	A>T3@2
+	A>T2@4
+	A>T1@3
 
 S>93
-	C>77,
-	@5
-	P:2
+	C>74,
+	@3
+	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[3]
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
 	Q: 
+	U>T3@3
+	U>T2@3
 	A>T1@3
-	A>T2@6
+	A>T2@4
+	A>T3@4
 
 S>94
-	C>78,79,
-	@5
-	P:0
+	C>75,
+	@3
+	P:3
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
 	Q: 
-	U>T1@6
-	U>T2@6
-	A>T1@6
-	A>T2@6
+	A>T2@2
+	A>T3@4
+	A>T1@3
 
 S>95
-	C>81,
-	@5
-	P:0
+	C>76,
+	@3
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[2]
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
 	Q: 
-	U>T2@5
-	U>T1@5
-	A>T1@6
-	A>T2@6
+	A>T3@2
+	A>T1@3
+	U>T2@4
+	A>T2@4
 
 S>96
-	C>82,
-	@5
+	C>76,
+	@3
 	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[2]
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
 	Q: 
+	A>T2@2
 	A>T1@3
-	A>T2@6
+	U>T3@4
+	A>T3@4
 
 S>97
-	C>83,
-	@5
-	P:1
+	C>76,
+	@3
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[4]
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
 	Q: 
-	U>T2@6
+	A>T2@2
+	A>T3@2
 	A>T1@6
-	A>T2@6
+	U>T1@4
 
 S>98
-	C>84,
-	@5
-	P:1
+	C>77,
+	@3
+	P:3
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[4]
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
 	Q: 
-	U>T2@5
-	A>T1@6
-	A>T2@6
+	A>T3@2
+	A>T2@4
+	A>T1@3
 
 S>99
-	C>85,86,
-	@5
+	C>78,
+	@3
 	P:0
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[1]
+		Port1,Sensor1=[]
+	T3
+		Port1,Sensor1=[]
+		Port2,Sensor1=[]
 	Q: 
-	U>T2@6
-	U>T1@6
-	A>T2@6
-	A>T1@6
+	U>T2@3
+	U>T3@3
+	U>T1@3
+	A>T1@3
+	A>T2@4
+	A>T3@4
 
 S>100
-	C>88,
-	@5
-	P:0
+	C>79,
+	@3
+	P:3
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[1]
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
 	Q: 
-	U>T1@5
-	U>T2@5
-	A>T1@6
-	A>T2@6
+	A>T2@2
+	A>T3@4
+	A>T1@3
 
 S>101
-	C>89,
-	@5
+	C>80,
+	@3
 	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
 	Q: 
+	A>T3@2
 	A>T1@3
-	A>T2@6
+	U>T2@4
+	A>T2@4
 
 S>102
-	C>90,
-	@6
-	P:0
+	C>80,
+	@3
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[3]
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
 	Q: 
-	U>T1@6
-	U>T2@6
-	A>T1@6
-	A>T2@6
+	A>T2@2
+	A>T1@3
+	U>T3@4
+	A>T3@4
 
 S>103
-	C>91,
-	@5
-	P:1
+	C>80,
+	@3
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[5]
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
 	Q: 
-	U>T2@6
+	A>T2@2
+	A>T3@2
 	A>T1@6
-	A>T2@6
+	U>T1@4
 
 S>104
-	C>100,92,95,
-	@5
+	C>81,
+	@3
 	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[5]
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
 	Q: 
-	A>T1@6
-	A>T2@6
+	A>T3@2
+	A>T2@4
+	U>T2@3
+	A>T1@3
 
 S>105
-	C>93,
-	@5
+	C>81,82,
+	@2
 	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[3]
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
 	Q: 
-	U>T1@6
-	A>T2@6
-	A>T1@6
+	A>T2@4
+	A>T3@4
+	U>T3@3
+	U>T2@3
+	A>T1@3
 
 S>106
-	C>94,
-	@6
-	P:0
+	C>82,
+	@3
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[2]
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
 	Q: 
-	U>T1@6
-	U>T2@6
-	A>T1@6
-	A>T2@6
+	A>T2@2
+	A>T3@4
+	U>T3@3
+	A>T1@3
 
 S>107
-	C>96,
-	@5
+	C>83,84,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T3@4
+	U>T2@4
+	A>T3@4
+	A>T2@4
+
+S>108
+	C>83,85,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@2
+	U>T1@4
+	U>T2@4
+	A>T2@4
+	A>T1@6
+
+S>109
+	C>84,85,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	U>T1@4
+	U>T3@4
+	A>T3@4
+	A>T1@6
+
+S>110
+	C>549,86,104,537,540,
+	@3
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@2
+	A>T2@4
+	A>T1@3
+
+S>111
+	C>87,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	U>T3@3
+	U>T2@3
+	A>T1@3
+	A>T3@4
+	A>T2@4
+
+S>112
+	C>88,
+	@3
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	A>T3@4
+	A>T1@3
+
+S>113
+	C>89,
+	@4
 	P:1
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
 	Q: 
-	U>T1@6
-	A>T2@6
-	A>T1@6
+	A>T1@3
+	U>T3@4
+	U>T2@4
+	A>T2@4
+	A>T3@4
 
-S>108
-	C>97,
-	@6
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[4]
-	Q: 
-	U>T2@6
-	A>T1@6
-	A>T2@6
-
-S>109
-	C>98,
-	@5
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[4]
-	Q: 
-	A>T1@6
-	A>T2@6
-
-S>110
-	C>99,
-	@6
+S>114
+	C>89,90,91,
+	@3
 	P:0
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[1]
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
 	Q: 
-	U>T2@6
-	U>T1@6
-	A>T2@6
+	U>T1@4
+	U>T3@4
+	U>T2@4
+	A>T2@4
+	A>T3@4
 	A>T1@6
-
-S>111
-	C>101,
-	@5
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[1]
-	Q: 
-	U>T1@6
-	A>T1@6
-	A>T2@6
-
-S>112
-	C>115,116,102,118,106,110,
-	@6
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[6]
-	Q: 
-	A>T1@6
-	A>T2@6
-
-S>113
-	C>103,
-	@6
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[5]
-	Q: 
-	U>T2@6
-	A>T1@6
-	A>T2@6
-
-S>114
-	C>113,104,
-	@6
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[5]
-	Q: 
-	A>T1@6
-	A>T2@6
 
 S>115
-	C>105,
-	@6
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[3]
-	Q: 
-	U>T1@6
-	A>T2@6
-	A>T1@6
-
-S>116
-	C>107,
-	@6
-	P:1
+	C>92,
+	@3
+	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
 	Q: 
-	U>T1@6
-	A>T2@6
+	A>T1@3
+	U>T3@4
+	A>T2@4
+	A>T3@4
+
+S>116
+	C>92,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@2
+	U>T1@4
+	A>T2@4
 	A>T1@6
 
 S>117
-	C>108,109,
-	@6
+	C>93,
+	@3
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	A>T2@4
+	A>T3@4
+
+S>118
+	C>94,
+	@3
 	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[4]
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
 	Q: 
-	A>T1@6
-	A>T2@6
+	A>T1@3
+	U>T2@4
+	A>T2@4
+	A>T3@4
 
-S>118
-	C>111,
-	@6
+S>119
+	C>94,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	U>T1@4
+	A>T3@4
+	A>T1@6
+
+S>120
+	C>96,95,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T3@4
+	U>T2@4
+	A>T3@4
+	A>T2@4
+
+S>121
+	C>97,95,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@2
+	U>T2@4
+	U>T1@4
+	A>T2@4
+	A>T1@6
+
+S>122
+	C>96,97,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	U>T1@4
+	U>T3@4
+	A>T3@4
+	A>T1@6
+
+S>123
+	C>98,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T3@4
+	A>T2@4
+	A>T3@4
+
+S>124
+	C>98,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@2
+	U>T1@4
+	A>T2@4
+	A>T1@6
+
+S>125
+	C>99,
+	@3
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	A>T2@4
+	A>T3@4
+
+S>126
+	C>100,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T2@4
+	A>T2@4
+	A>T3@4
+
+S>127
+	C>100,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	U>T1@4
+	A>T3@4
+	A>T1@6
+
+S>128
+	C>101,102,
+	@3
 	P:1
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
 	Q: 
+	A>T1@3
+	U>T3@4
+	U>T2@4
+	A>T3@4
+	A>T2@4
+
+S>129
+	C>101,103,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@2
+	U>T1@4
+	U>T2@4
+	A>T2@4
+	A>T1@6
+
+S>130
+	C>102,103,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T2@2
+	U>T1@4
+	U>T3@4
+	A>T3@4
+	A>T1@6
+
+S>131
+	C>105,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	U>T3@3
+	U>T2@3
+	A>T1@3
+	A>T2@4
+	A>T3@4
+
+S>132
+	C>106,
+	@3
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T2@2
+	A>T3@4
+	A>T1@3
+
+S>133
+	C>107,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T3@4
+	U>T2@4
+	A>T3@4
+	A>T2@4
+
+S>134
+	C>107,108,109,
+	@3
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	U>T1@4
+	U>T3@4
+	U>T2@4
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>135
+	C>110,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T1@3
+	U>T3@4
+	A>T2@4
+	A>T3@4
+
+S>136
+	C>110,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@2
+	U>T1@4
+	A>T2@4
+	A>T1@6
+
+S>137
+	C>131,571,111,
+	@3
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T1@3
+	A>T3@4
+	A>T2@4
+
+S>138
+	C>112,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T2@4
+	A>T3@4
+	A>T2@4
+
+S>139
+	C>112,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@2
+	U>T1@4
+	A>T3@4
+	A>T1@6
+
+S>140
+	C>113,145,117,142,
+	@4
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	A>T2@4
+	A>T3@4
+
+S>141
+	C>114,
+	@4
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
+	Q: 
+	U>T1@4
+	U>T3@4
+	U>T2@4
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>142
+	C>115,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	U>T3@4
+	A>T2@4
+	A>T3@4
+
+S>143
+	C>115,116,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	U>T3@4
+	U>T1@4
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>144
+	C>117,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@6
+	U>T1@4
+	A>T2@4
+	A>T3@4
+
+S>145
+	C>118,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T2@4
+	A>T2@4
+	A>T3@4
+
+S>146
+	C>118,119,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@4
+	U>T1@4
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>147
+	C>120,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T3@4
+	U>T2@4
+	A>T3@4
+	A>T2@4
+
+S>148
+	C>120,121,122,
+	@3
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	U>T3@4
+	U>T2@4
+	U>T1@4
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>149
+	C>123,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T3@4
+	A>T2@4
+	A>T3@4
+
+S>150
+	C>123,124,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	U>T3@4
+	U>T1@4
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>151
+	C>149,125,
+	@4
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	A>T2@4
+	A>T3@4
+
+S>152
+	C>125,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@6
+	U>T1@4
+	A>T2@4
+	A>T3@4
+
+S>153
+	C>126,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T2@4
+	A>T2@4
+	A>T3@4
+
+S>154
+	C>126,127,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	U>T1@4
+	U>T2@4
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>155
+	C>128,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T1@3
+	U>T3@4
+	U>T2@4
+	A>T3@4
+	A>T2@4
+
+S>156
+	C>128,129,130,
+	@3
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	U>T3@4
+	U>T1@4
+	U>T2@4
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>157
+	C>132,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T1@3
+	U>T2@4
+	A>T3@4
+	A>T2@4
+
+S>158
+	C>132,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T2@2
+	U>T1@4
+	A>T3@4
+	A>T1@6
+
+S>159
+	C>161,164,133,184,137,155,590,
+	@4
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T1@3
+	A>T3@4
+	A>T2@4
+
+S>160
+	C>134,
+	@4
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	U>T1@4
+	U>T3@4
+	U>T2@4
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>161
+	C>135,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T1@3
+	U>T3@4
+	A>T2@4
+	A>T3@4
+
+S>162
+	C>135,136,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	U>T3@4
+	U>T1@4
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>163
+	C>137,
+	@3
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T1@6
+	U>T1@4
+	A>T3@4
+	A>T2@4
+
+S>164
+	C>138,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T2@4
+	A>T3@4
+	A>T2@4
+
+S>165
+	C>138,139,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	U>T1@4
+	U>T2@4
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>166
+	C>140,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	A>T2@4
+	A>T3@4
+
+S>167
+	C>140,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T2@4
+	A>T3@4
+	A>T1@6
+	U>T1@5
+
+S>168
+	C>140,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	A>T3@4
+	A>T2@6
+	U>T2@5
+
+S>169
+	C>140,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	A>T2@4
+	A>T3@6
+	U>T3@5
+
+S>170
+	C>171,172,141,173,
+	@4
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>171
+	C>143,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	U>T3@4
+	U>T1@4
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>172
+	C>144,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	U>T1@4
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>173
+	C>146,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@4
+	U>T1@4
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>174
+	C>592,147,153,
+	@4
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	A>T3@4
+	A>T2@4
+
+S>175
+	C>148,
+	@4
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	U>T3@4
+	U>T2@4
+	U>T1@4
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>176
+	C>150,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	U>T3@4
+	U>T1@4
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>177
+	C>151,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	A>T2@4
+	A>T3@4
+
+S>178
+	C>151,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	A>T3@4
+	A>T1@6
+	U>T1@5
+
+S>179
+	C>151,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	A>T3@4
+	A>T2@6
+	U>T2@5
+
+S>180
+	C>151,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	A>T2@4
+	A>T3@6
+	U>T3@5
+
+S>181
+	C>152,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	U>T1@4
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>182
+	C>154,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	U>T1@4
+	U>T2@4
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>183
+	C>156,
+	@4
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	U>T3@4
+	U>T1@4
+	U>T2@4
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>184
+	C>157,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T1@3
+	U>T2@4
+	A>T3@4
+	A>T2@4
+
+S>185
+	C>157,158,
+	@3
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	U>T1@4
+	U>T2@4
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>186
+	C>159,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T1@3
+	A>T3@4
+	A>T2@4
+
+S>187
+	C>159,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	A>T2@4
+	A>T1@6
+	U>T1@5
+
+S>188
+	C>159,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T1@3
+	A>T3@4
+	A>T2@6
+	U>T2@5
+
+S>189
+	C>160,192,596,183,218,190,191,
+	@4
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>190
+	C>162,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	U>T3@4
+	U>T1@4
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>191
+	C>163,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	U>T1@4
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>192
+	C>165,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[]
+	Q: 
+	U>T1@4
+	U>T2@4
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>193
+	C>166,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T2@4
+	A>T3@4
+	U>T1@6
+	A>T1@6
+
+S>194
+	C>166,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	A>T3@4
+	U>T2@6
+	A>T2@6
+
+S>195
+	C>167,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T2@4
+	A>T3@4
+	A>T1@6
+	U>T1@5
+
+S>196
+	C>167,168,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@4
+	A>T2@6
+	A>T1@6
+	U>T1@5
+	U>T2@5
+
+S>197
+	C>167,169,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T2@4
+	A>T3@6
+	A>T1@6
+	U>T1@5
+	U>T3@5
+
+S>198
+	C>168,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	A>T3@4
+	A>T2@6
+	U>T2@5
+
+S>199
+	C>168,169,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	A>T3@6
+	A>T2@6
+	U>T2@5
+	U>T3@5
+
+S>200
+	C>169,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	A>T2@4
+	A>T3@6
+	U>T3@5
+
+S>201
+	C>170,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>202
+	C>170,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@4
+	A>T1@6
+	A>T2@6
+	U>T2@5
+
+S>203
+	C>174,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	A>T3@4
+	A>T2@4
+
+S>204
+	C>174,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	A>T2@4
+	A>T1@6
+	U>T1@5
+
+S>205
+	C>174,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	A>T2@4
+	A>T3@6
+	U>T3@5
+
+S>206
+	C>174,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	A>T3@4
+	A>T2@6
+	U>T2@5
+
+S>207
+	C>597,182,175,
+	@4
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>208
+	C>176,181,
+	@4
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>209
+	C>177,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	A>T3@4
+	U>T1@6
+	A>T1@6
+
+S>210
+	C>177,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	A>T3@4
+	U>T2@6
+	A>T2@6
+
+S>211
+	C>177,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	A>T2@4
+	U>T3@6
+	A>T3@6
+
+S>212
+	C>178,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	A>T3@4
+	A>T1@6
+	U>T1@5
+
+S>213
+	C>178,179,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@4
+	A>T2@6
+	A>T1@6
+	U>T1@5
+	U>T2@5
+
+S>214
+	C>178,180,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	A>T1@6
+	A>T3@6
+	U>T1@5
+	U>T3@5
+
+S>215
+	C>179,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	A>T3@4
+	A>T2@6
+	U>T2@5
+
+S>216
+	C>179,180,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	A>T3@6
+	A>T2@6
+	U>T2@5
+	U>T3@5
+
+S>217
+	C>180,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	A>T2@4
+	A>T3@6
+	U>T3@5
+
+S>218
+	C>185,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	U>T1@4
+	U>T2@4
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>219
+	C>186,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	A>T2@4
+	U>T1@6
+	A>T1@6
+
+S>220
+	C>186,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T1@3
+	A>T3@4
+	U>T2@6
+	A>T2@6
+
+S>221
+	C>187,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	A>T2@4
+	A>T1@6
+	U>T1@5
+
+S>222
+	C>187,188,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	A>T2@6
+	A>T1@6
+	U>T2@5
+	U>T1@5
+
+S>223
+	C>188,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T1@3
+	A>T3@4
+	A>T2@6
+	U>T2@5
+
+S>224
+	C>189,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>225
+	C>189,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	A>T1@6
+	A>T2@6
+	U>T2@5
+
+S>226
+	C>193,194,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@4
+	U>T1@6
+	U>T2@6
+	A>T2@6
+	A>T1@6
+
+S>227
+	C>195,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>228
+	C>196,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@4
+	A>T2@6
+	A>T1@6
+	U>T1@5
+	U>T2@5
+
+S>229
+	C>196,197,199,
+	@4
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@6
+	U>T1@5
+	U>T3@5
+	U>T2@5
+
+S>230
+	C>197,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T2@4
+	A>T3@6
+	A>T1@6
+	U>T1@5
+	U>T3@5
+
+S>231
+	C>198,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	A>T2@6
+	A>T3@4
+
+S>232
+	C>199,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	A>T3@6
+	A>T2@6
+	U>T2@5
+	U>T3@5
+
+S>233
+	C>200,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	A>T3@6
+	A>T2@4
+
+S>234
+	C>201,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@4
+	U>T2@6
+	A>T1@6
+	A>T2@6
+
+S>235
+	C>202,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@4
+	A>T1@6
+	A>T2@6
+	U>T2@5
+
+S>236
+	C>203,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	A>T2@4
+	U>T1@6
+	A>T1@6
+
+S>237
+	C>203,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	A>T2@4
+	U>T3@6
+	A>T3@6
+
+S>238
+	C>203,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	A>T3@4
+	U>T2@6
+	A>T2@6
+
+S>239
+	C>204,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	A>T2@4
+	A>T1@6
+	U>T1@5
+
+S>240
+	C>204,205,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T2@4
+	A>T1@6
+	A>T3@6
+	U>T3@5
+	U>T1@5
+
+S>241
+	C>204,206,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	A>T2@6
+	A>T1@6
+	U>T1@5
+	U>T2@5
+
+S>242
+	C>205,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	A>T2@4
+	A>T3@6
+	U>T3@5
+
+S>243
+	C>205,206,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	A>T3@6
+	A>T2@6
+	U>T2@5
+	U>T3@5
+
+S>244
+	C>206,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	A>T3@4
+	A>T2@6
+	U>T2@5
+
+S>245
+	C>207,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>246
+	C>207,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T2@4
+	A>T1@6
+	A>T3@6
+	U>T3@5
+
+S>247
+	C>207,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	A>T1@6
+	A>T2@6
+	U>T2@5
+
+S>248
+	C>208,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>249
+	C>208,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@4
+	A>T2@6
+	A>T1@6
+	U>T2@5
+
+S>250
+	C>208,
+	@4
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	A>T1@6
+	A>T3@6
+	U>T3@5
+
+S>251
+	C>209,210,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@4
+	U>T1@6
+	U>T2@6
+	A>T1@6
+	A>T2@6
+
+S>252
+	C>209,211,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	U>T3@6
+	U>T1@6
+	A>T3@6
+	A>T1@6
+
+S>253
+	C>210,211,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T3@6
+	U>T2@6
+	A>T2@6
+	A>T3@6
+
+S>254
+	C>212,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	A>T3@4
+	A>T1@6
+
+S>255
+	C>213,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@4
+	A>T2@6
+	A>T1@6
+	U>T1@5
+	U>T2@5
+
+S>256
+	C>213,214,216,
+	@4
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@6
+	A>T3@6
+	A>T1@6
+	U>T1@5
+	U>T3@5
+	U>T2@5
+
+S>257
+	C>214,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	A>T1@6
+	A>T3@6
+	U>T1@5
+	U>T3@5
+
+S>258
+	C>244,215,606,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	A>T2@6
+	A>T3@4
+
+S>259
+	C>216,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	A>T3@6
+	A>T2@6
+	U>T2@5
+	U>T3@5
+
+S>260
+	C>217,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	A>T3@6
+	A>T2@4
+
+S>261
+	C>219,220,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	U>T1@6
+	U>T2@6
+	A>T2@6
+	A>T1@6
+
+S>262
+	C>221,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>263
+	C>222,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	A>T2@6
+	A>T1@6
+	U>T2@5
+	U>T1@5
+
+S>264
+	C>223,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T1@3
+	A>T2@6
+	A>T3@4
+
+S>265
+	C>224,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	U>T2@6
+	A>T2@6
+	A>T1@6
+
+S>266
+	C>225,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	A>T1@6
+	A>T2@6
+	U>T2@5
+
+S>267
+	C>227,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@4
+	U>T2@6
+	A>T2@6
+	A>T1@6
+
+S>268
+	C>228,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@4
+	A>T2@6
+	A>T1@6
+
+S>269
+	C>229,
+	@5
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	U>T1@5
+	U>T3@5
+	U>T2@5
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>270
+	C>230,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T2@4
+	A>T3@6
+	A>T1@6
+
+S>271
+	C>231,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@4
 	U>T1@6
 	A>T1@6
 	A>T2@6
 
-S>119
-	C>112,
+S>272
+	C>232,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	A>T3@6
+	A>T2@6
+
+S>273
+	C>233,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T2@4
+	U>T1@6
+	A>T3@6
+	A>T1@6
+
+S>274
+	C>233,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T1@3
+	U>T2@6
+	A>T3@6
+	A>T2@6
+
+S>275
+	C>289,292,615,266,235,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@4
+	A>T1@6
+	A>T2@6
+
+S>276
+	C>236,237,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T2@4
+	U>T1@6
+	U>T3@6
+	A>T3@6
+	A>T1@6
+
+S>277
+	C>236,238,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	U>T1@6
+	U>T2@6
+	A>T1@6
+	A>T2@6
+
+S>278
+	C>237,238,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	U>T2@6
+	U>T3@6
+	A>T2@6
+	A>T3@6
+
+S>279
+	C>239,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	A>T2@4
+	A>T1@6
+
+S>280
+	C>240,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T2@4
+	A>T1@6
+	A>T3@6
+	U>T3@5
+	U>T1@5
+
+S>281
+	C>240,241,243,
+	@4
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T2@6
+	A>T1@6
+	A>T3@6
+	U>T3@5
+	U>T1@5
+	U>T2@5
+
+S>282
+	C>241,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	A>T2@6
+	A>T1@6
+	U>T1@5
+	U>T2@5
+
+S>283
+	C>242,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	A>T3@6
+	A>T2@4
+
+S>284
+	C>243,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	A>T3@6
+	A>T2@6
+	U>T2@5
+	U>T3@5
+
+S>285
+	C>245,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T2@4
+	U>T3@6
+	A>T1@6
+	A>T3@6
+
+S>286
+	C>245,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	U>T2@6
+	A>T1@6
+	A>T2@6
+
+S>287
+	C>246,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T2@4
+	A>T1@6
+	A>T3@6
+	U>T3@5
+
+S>288
+	C>246,247,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@6
+	A>T3@6
+	A>T2@6
+	U>T2@5
+	U>T3@5
+
+S>289
+	C>247,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	A>T1@6
+	A>T2@6
+	U>T2@5
+
+S>290
+	C>248,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@4
+	U>T2@6
+	A>T2@6
+	A>T1@6
+
+S>291
+	C>248,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	U>T3@6
+	A>T3@6
+	A>T1@6
+
+S>292
+	C>249,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@4
+	A>T2@6
+	A>T1@6
+	U>T2@5
+
+S>293
+	C>249,250,
+	@4
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@6
+	A>T1@6
+	A>T3@6
+	U>T2@5
+	U>T3@5
+
+S>294
+	C>250,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	A>T1@6
+	A>T3@6
+	U>T3@5
+
+S>295
+	C>251,252,253,
+	@5
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	U>T1@6
+	U>T3@6
+	U>T2@6
+	A>T3@6
+	A>T1@6
+	A>T2@6
+
+S>296
+	C>254,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[]
+	Q: 
+	A>T3@4
+	U>T2@6
+	A>T2@6
+	A>T1@6
+
+S>297
+	C>254,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	U>T3@6
+	A>T3@6
+	A>T1@6
+
+S>298
+	C>610,282,255,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	A>T2@6
+	A>T1@6
+
+S>299
+	C>256,
+	@5
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	U>T1@5
+	U>T3@5
+	U>T2@5
+	A>T2@6
+	A>T3@6
+	A>T1@6
+
+S>300
+	C>257,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	A>T1@6
+	A>T3@6
+
+S>301
+	C>258,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	U>T1@6
+	A>T1@6
+	A>T2@6
+
+S>302
+	C>258,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	U>T3@6
+	A>T2@6
+	A>T3@6
+
+S>303
+	C>259,284,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	A>T3@6
+	A>T2@6
+
+S>304
+	C>260,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	U>T1@6
+	A>T1@6
+	A>T3@6
+
+S>305
+	C>260,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	A>T1@3
+	U>T2@6
+	A>T2@6
+	A>T3@6
+
+S>306
+	C>262,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	U>T2@6
+	A>T1@6
+	A>T2@6
+
+S>307
+	C>263,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	A>T2@6
+	A>T1@6
+
+S>308
+	C>264,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[1]
+	T3
+		Port1,Sensor1=[1]
+		Port2,Sensor1=[1]
+	Q: 
+	A>T3@4
+	U>T1@6
+	A>T2@6
+	A>T1@6
+
+S>309
+	C>269,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>310
+	C>270,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	U>T2@6
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>311
+	C>272,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	U>T1@6
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>312
+	C>273,274,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	U>T1@6
+	U>T2@6
+	A>T2@6
+	A>T3@6
+	A>T1@6
+
+S>313
+	C>275,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	U>T3@6
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>314
+	C>276,277,278,
+	@5
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T1@6
+	U>T3@6
+	U>T2@6
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>315
+	C>279,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@4
+	U>T2@6
+	A>T2@6
+	A>T1@6
+
+S>316
+	C>280,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T2@4
+	A>T1@6
+	A>T3@6
+
+S>317
+	C>281,
+	@5
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T3@5
+	U>T1@5
+	U>T2@5
+	A>T2@6
+	A>T1@6
+	A>T3@6
+
+S>318
+	C>283,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T2@4
+	U>T1@6
+	A>T3@6
+	A>T1@6
+
+S>319
+	C>283,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T1@3
+	U>T2@6
+	A>T2@6
+	A>T3@6
+
+S>320
+	C>285,286,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T3@6
+	U>T2@6
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>321
+	C>287,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T2@4
+	A>T1@6
+	A>T3@6
+
+S>322
+	C>288,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T2@5
+	U>T3@5
+	A>T1@6
+	A>T3@6
+	A>T2@6
+
+S>323
+	C>290,291,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@6
+	U>T3@6
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>324
+	C>293,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@5
+	U>T3@5
+	A>T2@6
+	A>T1@6
+	A>T3@6
+
+S>325
+	C>294,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	A>T2@4
+	A>T1@6
+	A>T3@6
+
+S>326
+	C>295,
+	@6
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	U>T1@6
+	U>T3@6
+	U>T2@6
+	A>T3@6
+	A>T1@6
+	A>T2@6
+
+S>327
+	C>296,297,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@6
+	U>T3@6
+	A>T2@6
+	A>T3@6
+	A>T1@6
+
+S>328
+	C>299,317,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T2@6
+	A>T3@6
+	A>T1@6
+
+S>329
+	C>300,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@6
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>330
+	C>301,302,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T1@6
+	U>T3@6
+	A>T3@6
+	A>T1@6
+	A>T2@6
+
+S>331
+	C>303,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T1@6
+	A>T3@6
+	A>T1@6
+	A>T2@6
+
+S>332
+	C>304,305,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	U>T1@6
+	U>T2@6
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>333
+	C>309,
+	@6
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>334
+	C>310,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	U>T2@6
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>335
+	C>311,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	U>T1@6
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>336
+	C>312,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[2]
+	T3
+		Port1,Sensor1=[2]
+		Port2,Sensor1=[2]
+	Q: 
+	U>T1@6
+	U>T2@6
+	A>T2@6
+	A>T3@6
+	A>T1@6
+
+S>337
+	C>313,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	U>T3@6
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>338
+	C>314,
+	@6
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T1@6
+	U>T3@6
+	U>T2@6
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>339
+	C>316,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T2@6
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>340
+	C>318,319,
+	@5
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T1@6
+	U>T2@6
+	A>T2@6
+	A>T3@6
+	A>T1@6
+
+S>341
+	C>320,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T3@6
+	U>T2@6
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>342
+	C>321,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T2@6
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>343
+	C>322,324,
+	@5
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	A>T3@6
+	A>T2@6
+
+S>344
+	C>323,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@6
+	U>T3@6
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>345
+	C>325,
+	@5
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@6
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>346
+	C>352,338,326,360,350,351,
+	@6
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@6
+	A>T1@6
+	A>T2@6
+
+S>347
+	C>327,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@6
+	U>T3@6
+	A>T2@6
+	A>T3@6
+	A>T1@6
+
+S>348
+	C>328,
+	@6
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T2@6
+	A>T3@6
+	A>T1@6
+
+S>349
+	C>329,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@6
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>350
+	C>330,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T1@6
+	U>T3@6
+	A>T3@6
+	A>T1@6
+	A>T2@6
+
+S>351
+	C>331,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T1@6
+	A>T3@6
+	A>T1@6
+	A>T2@6
+
+S>352
+	C>332,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[]
+	Q: 
+	U>T1@6
+	U>T2@6
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>353
+	C>333,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>354
+	C>333,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T1@6
+	A>T2@8
+	U>T2@7
+
+S>355
+	C>333,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@9
+	U>T1@7
+
+S>356
+	C>359,347,349,334,
+	@6
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>357
+	C>336,335,
+	@6
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>358
+	C>337,341,343,344,361,362,
+	@6
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>359
+	C>339,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T2@6
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>360
+	C>340,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[3]
+	T3
+		Port1,Sensor1=[3]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T1@6
+	U>T2@6
+	A>T2@6
+	A>T3@6
+	A>T1@6
+
+S>361
+	C>342,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[3]
+	Q: 
+	U>T2@6
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>362
+	C>345,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[]
+	Q: 
+	U>T2@6
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>363
+	C>346,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@6
+	A>T1@6
+	A>T2@6
+
+S>364
+	C>346,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@9
+	U>T1@7
+
+S>365
+	C>346,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@6
+	A>T1@6
+	A>T2@8
+	U>T2@7
+
+S>366
+	C>348,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T2@6
+	A>T3@6
+	A>T1@6
+
+S>367
+	C>348,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@6
+	A>T1@6
+	A>T2@8
+	U>T2@7
+
+S>368
+	C>348,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T2@6
+	A>T3@6
+	A>T1@9
+	U>T1@7
+
+S>369
+	C>353,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T1@6
+	U>T2@8
+	A>T2@8
+
+S>370
+	C>353,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@9
+	U>T1@8
+
+S>371
+	C>354,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T1@6
+	A>T2@8
+	U>T2@7
+
+S>372
+	C>354,355,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	U>T2@7
+	U>T1@7
+	A>T1@9
+	A>T2@8
+
+S>373
+	C>355,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@9
+	U>T1@7
+
+S>374
+	C>356,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>375
+	C>356,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T2@6
+	A>T1@6
+	A>T3@8
+	U>T3@7
+
+S>376
+	C>356,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	A>T1@6
+	A>T2@8
+	U>T2@7
+
+S>377
+	C>356,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@9
+	U>T1@7
+
+S>378
+	C>357,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@6
+
+S>379
+	C>357,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T1@6
+	A>T2@8
+	U>T2@7
+
+S>380
+	C>357,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@9
+	U>T1@7
+
+S>381
+	C>358,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	A>T2@6
+	A>T3@6
+
+S>382
+	C>358,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@6
+	A>T3@6
+	A>T1@9
+	U>T1@7
+
+S>383
+	C>358,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	A>T3@6
+	A>T2@8
+	U>T2@7
+
+S>384
+	C>358,
+	@6
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	A>T2@6
+	A>T3@8
+	U>T3@7
+
+S>385
+	C>363,
 	@7
 	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[6]
-	Q: 
-	A>T1@6
-	A>T2@6
-
-S>120
-	C>112,
-	@6
-	P:1
-	T[]:
-	T1
-	T2
+	T3
 		Port1,Sensor1=[6]
+		Port2,Sensor1=[3]
 	Q: 
-	A>T2@6
-	A>T1@9
-	U>T1@7
-
-S>121
-	C>112,
-	@6
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[6]
-	Q: 
-	A>T1@6
-	A>T2@8
-	U>T2@7
-
-S>122
-	C>114,
-	@7
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[5]
-	Q: 
-	A>T1@6
-	A>T2@6
-
-S>123
-	C>114,
-	@6
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[5]
-	Q: 
-	A>T2@6
-	A>T1@9
-	U>T1@7
-
-S>124
-	C>114,
-	@6
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[5]
-	Q: 
-	A>T1@6
-	A>T2@8
-	U>T2@7
-
-S>125
-	C>117,
-	@7
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[4]
-	Q: 
-	A>T1@6
-	A>T2@6
-
-S>126
-	C>117,
-	@6
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[4]
-	Q: 
-	A>T2@6
-	A>T1@9
-	U>T1@7
-
-S>127
-	C>117,
-	@6
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[4]
-	Q: 
-	A>T1@6
-	A>T2@8
-	U>T2@7
-
-S>128
-	C>119,
-	@7
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[6]
-	Q: 
+	A>T3@6
 	A>T2@6
 	A>T1@9
 	U>T1@8
 
-S>129
-	C>119,
-	@7
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[6]
-	Q: 
-	A>T1@6
-	U>T2@8
-	A>T2@8
-
-S>130
-	C>120,
-	@7
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[6]
-	Q: 
-	A>T2@6
-	A>T1@9
-	U>T1@7
-
-S>131
-	C>120,121,
-	@6
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[6]
-	Q: 
-	U>T1@7
-	U>T2@7
-	A>T1@9
-	A>T2@8
-
-S>132
-	C>121,
-	@7
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[6]
-	Q: 
-	A>T1@6
-	A>T2@8
-	U>T2@7
-
-S>133
-	C>122,
-	@7
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[5]
-	Q: 
-	A>T2@6
-	A>T1@9
-	U>T1@8
-
-S>134
-	C>122,
-	@7
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[5]
-	Q: 
-	A>T1@6
-	U>T2@8
-	A>T2@8
-
-S>135
-	C>123,
-	@7
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[5]
-	Q: 
-	A>T2@6
-	A>T1@9
-	U>T1@7
-
-S>136
-	C>123,124,
-	@6
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[5]
-	Q: 
-	U>T2@7
-	U>T1@7
-	A>T1@9
-	A>T2@8
-
-S>137
-	C>124,
-	@7
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[5]
-	Q: 
-	A>T1@6
-	A>T2@8
-	U>T2@7
-
-S>138
-	C>125,
-	@7
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[4]
-	Q: 
-	A>T2@6
-	A>T1@9
-	U>T1@8
-
-S>139
-	C>125,
-	@7
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[4]
-	Q: 
-	A>T1@6
-	U>T2@8
-	A>T2@8
-
-S>140
-	C>126,
-	@7
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[4]
-	Q: 
-	A>T2@6
-	A>T1@9
-	U>T1@7
-
-S>141
-	C>126,127,
-	@6
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[4]
-	Q: 
-	U>T1@7
-	U>T2@7
-	A>T1@9
-	A>T2@8
-
-S>142
-	C>127,
-	@7
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[4]
-	Q: 
-	A>T1@6
-	A>T2@8
-	U>T2@7
-
-S>143
-	C>128,129,
-	@7
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[6]
-	Q: 
-	A>T1@9
-	U>T2@8
-	U>T1@8
-	A>T2@8
-
-S>144
-	C>129,
-	@8
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[6]
-	Q: 
-	A>T1@6
-	U>T2@8
-	A>T2@8
-
-S>145
-	C>131,
-	@7
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[6]
-	Q: 
-	U>T1@7
-	U>T2@7
-	A>T1@9
-	A>T2@8
-
-S>146
-	C>132,
+S>386
+	C>363,
 	@7
 	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[3]
 	Q: 
+	A>T3@6
 	A>T1@6
-	A>T2@8
-
-S>147
-	C>133,134,
-	@7
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[5]
-	Q: 
-	A>T1@9
-	U>T1@8
 	U>T2@8
 	A>T2@8
 
-S>148
-	C>134,
-	@8
+S>387
+	C>364,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@9
+	U>T1@7
+
+S>388
+	C>364,365,
+	@6
 	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[5]
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[3]
 	Q: 
-	A>T1@6
-	U>T2@8
-	A>T2@8
-
-S>149
-	C>136,
-	@7
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[5]
-	Q: 
+	A>T3@6
 	U>T2@7
 	U>T1@7
 	A>T1@9
 	A>T2@8
 
-S>150
-	C>137,
+S>389
+	C>365,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@6
+	A>T1@6
+	A>T2@8
+	U>T2@7
+
+S>390
+	C>366,
 	@7
 	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
 	Q: 
+	A>T3@6
 	A>T1@6
+	U>T2@8
 	A>T2@8
 
-S>151
-	C>138,139,
+S>391
+	C>366,
 	@7
-	P:0
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[4]
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
 	Q: 
+	A>T2@6
+	A>T3@6
 	A>T1@9
-	U>T2@8
 	U>T1@8
-	A>T2@8
 
-S>152
-	C>139,
-	@8
+S>392
+	C>367,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@6
+	A>T1@6
+	A>T2@8
+	U>T2@7
+
+S>393
+	C>368,367,
+	@6
 	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[4]
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
 	Q: 
-	A>T1@6
-	U>T2@8
-	A>T2@8
-
-S>153
-	C>141,
-	@7
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[4]
-	Q: 
+	A>T3@6
 	U>T1@7
 	U>T2@7
 	A>T1@9
 	A>T2@8
 
-S>154
-	C>142,
+S>394
+	C>368,
 	@7
 	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[4]
-	Q: 
-	A>T1@6
-	A>T2@8
-
-S>155
-	C>143,
-	@8
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[6]
-	Q: 
-	U>T2@8
-	U>T1@8
-	A>T2@8
-	A>T1@9
-
-S>156
-	C>144,146,
-	@8
-	P:2
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[6]
-	Q: 
-	A>T1@6
-	A>T2@8
-
-S>157
-	C>146,
-	@7
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[6]
-	Q: 
-	A>T1@9
-	U>T1@8
-	A>T2@8
-
-S>158
-	C>147,
-	@8
-	P:0
-	T[]:
-	T1
-	T2
 		Port1,Sensor1=[5]
-	Q: 
-	U>T1@8
-	U>T2@8
-	A>T2@8
-	A>T1@9
-
-S>159
-	C>148,150,
-	@8
-	P:2
-	T[]:
-	T1
-	T2
+	T3
 		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
 	Q: 
-	A>T1@6
-	A>T2@8
+	A>T2@6
+	A>T3@6
+	A>T1@9
+	U>T1@7
 
-S>160
-	C>150,
+S>395
+	C>369,370,
 	@7
 	P:1
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
 	Q: 
+	A>T3@6
 	A>T1@9
-	U>T1@8
-	A>T2@8
-
-S>161
-	C>151,
-	@8
-	P:0
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[4]
-	Q: 
 	U>T2@8
 	U>T1@8
 	A>T2@8
+
+S>396
+	C>371,405,392,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	A>T1@6
+	A>T2@8
+
+S>397
+	C>372,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	U>T2@7
+	U>T1@7
+	A>T1@9
+	A>T2@8
+
+S>398
+	C>373,412,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T2@6
 	A>T1@9
 
-S>162
-	C>152,154,
-	@8
+S>399
+	C>374,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T2@6
+	A>T1@6
+	U>T3@8
+	A>T3@8
+
+S>400
+	C>374,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	A>T1@6
+	U>T2@8
+	A>T2@8
+
+S>401
+	C>374,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@9
+	U>T1@8
+
+S>402
+	C>375,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T2@6
+	A>T1@6
+	A>T3@8
+	U>T3@7
+
+S>403
+	C>375,376,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@6
+	A>T3@8
+	A>T2@8
+	U>T2@7
+	U>T3@7
+
+S>404
+	C>375,377,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T2@6
+	U>T1@7
+	U>T3@7
+	A>T1@9
+	A>T3@8
+
+S>405
+	C>376,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	A>T1@6
+	A>T2@8
+	U>T2@7
+
+S>406
+	C>376,377,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	U>T2@7
+	U>T1@7
+	A>T1@9
+	A>T2@8
+
+S>407
+	C>377,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@9
+	U>T1@7
+
+S>408
+	C>378,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T1@6
+	U>T2@8
+	A>T2@8
+
+S>409
+	C>378,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@9
+	U>T1@8
+
+S>410
+	C>379,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T1@6
+	A>T2@8
+	U>T2@7
+
+S>411
+	C>379,380,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	U>T2@7
+	U>T1@7
+	A>T1@9
+	A>T2@8
+
+S>412
+	C>380,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@9
+	U>T1@7
+
+S>413
+	C>381,
+	@7
 	P:2
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@6
+	A>T3@6
+	A>T1@9
+	U>T1@8
+
+S>414
+	C>381,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	A>T3@6
+	U>T2@8
+	A>T2@8
+
+S>415
+	C>382,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@6
+	A>T3@6
+	A>T1@9
+	U>T1@7
+
+S>416
+	C>382,383,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@6
+	U>T1@7
+	U>T2@7
+	A>T1@9
+	A>T2@8
+
+S>417
+	C>384,382,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@6
+	U>T1@7
+	U>T3@7
+	A>T1@9
+	A>T3@8
+
+S>418
+	C>383,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	A>T3@6
+	A>T2@8
+	U>T2@7
+
+S>419
+	C>384,383,
+	@6
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
 	Q: 
 	A>T1@6
 	A>T2@8
+	A>T3@8
+	U>T2@7
+	U>T3@7
 
-S>163
-	C>154,
+S>420
+	C>384,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	A>T2@6
+	A>T3@8
+	U>T3@7
+
+S>421
+	C>385,386,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@6
+	A>T1@9
+	U>T1@8
+	U>T2@8
+	A>T2@8
+
+S>422
+	C>387,394,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@9
+
+S>423
+	C>388,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@6
+	U>T2@7
+	U>T1@7
+	A>T1@9
+	A>T2@8
+
+S>424
+	C>389,410,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@6
+	A>T1@6
+	A>T2@8
+
+S>425
+	C>390,391,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@6
+	A>T1@9
+	U>T1@8
+	U>T2@8
+	A>T2@8
+
+S>426
+	C>393,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@6
+	U>T1@7
+	U>T2@7
+	A>T1@9
+	A>T2@8
+
+S>427
+	C>396,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@6
+	U>T3@8
+	A>T3@8
+	A>T2@8
+
+S>428
+	C>396,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	A>T1@9
+	U>T1@8
+	A>T2@8
+
+S>429
+	C>438,426,397,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	A>T1@9
+	A>T2@8
+
+S>430
+	C>398,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T1@9
+	U>T2@8
+	A>T2@8
+
+S>431
+	C>400,399,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@6
+	U>T2@8
+	U>T3@8
+	A>T2@8
+	A>T3@8
+
+S>432
+	C>401,399,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T2@6
+	A>T1@9
+	U>T1@8
+	U>T3@8
+	A>T3@8
+
+S>433
+	C>400,401,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	A>T1@9
+	U>T2@8
+	U>T1@8
+	A>T2@8
+
+S>434
+	C>402,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T2@6
+	A>T1@6
+	A>T3@8
+
+S>435
+	C>403,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@6
+	A>T3@8
+	A>T2@8
+	U>T2@7
+	U>T3@7
+
+S>436
+	C>403,404,406,
+	@6
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	U>T1@7
+	U>T2@7
+	U>T3@7
+	A>T1@9
+	A>T3@8
+	A>T2@8
+
+S>437
+	C>404,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T2@6
+	U>T1@7
+	U>T3@7
+	A>T1@9
+	A>T3@8
+
+S>438
+	C>406,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	U>T2@7
+	U>T1@7
+	A>T1@9
+	A>T2@8
+
+S>439
+	C>407,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	A>T2@6
+	A>T1@9
+
+S>440
+	C>408,409,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	A>T1@9
+	U>T1@8
+	U>T2@8
+	A>T2@8
+
+S>441
+	C>411,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[2]
+	Q: 
+	A>T3@6
+	U>T2@7
+	U>T1@7
+	A>T1@9
+	A>T2@8
+
+S>442
+	C>413,414,
 	@7
 	P:1
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
 	Q: 
+	A>T3@6
+	A>T1@9
+	U>T1@8
+	U>T2@8
+	A>T2@8
+
+S>443
+	C>415,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@6
+	A>T3@6
+	A>T1@9
+
+S>444
+	C>416,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@6
+	U>T1@7
+	U>T2@7
+	A>T1@9
+	A>T2@8
+
+S>445
+	C>416,417,419,
+	@6
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	U>T1@7
+	U>T3@7
+	U>T2@7
+	A>T1@9
+	A>T2@8
+	A>T3@8
+
+S>446
+	C>417,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@6
+	U>T1@7
+	U>T3@7
+	A>T1@9
+	A>T3@8
+
+S>447
+	C>418,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	A>T3@6
+	A>T2@8
+
+S>448
+	C>419,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	A>T2@8
+	A>T3@8
+	U>T2@7
+	U>T3@7
+
+S>449
+	C>420,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	A>T2@6
+	A>T3@8
+
+S>450
+	C>422,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[3]
+	Q: 
+	A>T3@6
+	A>T1@9
+	U>T2@8
+	A>T2@8
+
+S>451
+	C>423,441,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@6
+	A>T1@9
+	A>T2@8
+
+S>452
+	C>424,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@6
+	U>T3@8
+	A>T3@8
+	A>T2@8
+
+S>453
+	C>424,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@6
 	A>T1@9
 	U>T1@8
 	A>T2@8
 
-S>164
-	C>156,
+S>454
+	C>427,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@6
+	U>T3@8
+	A>T3@8
+	A>T2@8
+
+S>455
+	C>427,428,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@9
+	U>T1@8
+	U>T3@8
+	A>T3@8
+	A>T2@8
+
+S>456
+	C>431,
+	@8
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@6
+	U>T2@8
+	U>T3@8
+	A>T2@8
+	A>T3@8
+
+S>457
+	C>432,433,431,
+	@7
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@9
+	U>T2@8
+	U>T3@8
+	U>T1@8
+	A>T2@8
+	A>T3@8
+
+S>458
+	C>434,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@6
+	U>T2@8
+	A>T3@8
+	A>T2@8
+
+S>459
+	C>434,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T2@6
+	A>T1@9
+	U>T1@8
+	A>T3@8
+
+S>460
+	C>435,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@6
+	A>T3@8
+	A>T2@8
+
+S>461
+	C>436,
+	@7
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	U>T1@7
+	U>T2@7
+	U>T3@7
+	A>T1@9
+	A>T3@8
+	A>T2@8
+
+S>462
+	C>437,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T2@6
+	A>T1@9
+	A>T3@8
+
+S>463
+	C>439,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@6
+	A>T1@9
+	U>T2@8
+	A>T2@8
+
+S>464
+	C>443,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@6
+	A>T1@9
+	U>T2@8
+	A>T2@8
+
+S>465
+	C>444,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@6
+	A>T1@9
+	A>T2@8
+
+S>466
+	C>445,
+	@7
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	U>T1@7
+	U>T3@7
+	U>T2@7
+	A>T1@9
+	A>T2@8
+	A>T3@8
+
+S>467
+	C>446,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@6
+	A>T1@9
+	A>T3@8
+
+S>468
+	C>447,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@6
+	A>T1@9
+	U>T1@8
+	A>T2@8
+
+S>469
+	C>448,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	A>T2@8
+	A>T3@8
+
+S>470
+	C>449,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@6
+	A>T1@9
+	U>T1@8
+	A>T3@8
+
+S>471
+	C>449,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	U>T2@8
+	A>T2@8
+	A>T3@8
+
+S>472
+	C>451,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@9
+	U>T3@8
+	A>T3@8
+	A>T2@8
+
+S>473
+	C>452,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@6
+	U>T3@8
+	A>T3@8
+	A>T2@8
+
+S>474
+	C>452,453,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@9
+	U>T1@8
+	U>T3@8
+	A>T3@8
+	A>T2@8
+
+S>475
+	C>454,456,460,478,
+	@8
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@6
+	A>T3@8
+	A>T2@8
+
+S>476
+	C>455,
+	@8
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	U>T1@8
+	U>T3@8
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>477
+	C>457,
+	@8
+	P:0
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	U>T2@8
+	U>T3@8
+	U>T1@8
+	A>T2@8
+	A>T3@8
+	A>T1@9
+
+S>478
+	C>458,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@6
+	U>T2@8
+	A>T3@8
+	A>T2@8
+
+S>479
+	C>458,459,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@9
+	U>T1@8
+	U>T2@8
+	A>T3@8
+	A>T2@8
+
+S>480
+	C>460,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@9
+	U>T1@8
+	A>T3@8
+	A>T2@8
+
+S>481
+	C>461,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>482
+	C>462,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@9
+	U>T2@8
+	A>T3@8
+	A>T2@8
+
+S>483
+	C>466,
+	@7
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@8
+	A>T3@8
+	A>T1@9
+
+S>484
+	C>467,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@9
+	U>T2@8
+	A>T3@8
+	A>T2@8
+
+S>485
+	C>469,488,
+	@8
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	A>T2@8
+	A>T3@8
+
+S>486
+	C>469,
+	@7
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@9
+	U>T1@8
+	A>T2@8
+	A>T3@8
+
+S>487
+	C>470,471,
+	@7
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@9
+	U>T1@8
+	U>T2@8
+	A>T3@8
+	A>T2@8
+
+S>488
+	C>471,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	U>T2@8
+	A>T2@8
+	A>T3@8
+
+S>489
+	C>472,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	U>T3@8
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>490
+	C>473,
+	@8
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@6
+	A>T3@8
+	A>T2@8
+
+S>491
+	C>474,
 	@8
 	P:1
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
 	Q: 
+	U>T1@8
+	U>T3@8
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>492
+	C>475,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
 	A>T2@8
 	U>T1@9
 	A>T1@9
 
-S>165
-	C>156,
+S>493
+	C>475,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T1@6
+	A>T3@8
+	A>T2@10
+	U>T2@9
+
+S>494
+	C>496,476,477,495,
+	@8
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>495
+	C>479,
+	@8
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	U>T1@8
+	U>T2@8
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>496
+	C>480,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	U>T1@8
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>497
+	C>481,
+	@8
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>498
+	C>482,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[5]
+	Q: 
+	U>T2@8
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>499
+	C>483,
+	@8
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@8
+	A>T3@8
+	A>T1@9
+
+S>500
+	C>484,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[4]
+	Q: 
+	U>T2@8
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>501
+	C>485,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@8
+	A>T3@8
+	U>T1@9
+	A>T1@9
+
+S>502
+	C>485,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T1@6
+	A>T3@8
+	A>T2@10
+	U>T2@9
+
+S>503
+	C>486,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	U>T1@8
+	A>T2@8
+	A>T3@8
+	A>T1@9
+
+S>504
+	C>487,
+	@8
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	U>T1@8
+	U>T2@8
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>505
+	C>489,
+	@8
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>506
+	C>490,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T2@8
+	U>T1@9
+	A>T1@9
+
+S>507
+	C>490,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@6
+	A>T2@8
+	A>T3@10
+	U>T3@9
+
+S>508
+	C>490,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@6
+	A>T3@8
+	A>T2@10
+	U>T2@9
+
+S>509
+	C>491,
+	@8
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>510
+	C>492,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T2@8
+	U>T1@9
+	A>T1@9
+
+S>511
+	C>492,493,
+	@8
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
+	Q: 
+	U>T2@9
+	U>T1@9
+	A>T1@9
+	A>T3@8
+	A>T2@10
+
+S>512
+	C>494,
+	@9
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>513
+	C>494,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T2@10
+	U>T2@9
+	A>T1@9
+
+S>514
+	C>497,
+	@9
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>515
+	C>497,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T2@10
+	U>T2@9
+	A>T1@9
+
+S>516
+	C>499,
+	@9
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@8
+	A>T3@8
+	A>T1@9
+
+S>517
+	C>499,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@8
+	A>T2@10
+	U>T2@9
+	A>T1@9
+
+S>518
+	C>501,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@8
+	A>T3@8
+	U>T1@9
+	A>T1@9
+
+S>519
+	C>501,502,
+	@8
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
+	Q: 
+	U>T2@9
+	U>T1@9
+	A>T1@9
+	A>T3@8
+	A>T2@10
+
+S>520
+	C>503,504,
+	@8
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@8
+	A>T3@8
+	A>T1@9
+
+S>521
+	C>505,
+	@9
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>522
+	C>505,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T2@8
+	A>T3@10
+	U>T3@9
+	A>T1@9
+
+S>523
+	C>505,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T2@10
+	U>T2@9
+	A>T1@9
+
+S>524
+	C>506,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T2@8
+	U>T1@9
+	A>T1@9
+
+S>525
+	C>506,507,
 	@8
 	P:1
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
 	Q: 
-	A>T1@6
-	A>T2@10
-	U>T2@9
+	U>T3@9
+	U>T1@9
+	A>T1@9
+	A>T2@8
+	A>T3@10
 
-S>166
-	C>157,
+S>526
+	C>506,508,
 	@8
 	P:1
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
 	Q: 
-	U>T1@8
-	A>T2@8
-	A>T1@9
-
-S>167
-	C>159,
-	@8
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[5]
-	Q: 
-	A>T2@8
 	U>T1@9
+	U>T2@9
 	A>T1@9
+	A>T3@8
+	A>T2@10
 
-S>168
-	C>159,
+S>527
+	C>507,508,
 	@8
 	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[5]
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
 	Q: 
 	A>T1@6
 	A>T2@10
+	A>T3@10
+	U>T3@9
 	U>T2@9
 
-S>169
-	C>160,
+S>528
+	C>509,
+	@9
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>529
+	C>509,
 	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T2@10
+	U>T2@9
+	A>T1@9
+
+S>530
+	C>510,
+	@9
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@9
+
+S>531
+	C>511,
+	@9
 	P:1
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[5]
+	T3
+		Port1,Sensor1=[5]
+		Port2,Sensor1=[5]
 	Q: 
-	U>T1@8
-	A>T2@8
-	A>T1@9
-
-S>170
-	C>162,
-	@8
-	P:1
-	T[]:
-	T1
-	T2
-		Port1,Sensor1=[4]
-	Q: 
-	A>T2@8
+	U>T2@9
 	U>T1@9
 	A>T1@9
+	A>T3@8
+	A>T2@10
 
-S>171
-	C>162,
-	@8
-	P:1
+S>532
+	C>512,
+	@9
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[4]
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[5]
 	Q: 
-	A>T1@6
+	A>T3@8
+	A>T1@9
+	U>T2@10
+	A>T2@10
+
+S>533
+	C>512,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@12
+	U>T1@10
+
+S>534
+	C>513,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
 	A>T2@10
 	U>T2@9
+	A>T1@9
 
-S>172
-	C>163,
-	@8
+S>535
+	C>514,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T1@9
+	U>T2@10
+	A>T2@10
+
+S>536
+	C>514,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@12
+	U>T1@10
+
+S>537
+	C>515,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T2@10
+	U>T2@9
+	A>T1@9
+
+S>538
+	C>516,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@8
+	A>T1@9
+	U>T2@10
+	A>T2@10
+
+S>539
+	C>516,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@8
+	A>T3@8
+	A>T1@12
+	U>T1@10
+
+S>540
+	C>517,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@8
+	A>T2@10
+	U>T2@9
+	A>T1@9
+
+S>541
+	C>518,
+	@9
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@8
+	A>T3@8
+	A>T1@9
+
+S>542
+	C>519,
+	@9
 	P:1
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[4]
+	T3
+		Port1,Sensor1=[4]
+		Port2,Sensor1=[4]
 	Q: 
-	U>T1@8
+	U>T2@9
+	U>T1@9
+	A>T1@9
+	A>T3@8
+	A>T2@10
+
+S>543
+	C>520,
+	@9
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@8
+	A>T3@8
+	A>T1@9
+
+S>544
+	C>520,
+	@8
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@8
+	A>T2@10
+	U>T2@9
+	A>T1@9
+
+S>545
+	C>521,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T1@9
+	U>T2@10
+	A>T2@10
+
+S>546
+	C>521,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@12
+	U>T1@10
+
+S>547
+	C>522,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T2@8
+	A>T3@10
+	U>T3@9
+	A>T1@9
+
+S>548
+	C>522,523,
+	@8
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@10
+	A>T2@10
+	U>T2@9
+	U>T3@9
+	A>T1@9
+
+S>549
+	C>523,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T2@10
+	U>T2@9
+	A>T1@9
+
+S>550
+	C>524,
+	@9
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
 	A>T2@8
 	A>T1@9
 
-S>173
-	C>164,
+S>551
+	C>525,
 	@9
 	P:1
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
 	Q: 
-	A>T2@8
+	U>T3@9
 	U>T1@9
 	A>T1@9
+	A>T2@8
+	A>T3@10
 
-S>174
-	C>164,165,
+S>552
+	C>525,526,527,
 	@8
 	P:0
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
 	Q: 
+	A>T2@10
+	A>T3@10
+	U>T3@9
 	U>T1@9
 	U>T2@9
 	A>T1@9
-	A>T2@10
 
-S>175
-	C>167,
+S>553
+	C>526,
 	@9
 	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[5]
+		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
 	Q: 
-	A>T2@8
 	U>T1@9
+	U>T2@9
 	A>T1@9
+	A>T3@8
+	A>T2@10
 
-S>176
-	C>167,168,
-	@8
-	P:0
+S>554
+	C>528,
+	@9
+	P:2
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[5]
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[6]
 	Q: 
-	U>T2@9
-	U>T1@9
+	A>T3@8
 	A>T1@9
+	U>T2@10
 	A>T2@10
 
-S>177
-	C>170,
+S>555
+	C>528,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@12
+	U>T1@10
+
+S>556
+	C>529,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T2@10
+	U>T2@9
+	A>T1@9
+
+S>557
+	C>530,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T1@9
+	U>T2@10
+	A>T2@10
+
+S>558
+	C>530,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@12
+	U>T1@10
+
+S>559
+	C>531,
+	@9
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	A>T2@10
+	A>T1@9
+
+S>560
+	C>532,533,
 	@9
 	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[4]
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[5]
 	Q: 
-	A>T2@8
-	U>T1@9
-	A>T1@9
+	A>T3@8
+	U>T2@10
+	U>T1@10
+	A>T2@10
+	A>T1@12
 
-S>178
-	C>170,171,
-	@8
-	P:0
+S>561
+	C>535,536,
+	@9
+	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[4]
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[5]
 	Q: 
-	U>T2@9
-	U>T1@9
+	A>T3@8
+	U>T2@10
+	U>T1@10
+	A>T2@10
+	A>T1@12
+
+S>562
+	C>538,539,
+	@9
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@8
+	U>T2@10
+	U>T1@10
+	A>T2@10
+	A>T1@12
+
+S>563
+	C>541,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@8
 	A>T1@9
+	U>T2@10
 	A>T2@10
 
-S>179
-	C>174,
+S>564
+	C>541,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@8
+	A>T3@8
+	A>T1@12
+	U>T1@10
+
+S>565
+	C>542,
+	@9
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@8
+	A>T2@10
+	A>T1@9
+
+S>566
+	C>543,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@8
+	A>T1@9
+	U>T2@10
+	A>T2@10
+
+S>567
+	C>543,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T2@8
+	A>T3@8
+	A>T1@12
+	U>T1@10
+
+S>568
+	C>544,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@8
+	A>T2@10
+	U>T2@9
+	A>T1@9
+
+S>569
+	C>545,546,
+	@9
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	U>T2@10
+	U>T1@10
+	A>T2@10
+	A>T1@12
+
+S>570
+	C>547,
+	@9
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T2@8
+	A>T3@10
+	A>T1@9
+
+S>571
+	C>548,
+	@9
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	U>T2@9
+	U>T3@9
+	A>T1@9
+	A>T3@10
+	A>T2@10
+
+S>572
+	C>550,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T1@9
+	U>T2@10
+	A>T2@10
+
+S>573
+	C>550,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	A>T2@8
+	A>T1@12
+	U>T1@10
+
+S>574
+	C>551,
+	@9
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T2@8
+	A>T3@10
+	A>T1@9
+
+S>575
+	C>552,
 	@9
 	P:0
 	T[]:
 	T1
 	T2
 		Port1,Sensor1=[6]
+	T3
+		Port1,Sensor1=[6]
+		Port2,Sensor1=[6]
 	Q: 
+	U>T3@9
 	U>T1@9
 	U>T2@9
 	A>T1@9
 	A>T2@10
+	A>T3@10
 
-S>180
-	C>176,
+S>576
+	C>553,
 	@9
-	P:0
+	P:3
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[5]
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
 	Q: 
-	U>T2@9
-	U>T1@9
-	A>T1@9
+	A>T3@8
 	A>T2@10
+	A>T1@9
 
-S>181
-	C>178,
+S>577
+	C>554,555,
 	@9
-	P:0
+	P:1
 	T[]:
 	T1
 	T2
-		Port1,Sensor1=[4]
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[6]
 	Q: 
-	U>T2@9
-	U>T1@9
+	A>T3@8
+	U>T1@10
+	U>T2@10
+	A>T2@10
+	A>T1@12
+
+S>578
+	C>557,558,
+	@9
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	U>T2@10
+	U>T1@10
+	A>T2@10
+	A>T1@12
+
+S>579
+	C>559,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[5]
+	Q: 
+	A>T3@8
+	U>T1@10
+	A>T2@10
+	A>T1@12
+
+S>580
+	C>563,564,
+	@9
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@8
+	U>T2@10
+	U>T1@10
+	A>T2@10
+	A>T1@12
+
+S>581
+	C>565,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@8
+	U>T1@10
+	A>T2@10
+	A>T1@12
+
+S>582
+	C>566,567,
+	@9
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[8]
+	T3
+		Port1,Sensor1=[8]
+		Port2,Sensor1=[4]
+	Q: 
+	A>T3@8
+	U>T1@10
+	U>T2@10
+	A>T2@10
+	A>T1@12
+
+S>583
+	C>570,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@9
+	U>T2@10
+	A>T3@10
+	A>T2@10
+
+S>584
+	C>570,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T2@8
+	U>T1@10
+	A>T3@10
+	A>T1@12
+
+S>585
+	C>572,573,
+	@9
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	U>T2@10
+	U>T1@10
+	A>T2@10
+	A>T1@12
+
+S>586
+	C>574,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@9
+	U>T2@10
+	A>T2@10
+	A>T3@10
+
+S>587
+	C>574,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T2@8
+	U>T1@10
+	A>T3@10
+	A>T1@12
+
+S>588
+	C>575,
+	@9
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
 	A>T1@9
 	A>T2@10
+	A>T3@10
+
+S>589
+	C>576,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@8
+	U>T1@10
+	A>T2@10
+	A>T1@12
+
+S>590
+	C>583,
+	@10
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@9
+	U>T2@10
+	A>T3@10
+	A>T2@10
+
+S>591
+	C>583,584,
+	@9
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	U>T1@10
+	U>T2@10
+	A>T3@10
+	A>T2@10
+	A>T1@12
+
+S>592
+	C>586,
+	@10
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@9
+	U>T2@10
+	A>T2@10
+	A>T3@10
+
+S>593
+	C>586,587,
+	@9
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	U>T2@10
+	U>T1@10
+	A>T2@10
+	A>T3@10
+	A>T1@12
+
+S>594
+	C>588,
+	@10
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@9
+	A>T2@10
+	A>T3@10
+
+S>595
+	C>588,
+	@9
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@12
+	U>T1@10
+	A>T2@10
+	A>T3@10
+
+S>596
+	C>591,
+	@10
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[7]
+	T3
+		Port1,Sensor1=[7]
+		Port2,Sensor1=[6]
+	Q: 
+	U>T1@10
+	U>T2@10
+	A>T3@10
+	A>T2@10
+	A>T1@12
+
+S>597
+	C>593,
+	@10
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	U>T2@10
+	U>T1@10
+	A>T2@10
+	A>T3@10
+	A>T1@12
+
+S>598
+	C>594,
+	@11
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@9
+	A>T2@10
+	A>T3@10
+
+S>599
+	C>594,
+	@10
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T2@10
+	A>T3@10
+	A>T1@12
+	U>T1@11
+
+S>600
+	C>594,
+	@10
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@9
+	A>T3@10
+	A>T2@12
+	U>T2@11
+
+S>601
+	C>595,
+	@10
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	U>T1@10
+	A>T2@10
+	A>T3@10
+	A>T1@12
+
+S>602
+	C>598,
+	@11
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T2@10
+	A>T3@10
+	U>T1@12
+	A>T1@12
+
+S>603
+	C>598,
+	@11
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@9
+	A>T3@10
+	U>T2@12
+	A>T2@12
+
+S>604
+	C>599,
+	@11
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T2@10
+	A>T3@10
+	A>T1@12
+	U>T1@11
+
+S>605
+	C>599,600,
+	@10
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@10
+	A>T2@12
+	A>T1@12
+	U>T1@11
+	U>T2@11
+
+S>606
+	C>600,
+	@11
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T1@9
+	A>T3@10
+	A>T2@12
+	U>T2@11
+
+S>607
+	C>601,
+	@10
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[10]
+	T3
+		Port1,Sensor1=[10]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T2@10
+	A>T3@10
+	A>T1@12
+
+S>608
+	C>602,603,
+	@11
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@10
+	U>T1@12
+	U>T2@12
+	A>T2@12
+	A>T1@12
+
+S>609
+	C>604,
+	@11
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[11]
+	T3
+		Port1,Sensor1=[11]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T2@10
+	A>T3@10
+	A>T1@12
+
+S>610
+	C>605,
+	@11
+	P:1
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[9]
+	T3
+		Port1,Sensor1=[9]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@10
+	A>T2@12
+	A>T1@12
+	U>T1@11
+	U>T2@11
+
+S>611
+	C>607,
+	@11
+	P:3
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[10]
+	T3
+		Port1,Sensor1=[10]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T2@10
+	A>T3@10
+	A>T1@12
+
+S>612
+	C>607,
+	@10
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[10]
+	T3
+		Port1,Sensor1=[10]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@10
+	A>T2@12
+	A>T1@12
+	U>T2@11
+
+S>613
+	C>609,
+	@11
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[11]
+	T3
+		Port1,Sensor1=[11]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@10
+	U>T2@12
+	A>T2@12
+	A>T1@12
+
+S>614
+	C>611,
+	@11
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[10]
+	T3
+		Port1,Sensor1=[10]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@10
+	U>T2@12
+	A>T1@12
+	A>T2@12
+
+S>615
+	C>612,
+	@11
+	P:2
+	T[]:
+	T1
+	T2
+		Port1,Sensor1=[10]
+	T3
+		Port1,Sensor1=[10]
+		Port2,Sensor1=[6]
+	Q: 
+	A>T3@10
+	A>T2@12
+	A>T1@12
+	U>T2@11

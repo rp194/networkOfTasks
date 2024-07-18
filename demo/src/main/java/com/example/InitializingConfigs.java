@@ -55,6 +55,7 @@ public interface InitializingConfigs {
         int toPort = (int) link.get("toPort");
         Link newLink = new Link(fromTask, fromPort, toTask, toPort);
         linkList.add(newLink);
+        TaskSet.addEdge(fromTask, toTask);
       }
     } catch (Exception e) {
       e.printStackTrace();
