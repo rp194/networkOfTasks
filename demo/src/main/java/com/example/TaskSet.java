@@ -22,7 +22,7 @@ public abstract class TaskSet {
     return adjList.get(vertex);
   }
 
-  public List<Integer> getParents(int vertex) {
+  public static List<Integer> getParents(int vertex) {
     List<Integer> parents = new ArrayList<>();
     for (Map.Entry<Integer, List<Integer>> entry : adjList.entrySet()) {
       if (entry.getValue().contains(vertex)) {

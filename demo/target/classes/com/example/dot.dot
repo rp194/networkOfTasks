@@ -8,1621 +8,1471 @@ digraph state_space {
   0 -> 0 [label = "A>T[1,2,3,]"];
   0 -> 1 [label = "+1", weight=1];
   0 -> 2 [label = "A>T[3]", weight=1];
-  0 -> 3 [label = "A>T[1]", weight=1];
-  0 -> 4 [label = "A>T[2]", weight=1];
+  0 -> 3 [label = "A>T[2]", weight=1];
+  0 -> 4 [label = "A>T[1]", weight=1];
   1 -> "1X" [label = "+1"];
   "1X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   1 -> 6 [label = "A>T[3]", weight=1];
-  1 -> 7 [label = "A>T[1]", weight=1];
-  1 -> 8 [label = "A>T[2]", weight=1];
+  1 -> 7 [label = "A>T[2]", weight=1];
+  1 -> 8 [label = "A>T[1]", weight=1];
   2 -> 9 [label = "+1", weight=1];
-  2 -> 10 [label = "A>T[1]", weight=1];
+  2 -> 10 [label = "A>T[3]", weight=1];
   2 -> 11 [label = "A>T[2]", weight=1];
-  3 -> 12 [label = "+1", weight=1];
-  3 -> 10 [label = "A>T[3]", weight=1];
-  3 -> 13 [label = "A>T[2]", weight=1];
-  4 -> 14 [label = "+1", weight=1];
-  4 -> 11 [label = "A>T[3]", weight=1];
-  4 -> 13 [label = "A>T[1]", weight=1];
+  2 -> 12 [label = "A>T[1]", weight=1];
+  3 -> 13 [label = "+1", weight=1];
+  3 -> 11 [label = "A>T[3]", weight=1];
+  3 -> 14 [label = "A>T[2]", weight=1];
+  3 -> 15 [label = "A>T[1]", weight=1];
+  4 -> 16 [label = "+1", weight=1];
+  4 -> 12 [label = "A>T[3]", weight=1];
+  4 -> 15 [label = "A>T[2]", weight=1];
+  4 -> 17 [label = "A>T[1]", weight=1];
   6 -> "6X" [label = "+1"];
   "6X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  6 -> 15 [label = "A>T[1]", weight=1];
-  6 -> 16 [label = "A>T[2]", weight=1];
+  6 -> 18 [label = "A>T[3]", weight=1];
+  6 -> 19 [label = "A>T[2]", weight=1];
+  6 -> 20 [label = "A>T[1]", weight=1];
   7 -> "7X" [label = "+1"];
   "7X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  7 -> 15 [label = "A>T[3]", weight=1];
-  7 -> 17 [label = "A>T[2]", weight=1];
+  7 -> 19 [label = "A>T[3]", weight=1];
+  7 -> 21 [label = "A>T[2]", weight=1];
+  7 -> 22 [label = "A>T[1]", weight=1];
   8 -> "8X" [label = "+1"];
   "8X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  8 -> 16 [label = "A>T[3]", weight=1];
-  8 -> 17 [label = "A>T[1]", weight=1];
-  9 -> 18 [label = "U>T[3,]", weight=1];
-  10 -> 19 [label = "+1", weight=1];
-  10 -> 20 [label = "A>T[2]", weight=1];
-  11 -> 21 [label = "+1", weight=1];
-  11 -> 20 [label = "A>T[1]", weight=1];
-  12 -> 22 [label = "U>T[1,]", weight=1];
-  13 -> 23 [label = "+1", weight=1];
-  13 -> 20 [label = "A>T[3]", weight=1];
-  14 -> 24 [label = "U>T[2,]", weight=1];
-  15 -> "15X" [label = "+1"];
-  "15X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  15 -> 25 [label = "A>T[2]", weight=1];
-  16 -> 26 [label = "+1", weight=1];
-  16 -> 25 [label = "A>T[1]", weight=1];
-  17 -> "17X" [label = "+1"];
-  "17X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  17 -> 25 [label = "A>T[3]", weight=1];
+  8 -> 20 [label = "A>T[3]", weight=1];
+  8 -> 22 [label = "A>T[2]", weight=1];
+  8 -> 23 [label = "A>T[1]", weight=1];
+  9 -> 24 [label = "U>T[3,]", weight=1];
+  10 -> 25 [label = "+1", weight=1];
+  10 -> 26 [label = "A>T[3]", weight=1];
+  10 -> 27 [label = "A>T[2]", weight=1];
+  10 -> 28 [label = "A>T[1]", weight=1];
+  11 -> 29 [label = "+1", weight=1];
+  11 -> 27 [label = "A>T[3]", weight=1];
+  11 -> 30 [label = "A>T[2]", weight=1];
+  11 -> 31 [label = "A>T[1]", weight=1];
+  12 -> 32 [label = "+1", weight=1];
+  12 -> 28 [label = "A>T[3]", weight=1];
+  12 -> 31 [label = "A>T[2]", weight=1];
+  12 -> 33 [label = "A>T[1]", weight=1];
+  13 -> 34 [label = "U>T[2,]", weight=1];
+  14 -> 35 [label = "+1", weight=1];
+  14 -> 30 [label = "A>T[3]", weight=1];
+  14 -> 36 [label = "A>T[2]", weight=1];
+  14 -> 37 [label = "A>T[1]", weight=1];
+  15 -> 38 [label = "+1", weight=1];
+  15 -> 31 [label = "A>T[3]", weight=1];
+  15 -> 37 [label = "A>T[2]", weight=1];
+  15 -> 39 [label = "A>T[1]", weight=1];
+  16 -> 40 [label = "U>T[1,]", weight=1];
+  17 -> 41 [label = "+1", weight=1];
+  17 -> 33 [label = "A>T[3]", weight=1];
+  17 -> 39 [label = "A>T[2]", weight=1];
+  17 -> 42 [label = "A>T[1]", weight=1];
   18 -> "18X" [label = "+1"];
   "18X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  18 -> 27 [label = "A>T[1]", weight=1];
-  18 -> 28 [label = "A>T[2]", weight=1];
-  19 -> 29 [label = "U>T[1,3,]", weight=1];
-  20 -> 30 [label = "+1", weight=1];
-  21 -> 31 [label = "U>T[2,3,]", weight=1];
+  18 -> 43 [label = "A>T[3]", weight=1];
+  18 -> 44 [label = "A>T[2]", weight=1];
+  18 -> 45 [label = "A>T[1]", weight=1];
+  19 -> "19X" [label = "+1"];
+  "19X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  19 -> 44 [label = "A>T[3]", weight=1];
+  19 -> 46 [label = "A>T[2]", weight=1];
+  19 -> 47 [label = "A>T[1]", weight=1];
+  20 -> "20X" [label = "+1"];
+  "20X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  20 -> 45 [label = "A>T[3]", weight=1];
+  20 -> 47 [label = "A>T[2]", weight=1];
+  20 -> 48 [label = "A>T[1]", weight=1];
+  21 -> "21X" [label = "+1"];
+  "21X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  21 -> 46 [label = "A>T[3]", weight=1];
+  21 -> 49 [label = "A>T[2]", weight=1];
+  21 -> 50 [label = "A>T[1]", weight=1];
   22 -> "22X" [label = "+1"];
   "22X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  22 -> 32 [label = "A>T[3]", weight=1];
-  22 -> 33 [label = "A>T[2]", weight=1];
-  23 -> 34 [label = "U>T[1,2,]", weight=1];
+  22 -> 47 [label = "A>T[3]", weight=1];
+  22 -> 50 [label = "A>T[2]", weight=1];
+  22 -> 51 [label = "A>T[1]", weight=1];
+  23 -> "23X" [label = "+1"];
+  "23X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  23 -> 48 [label = "A>T[3]", weight=1];
+  23 -> 51 [label = "A>T[2]", weight=1];
+  23 -> 52 [label = "A>T[1]", weight=1];
   24 -> "24X" [label = "+1"];
   "24X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  24 -> 35 [label = "A>T[3]", weight=1];
-  24 -> 36 [label = "A>T[1]", weight=1];
-  25 -> 37 [label = "+1", weight=1];
-  26 -> 38 [label = "U>T[2,3,]", weight=1];
-  27 -> "27X" [label = "+1"];
-  "27X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  27 -> 39 [label = "A>T[2]", weight=1];
-  28 -> 40 [label = "+1", weight=1];
-  28 -> 39 [label = "A>T[1]", weight=1];
-  29 -> "29X" [label = "+1"];
-  "29X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  29 -> 41 [label = "A>T[2]", weight=1];
-  30 -> 42 [label = "U>T[2,1,3,]", weight=1];
-  31 -> 38 [label = "+1", weight=1];
-  31 -> 43 [label = "A>T[1]", weight=1];
-  32 -> "32X" [label = "+1"];
-  "32X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  32 -> 44 [label = "A>T[2]", weight=1];
-  33 -> "33X" [label = "+1"];
-  "33X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  33 -> 44 [label = "A>T[3]", weight=1];
+  24 -> 53 [label = "A>T[1]", weight=1];
+  24 -> 54 [label = "A>T[2]", weight=1];
+  24 -> 55 [label = "A>T[3]", weight=1];
+  25 -> 56 [label = "U>T[3,3,]", weight=1];
+  26 -> 57 [label = "+1", weight=1];
+  27 -> 58 [label = "+1", weight=1];
+  28 -> 59 [label = "+1", weight=1];
+  29 -> 60 [label = "U>T[3,2,]", weight=1];
+  30 -> 61 [label = "+1", weight=1];
+  31 -> 62 [label = "+1", weight=1];
+  32 -> 63 [label = "U>T[3,1,]", weight=1];
+  33 -> 64 [label = "+1", weight=1];
   34 -> "34X" [label = "+1"];
   "34X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  34 -> 45 [label = "A>T[3]", weight=1];
-  35 -> 46 [label = "+1", weight=1];
-  35 -> 47 [label = "A>T[1]", weight=1];
-  36 -> "36X" [label = "+1"];
-  "36X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  36 -> 47 [label = "A>T[3]", weight=1];
-  37 -> 48 [label = "U>T[2,3,1,]", weight=1];
-  38 -> "38X" [label = "+1"];
-  "38X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  38 -> 49 [label = "A>T[1]", weight=1];
-  38 -> 50 [label = "A>T[2]", weight=1];
-  38 -> 51 [label = "A>T[3]", weight=1];
-  39 -> 52 [label = "+1", weight=1];
-  40 -> 38 [label = "U>T[2,]"];
-  41 -> 53 [label = "+1", weight=1];
-  42 -> 54 [label = "+1", weight=1];
-  43 -> 55 [label = "+1", weight=1];
-  44 -> 56 [label = "+1", weight=1];
-  45 -> 57 [label = "+1", weight=1];
-  46 -> 38 [label = "U>T[3,]"];
-  47 -> 58 [label = "+1", weight=1];
-  48 -> 59 [label = "+1", weight=1];
-  48 -> 60 [label = "A>T[2]", weight=1];
-  48 -> 61 [label = "A>T[3]", weight=1];
-  49 -> 62 [label = "+1", weight=1];
-  49 -> 63 [label = "A>T[2]", weight=1];
-  49 -> 64 [label = "A>T[3]", weight=1];
+  34 -> 65 [label = "A>T[1]", weight=1];
+  34 -> 66 [label = "A>T[2]", weight=1];
+  34 -> 67 [label = "A>T[3]", weight=1];
+  35 -> 68 [label = "U>T[2,2,]", weight=1];
+  36 -> 69 [label = "+1", weight=1];
+  37 -> 70 [label = "+1", weight=1];
+  38 -> 71 [label = "U>T[2,1,]", weight=1];
+  39 -> 72 [label = "+1", weight=1];
+  40 -> "40X" [label = "+1"];
+  "40X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  40 -> 73 [label = "A>T[1]", weight=1];
+  40 -> 74 [label = "A>T[2]", weight=1];
+  40 -> 75 [label = "A>T[3]", weight=1];
+  41 -> 76 [label = "U>T[1,1,]", weight=1];
+  42 -> 77 [label = "+1", weight=1];
+  43 -> "43X" [label = "+1"];
+  "43X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  44 -> "44X" [label = "+1"];
+  "44X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  45 -> "45X" [label = "+1"];
+  "45X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  46 -> "46X" [label = "+1"];
+  "46X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  47 -> "47X" [label = "+1"];
+  "47X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  48 -> "48X" [label = "+1"];
+  "48X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  49 -> "49X" [label = "+1"];
+  "49X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   50 -> "50X" [label = "+1"];
   "50X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  50 -> 63 [label = "A>T[1]", weight=1];
-  50 -> 65 [label = "A>T[3]", weight=1];
   51 -> "51X" [label = "+1"];
   "51X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  51 -> 64 [label = "A>T[1]", weight=1];
-  51 -> 65 [label = "A>T[2]", weight=1];
-  52 -> 48 [label = "U>T[2,1,]"];
-  53 -> 66 [label = "U>T[2,]", weight=1];
-  54 -> 67 [label = "+1", weight=1];
-  54 -> 68 [label = "A>T[2]", weight=1];
-  54 -> 69 [label = "A>T[3]", weight=1];
-  55 -> 48 [label = "U>T[1,]"];
-  56 -> 66 [label = "U>T[3,2,]", weight=1];
-  57 -> 54 [label = "U>T[3,]"];
-  58 -> 48 [label = "U>T[1,3,]"];
-  59 -> "59X" [label = "+1"];
-  "59X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  59 -> 70 [label = "A>T[2]", weight=1];
-  59 -> 71 [label = "A>T[3]", weight=1];
-  59 -> 72 [label = "A>T[1]", weight=1];
-  60 -> 73 [label = "+1", weight=1];
-  60 -> 74 [label = "A>T[3]", weight=1];
-  61 -> 75 [label = "+1", weight=1];
-  61 -> 74 [label = "A>T[2]", weight=1];
-  62 -> 76 [label = "U>T[1,]", weight=1];
-  63 -> 77 [label = "+1", weight=1];
-  63 -> 78 [label = "A>T[3]", weight=1];
-  64 -> 79 [label = "+1", weight=1];
-  64 -> 78 [label = "A>T[2]", weight=1];
+  52 -> "52X" [label = "+1"];
+  "52X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  53 -> "53X" [label = "+1"];
+  "53X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  53 -> 78 [label = "A>T[1]", weight=1];
+  53 -> 79 [label = "A>T[2]", weight=1];
+  53 -> 80 [label = "A>T[3]", weight=1];
+  54 -> "54X" [label = "+1"];
+  "54X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  54 -> 79 [label = "A>T[1]", weight=1];
+  54 -> 81 [label = "A>T[2]", weight=1];
+  54 -> 82 [label = "A>T[3]", weight=1];
+  55 -> "55X" [label = "+1"];
+  "55X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  55 -> 80 [label = "A>T[1]", weight=1];
+  55 -> 82 [label = "A>T[2]", weight=1];
+  55 -> 83 [label = "A>T[3]", weight=1];
+  56 -> "56X" [label = "+1"];
+  "56X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  56 -> 84 [label = "A>T[1]", weight=1];
+  56 -> 85 [label = "A>T[2]", weight=1];
+  56 -> 86 [label = "A>T[3]", weight=1];
+  57 -> 87 [label = "U>T[3,3,3,]", weight=1];
+  58 -> 88 [label = "U>T[3,3,2,]", weight=1];
+  59 -> 89 [label = "U>T[3,3,1,]", weight=1];
+  60 -> "60X" [label = "+1"];
+  "60X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  60 -> 90 [label = "A>T[1]", weight=1];
+  60 -> 91 [label = "A>T[2]", weight=1];
+  60 -> 92 [label = "A>T[3]", weight=1];
+  61 -> 93 [label = "U>T[3,2,2,]", weight=1];
+  62 -> 94 [label = "U>T[3,2,1,]", weight=1];
+  63 -> "63X" [label = "+1"];
+  "63X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  63 -> 95 [label = "A>T[1]", weight=1];
+  63 -> 96 [label = "A>T[2]", weight=1];
+  63 -> 97 [label = "A>T[3]", weight=1];
+  64 -> 98 [label = "U>T[3,1,1,]", weight=1];
   65 -> "65X" [label = "+1"];
   "65X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  65 -> 78 [label = "A>T[1]", weight=1];
-  66 -> 80 [label = "+1", weight=1];
-  66 -> 81 [label = "A>T[2]", weight=1];
-  66 -> 82 [label = "A>T[3]", weight=1];
+  65 -> 99 [label = "A>T[1]", weight=1];
+  65 -> 100 [label = "A>T[2]", weight=1];
+  65 -> 101 [label = "A>T[3]", weight=1];
+  66 -> "66X" [label = "+1"];
+  "66X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  66 -> 100 [label = "A>T[1]", weight=1];
+  66 -> 102 [label = "A>T[2]", weight=1];
+  66 -> 103 [label = "A>T[3]", weight=1];
   67 -> "67X" [label = "+1"];
   "67X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  67 -> 83 [label = "A>T[2]", weight=1];
-  67 -> 84 [label = "A>T[3]", weight=1];
-  67 -> 85 [label = "A>T[1]", weight=1];
-  68 -> 86 [label = "+1", weight=1];
-  68 -> 87 [label = "A>T[3]", weight=1];
-  69 -> 88 [label = "+1", weight=1];
-  69 -> 87 [label = "A>T[2]", weight=1];
-  70 -> "70X" [label = "+1"];
-  "70X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  70 -> 89 [label = "A>T[3]", weight=1];
-  70 -> 90 [label = "A>T[1]", weight=1];
+  67 -> 101 [label = "A>T[1]", weight=1];
+  67 -> 103 [label = "A>T[2]", weight=1];
+  67 -> 104 [label = "A>T[3]", weight=1];
+  68 -> "68X" [label = "+1"];
+  "68X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  68 -> 105 [label = "A>T[1]", weight=1];
+  68 -> 106 [label = "A>T[2]", weight=1];
+  68 -> 107 [label = "A>T[3]", weight=1];
+  69 -> 108 [label = "U>T[2,2,2,]", weight=1];
+  70 -> 109 [label = "U>T[2,2,1,]", weight=1];
   71 -> "71X" [label = "+1"];
   "71X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  71 -> 89 [label = "A>T[2]", weight=1];
-  71 -> 91 [label = "A>T[1]", weight=1];
-  72 -> "72X" [label = "+1"];
-  "72X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  72 -> 90 [label = "A>T[2]", weight=1];
-  72 -> 91 [label = "A>T[3]", weight=1];
-  73 -> 92 [label = "U>T[2,]", weight=1];
-  74 -> 93 [label = "+1", weight=1];
-  75 -> 94 [label = "U>T[3,]", weight=1];
+  71 -> 110 [label = "A>T[1]", weight=1];
+  71 -> 111 [label = "A>T[2]", weight=1];
+  71 -> 112 [label = "A>T[3]", weight=1];
+  72 -> 113 [label = "U>T[2,1,1,]", weight=1];
+  73 -> "73X" [label = "+1"];
+  "73X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  73 -> 114 [label = "A>T[1]", weight=1];
+  73 -> 115 [label = "A>T[2]", weight=1];
+  73 -> 116 [label = "A>T[3]", weight=1];
+  74 -> "74X" [label = "+1"];
+  "74X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  74 -> 115 [label = "A>T[1]", weight=1];
+  74 -> 117 [label = "A>T[2]", weight=1];
+  74 -> 118 [label = "A>T[3]", weight=1];
+  75 -> "75X" [label = "+1"];
+  "75X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  75 -> 116 [label = "A>T[1]", weight=1];
+  75 -> 118 [label = "A>T[2]", weight=1];
+  75 -> 119 [label = "A>T[3]", weight=1];
   76 -> "76X" [label = "+1"];
   "76X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  76 -> 95 [label = "A>T[2]", weight=1];
-  76 -> 96 [label = "A>T[3]", weight=1];
-  76 -> 97 [label = "A>T[1]", weight=1];
-  77 -> 98 [label = "U>T[2,1,]", weight=1];
-  78 -> 99 [label = "+1", weight=1];
-  79 -> 100 [label = "U>T[1,3,]", weight=1];
+  76 -> 120 [label = "A>T[1]", weight=1];
+  76 -> 121 [label = "A>T[2]", weight=1];
+  76 -> 122 [label = "A>T[3]", weight=1];
+  77 -> 123 [label = "U>T[1,1,1,]", weight=1];
+  78 -> "78X" [label = "+1"];
+  "78X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  78 -> 124 [label = "A>T[1]", weight=1];
+  78 -> 125 [label = "A>T[2]", weight=1];
+  78 -> 126 [label = "A>T[3]", weight=1];
+  79 -> "79X" [label = "+1"];
+  "79X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  79 -> 125 [label = "A>T[1]", weight=1];
+  79 -> 127 [label = "A>T[2]", weight=1];
+  79 -> 128 [label = "A>T[3]", weight=1];
   80 -> "80X" [label = "+1"];
   "80X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  80 -> 101 [label = "A>T[2]", weight=1];
-  80 -> 102 [label = "A>T[3]", weight=1];
-  80 -> 103 [label = "A>T[1]", weight=1];
-  81 -> 104 [label = "+1", weight=1];
-  81 -> 105 [label = "A>T[3]", weight=1];
-  82 -> 106 [label = "+1", weight=1];
-  82 -> 105 [label = "A>T[2]", weight=1];
+  80 -> 126 [label = "A>T[1]", weight=1];
+  80 -> 128 [label = "A>T[2]", weight=1];
+  80 -> 129 [label = "A>T[3]", weight=1];
+  81 -> "81X" [label = "+1"];
+  "81X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  81 -> 127 [label = "A>T[1]", weight=1];
+  81 -> 130 [label = "A>T[2]", weight=1];
+  81 -> 131 [label = "A>T[3]", weight=1];
+  82 -> "82X" [label = "+1"];
+  "82X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  82 -> 128 [label = "A>T[1]", weight=1];
+  82 -> 131 [label = "A>T[2]", weight=1];
+  82 -> 132 [label = "A>T[3]", weight=1];
   83 -> "83X" [label = "+1"];
   "83X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  83 -> 107 [label = "A>T[3]", weight=1];
-  83 -> 108 [label = "A>T[1]", weight=1];
+  83 -> 129 [label = "A>T[1]", weight=1];
+  83 -> 132 [label = "A>T[2]", weight=1];
+  83 -> 133 [label = "A>T[3]", weight=1];
   84 -> "84X" [label = "+1"];
   "84X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  84 -> 107 [label = "A>T[2]", weight=1];
-  84 -> 109 [label = "A>T[1]", weight=1];
+  84 -> 134 [label = "A>T[1]", weight=1];
+  84 -> 135 [label = "A>T[2]", weight=1];
+  84 -> 136 [label = "A>T[3]", weight=1];
   85 -> "85X" [label = "+1"];
   "85X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  85 -> 108 [label = "A>T[2]", weight=1];
-  85 -> 109 [label = "A>T[3]", weight=1];
-  86 -> 110 [label = "U>T[2,]", weight=1];
-  87 -> 111 [label = "+1", weight=1];
-  88 -> 112 [label = "U>T[3,]", weight=1];
-  89 -> 113 [label = "+1", weight=1];
-  89 -> 114 [label = "A>T[1]", weight=1];
+  85 -> 135 [label = "A>T[1]", weight=1];
+  85 -> 137 [label = "A>T[2]", weight=1];
+  85 -> 138 [label = "A>T[3]", weight=1];
+  86 -> "86X" [label = "+1"];
+  "86X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  86 -> 136 [label = "A>T[1]", weight=1];
+  86 -> 138 [label = "A>T[2]", weight=1];
+  86 -> 139 [label = "A>T[3]", weight=1];
+  87 -> "87X" [label = "+1"];
+  "87X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  87 -> 140 [label = "A>T[1]", weight=1];
+  87 -> 141 [label = "A>T[2]", weight=1];
+  87 -> 142 [label = "A>T[3]", weight=1];
+  88 -> "88X" [label = "+1"];
+  "88X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  88 -> 143 [label = "A>T[1]", weight=1];
+  88 -> 144 [label = "A>T[2]", weight=1];
+  88 -> 145 [label = "A>T[3]", weight=1];
+  89 -> "89X" [label = "+1"];
+  "89X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  89 -> 146 [label = "A>T[1]", weight=1];
+  89 -> 147 [label = "A>T[2]", weight=1];
+  89 -> 148 [label = "A>T[3]", weight=1];
   90 -> "90X" [label = "+1"];
   "90X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  90 -> 114 [label = "A>T[3]", weight=1];
+  90 -> 149 [label = "A>T[1]", weight=1];
+  90 -> 150 [label = "A>T[2]", weight=1];
+  90 -> 151 [label = "A>T[3]", weight=1];
   91 -> "91X" [label = "+1"];
   "91X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  91 -> 114 [label = "A>T[2]", weight=1];
+  91 -> 150 [label = "A>T[1]", weight=1];
+  91 -> 152 [label = "A>T[2]", weight=1];
+  91 -> 153 [label = "A>T[3]", weight=1];
   92 -> "92X" [label = "+1"];
   "92X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  92 -> 115 [label = "A>T[3]", weight=1];
-  92 -> 116 [label = "A>T[1]", weight=1];
-  93 -> 117 [label = "U>T[3,2,]", weight=1];
+  92 -> 151 [label = "A>T[1]", weight=1];
+  92 -> 153 [label = "A>T[2]", weight=1];
+  92 -> 154 [label = "A>T[3]", weight=1];
+  93 -> "93X" [label = "+1"];
+  "93X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  93 -> 155 [label = "A>T[1]", weight=1];
+  93 -> 156 [label = "A>T[2]", weight=1];
+  93 -> 157 [label = "A>T[3]", weight=1];
   94 -> "94X" [label = "+1"];
   "94X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  94 -> 118 [label = "A>T[2]", weight=1];
-  94 -> 119 [label = "A>T[1]", weight=1];
+  94 -> 158 [label = "A>T[1]", weight=1];
+  94 -> 159 [label = "A>T[2]", weight=1];
+  94 -> 160 [label = "A>T[3]", weight=1];
   95 -> "95X" [label = "+1"];
   "95X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  95 -> 120 [label = "A>T[3]", weight=1];
-  95 -> 121 [label = "A>T[1]", weight=1];
+  95 -> 161 [label = "A>T[1]", weight=1];
+  95 -> 162 [label = "A>T[2]", weight=1];
+  95 -> 163 [label = "A>T[3]", weight=1];
   96 -> "96X" [label = "+1"];
   "96X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  96 -> 120 [label = "A>T[2]", weight=1];
-  96 -> 122 [label = "A>T[1]", weight=1];
+  96 -> 162 [label = "A>T[1]", weight=1];
+  96 -> 164 [label = "A>T[2]", weight=1];
+  96 -> 165 [label = "A>T[3]", weight=1];
   97 -> "97X" [label = "+1"];
   "97X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  97 -> 121 [label = "A>T[2]", weight=1];
-  97 -> 122 [label = "A>T[3]", weight=1];
+  97 -> 163 [label = "A>T[1]", weight=1];
+  97 -> 165 [label = "A>T[2]", weight=1];
+  97 -> 166 [label = "A>T[3]", weight=1];
   98 -> "98X" [label = "+1"];
   "98X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  98 -> 123 [label = "A>T[3]", weight=1];
-  98 -> 124 [label = "A>T[1]", weight=1];
-  99 -> 125 [label = "U>T[2,3,1,]", weight=1];
+  98 -> 167 [label = "A>T[1]", weight=1];
+  98 -> 168 [label = "A>T[2]", weight=1];
+  98 -> 169 [label = "A>T[3]", weight=1];
+  99 -> "99X" [label = "+1"];
+  "99X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  99 -> 170 [label = "A>T[1]", weight=1];
+  99 -> 171 [label = "A>T[2]", weight=1];
+  99 -> 172 [label = "A>T[3]", weight=1];
   100 -> "100X" [label = "+1"];
   "100X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  100 -> 126 [label = "A>T[2]", weight=1];
-  100 -> 127 [label = "A>T[1]", weight=1];
+  100 -> 171 [label = "A>T[1]", weight=1];
+  100 -> 173 [label = "A>T[2]", weight=1];
+  100 -> 174 [label = "A>T[3]", weight=1];
   101 -> "101X" [label = "+1"];
   "101X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  101 -> 128 [label = "A>T[3]", weight=1];
-  101 -> 129 [label = "A>T[1]", weight=1];
+  101 -> 172 [label = "A>T[1]", weight=1];
+  101 -> 174 [label = "A>T[2]", weight=1];
+  101 -> 175 [label = "A>T[3]", weight=1];
   102 -> "102X" [label = "+1"];
   "102X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  102 -> 128 [label = "A>T[2]", weight=1];
-  102 -> 130 [label = "A>T[1]", weight=1];
+  102 -> 173 [label = "A>T[1]", weight=1];
+  102 -> 176 [label = "A>T[2]", weight=1];
+  102 -> 177 [label = "A>T[3]", weight=1];
   103 -> "103X" [label = "+1"];
   "103X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  103 -> 129 [label = "A>T[2]", weight=1];
-  103 -> 130 [label = "A>T[3]", weight=1];
-  104 -> 110 [label = "U>T[2,]", weight=1];
-  105 -> 131 [label = "+1", weight=1];
-  106 -> 132 [label = "U>T[3,]", weight=1];
-  107 -> 133 [label = "+1", weight=1];
-  107 -> 134 [label = "A>T[1]", weight=1];
+  103 -> 174 [label = "A>T[1]", weight=1];
+  103 -> 177 [label = "A>T[2]", weight=1];
+  103 -> 178 [label = "A>T[3]", weight=1];
+  104 -> "104X" [label = "+1"];
+  "104X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  104 -> 175 [label = "A>T[1]", weight=1];
+  104 -> 178 [label = "A>T[2]", weight=1];
+  104 -> 179 [label = "A>T[3]", weight=1];
+  105 -> "105X" [label = "+1"];
+  "105X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  105 -> 180 [label = "A>T[1]", weight=1];
+  105 -> 181 [label = "A>T[2]", weight=1];
+  105 -> 182 [label = "A>T[3]", weight=1];
+  106 -> "106X" [label = "+1"];
+  "106X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  106 -> 181 [label = "A>T[1]", weight=1];
+  106 -> 183 [label = "A>T[2]", weight=1];
+  106 -> 184 [label = "A>T[3]", weight=1];
+  107 -> "107X" [label = "+1"];
+  "107X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  107 -> 182 [label = "A>T[1]", weight=1];
+  107 -> 184 [label = "A>T[2]", weight=1];
+  107 -> 185 [label = "A>T[3]", weight=1];
   108 -> "108X" [label = "+1"];
   "108X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  108 -> 134 [label = "A>T[3]", weight=1];
+  108 -> 186 [label = "A>T[1]", weight=1];
+  108 -> 187 [label = "A>T[2]", weight=1];
+  108 -> 188 [label = "A>T[3]", weight=1];
   109 -> "109X" [label = "+1"];
   "109X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  109 -> 134 [label = "A>T[2]", weight=1];
+  109 -> 189 [label = "A>T[1]", weight=1];
+  109 -> 190 [label = "A>T[2]", weight=1];
+  109 -> 191 [label = "A>T[3]", weight=1];
   110 -> "110X" [label = "+1"];
   "110X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  110 -> 135 [label = "A>T[3]", weight=1];
-  110 -> 136 [label = "A>T[1]", weight=1];
-  111 -> 137 [label = "U>T[3,2,]", weight=1];
+  110 -> 192 [label = "A>T[1]", weight=1];
+  110 -> 193 [label = "A>T[2]", weight=1];
+  110 -> 194 [label = "A>T[3]", weight=1];
+  111 -> "111X" [label = "+1"];
+  "111X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  111 -> 193 [label = "A>T[1]", weight=1];
+  111 -> 195 [label = "A>T[2]", weight=1];
+  111 -> 196 [label = "A>T[3]", weight=1];
   112 -> "112X" [label = "+1"];
   "112X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  112 -> 138 [label = "A>T[2]", weight=1];
-  112 -> 139 [label = "A>T[1]", weight=1];
-  113 -> 140 [label = "U>T[3,2,]", weight=1];
-  114 -> 141 [label = "+1", weight=1];
-  115 -> 142 [label = "+1", weight=1];
-  115 -> 143 [label = "A>T[1]", weight=1];
+  112 -> 194 [label = "A>T[1]", weight=1];
+  112 -> 196 [label = "A>T[2]", weight=1];
+  112 -> 197 [label = "A>T[3]", weight=1];
+  113 -> "113X" [label = "+1"];
+  "113X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  113 -> 198 [label = "A>T[1]", weight=1];
+  113 -> 199 [label = "A>T[2]", weight=1];
+  113 -> 200 [label = "A>T[3]", weight=1];
+  114 -> "114X" [label = "+1"];
+  "114X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  114 -> 201 [label = "A>T[1]", weight=1];
+  114 -> 202 [label = "A>T[2]", weight=1];
+  114 -> 203 [label = "A>T[3]", weight=1];
+  115 -> "115X" [label = "+1"];
+  "115X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  115 -> 202 [label = "A>T[1]", weight=1];
+  115 -> 204 [label = "A>T[2]", weight=1];
+  115 -> 205 [label = "A>T[3]", weight=1];
   116 -> "116X" [label = "+1"];
   "116X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  116 -> 143 [label = "A>T[3]", weight=1];
-  117 -> 140 [label = "+1", weight=1];
-  117 -> 144 [label = "A>T[1]", weight=1];
-  118 -> 145 [label = "+1", weight=1];
-  118 -> 146 [label = "A>T[1]", weight=1];
+  116 -> 203 [label = "A>T[1]", weight=1];
+  116 -> 205 [label = "A>T[2]", weight=1];
+  116 -> 206 [label = "A>T[3]", weight=1];
+  117 -> "117X" [label = "+1"];
+  "117X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  117 -> 204 [label = "A>T[1]", weight=1];
+  117 -> 207 [label = "A>T[2]", weight=1];
+  117 -> 208 [label = "A>T[3]", weight=1];
+  118 -> "118X" [label = "+1"];
+  "118X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  118 -> 205 [label = "A>T[1]", weight=1];
+  118 -> 208 [label = "A>T[2]", weight=1];
+  118 -> 209 [label = "A>T[3]", weight=1];
   119 -> "119X" [label = "+1"];
   "119X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  119 -> 146 [label = "A>T[2]", weight=1];
-  120 -> 147 [label = "+1", weight=1];
-  120 -> 148 [label = "A>T[1]", weight=1];
+  119 -> 206 [label = "A>T[1]", weight=1];
+  119 -> 209 [label = "A>T[2]", weight=1];
+  119 -> 210 [label = "A>T[3]", weight=1];
+  120 -> "120X" [label = "+1"];
+  "120X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  120 -> 211 [label = "A>T[1]", weight=1];
+  120 -> 212 [label = "A>T[2]", weight=1];
+  120 -> 213 [label = "A>T[3]", weight=1];
   121 -> "121X" [label = "+1"];
   "121X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  121 -> 148 [label = "A>T[3]", weight=1];
+  121 -> 212 [label = "A>T[1]", weight=1];
+  121 -> 214 [label = "A>T[2]", weight=1];
+  121 -> 215 [label = "A>T[3]", weight=1];
   122 -> "122X" [label = "+1"];
   "122X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  122 -> 148 [label = "A>T[2]", weight=1];
-  123 -> 149 [label = "+1", weight=1];
-  123 -> 150 [label = "A>T[1]", weight=1];
+  122 -> 213 [label = "A>T[1]", weight=1];
+  122 -> 215 [label = "A>T[2]", weight=1];
+  122 -> 216 [label = "A>T[3]", weight=1];
+  123 -> "123X" [label = "+1"];
+  "123X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  123 -> 217 [label = "A>T[1]", weight=1];
+  123 -> 218 [label = "A>T[2]", weight=1];
+  123 -> 219 [label = "A>T[3]", weight=1];
   124 -> "124X" [label = "+1"];
   "124X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  124 -> 150 [label = "A>T[3]", weight=1];
-  125 -> 151 [label = "+1", weight=1];
-  125 -> 152 [label = "A>T[1]", weight=1];
-  126 -> 153 [label = "+1", weight=1];
-  126 -> 154 [label = "A>T[1]", weight=1];
+  125 -> "125X" [label = "+1"];
+  "125X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  126 -> "126X" [label = "+1"];
+  "126X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   127 -> "127X" [label = "+1"];
   "127X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  127 -> 154 [label = "A>T[2]", weight=1];
-  128 -> 155 [label = "+1", weight=1];
-  128 -> 156 [label = "A>T[1]", weight=1];
+  128 -> "128X" [label = "+1"];
+  "128X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   129 -> "129X" [label = "+1"];
   "129X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  129 -> 156 [label = "A>T[3]", weight=1];
   130 -> "130X" [label = "+1"];
   "130X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  130 -> 156 [label = "A>T[2]", weight=1];
-  131 -> 137 [label = "U>T[3,2,]", weight=1];
+  131 -> "131X" [label = "+1"];
+  "131X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   132 -> "132X" [label = "+1"];
   "132X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  132 -> 157 [label = "A>T[2]", weight=1];
-  132 -> 158 [label = "A>T[1]", weight=1];
-  133 -> 159 [label = "U>T[3,2,]", weight=1];
-  134 -> 160 [label = "+1", weight=1];
-  135 -> 161 [label = "+1", weight=1];
-  135 -> 162 [label = "A>T[1]", weight=1];
+  133 -> "133X" [label = "+1"];
+  "133X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  134 -> "134X" [label = "+1"];
+  "134X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  134 -> 220 [label = "A>T[1]", weight=1];
+  134 -> 221 [label = "A>T[2]", weight=1];
+  134 -> 222 [label = "A>T[3]", weight=1];
+  135 -> "135X" [label = "+1"];
+  "135X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  135 -> 221 [label = "A>T[1]", weight=1];
+  135 -> 223 [label = "A>T[2]", weight=1];
+  135 -> 224 [label = "A>T[3]", weight=1];
   136 -> "136X" [label = "+1"];
   "136X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  136 -> 162 [label = "A>T[3]", weight=1];
-  137 -> 159 [label = "+1", weight=1];
-  137 -> 163 [label = "A>T[1]", weight=1];
-  138 -> 164 [label = "+1", weight=1];
-  138 -> 165 [label = "A>T[1]", weight=1];
+  136 -> 222 [label = "A>T[1]", weight=1];
+  136 -> 224 [label = "A>T[2]", weight=1];
+  136 -> 225 [label = "A>T[3]", weight=1];
+  137 -> "137X" [label = "+1"];
+  "137X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  137 -> 223 [label = "A>T[1]", weight=1];
+  137 -> 226 [label = "A>T[2]", weight=1];
+  137 -> 227 [label = "A>T[3]", weight=1];
+  138 -> "138X" [label = "+1"];
+  "138X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  138 -> 224 [label = "A>T[1]", weight=1];
+  138 -> 227 [label = "A>T[2]", weight=1];
+  138 -> 228 [label = "A>T[3]", weight=1];
   139 -> "139X" [label = "+1"];
   "139X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  139 -> 165 [label = "A>T[2]", weight=1];
-  140 -> 166 [label = "+1", weight=1];
-  140 -> 167 [label = "A>T[1]", weight=1];
-  140 -> 168 [label = "A>T[2]", weight=1];
-  140 -> 169 [label = "A>T[3]", weight=1];
-  141 -> 170 [label = "U>T[1,3,2,]", weight=1];
-  142 -> 140 [label = "U>T[3,]"];
-  143 -> 171 [label = "+1", weight=1];
-  144 -> 172 [label = "+1", weight=1];
-  145 -> 140 [label = "U>T[2,]"];
-  146 -> 173 [label = "+1", weight=1];
-  147 -> 174 [label = "U>T[3,2,]", weight=1];
-  148 -> 175 [label = "+1", weight=1];
-  149 -> 151 [label = "U>T[3,]", weight=1];
-  150 -> 176 [label = "+1", weight=1];
-  151 -> 177 [label = "+1", weight=1];
-  151 -> 178 [label = "A>T[1]", weight=1];
-  151 -> 179 [label = "A>T[2]", weight=1];
-  151 -> 180 [label = "A>T[3]", weight=1];
-  152 -> 181 [label = "+1", weight=1];
-  153 -> 174 [label = "U>T[2,]", weight=1];
-  154 -> 182 [label = "+1", weight=1];
-  155 -> 159 [label = "U>T[3,2,]", weight=1];
-  156 -> 183 [label = "+1", weight=1];
-  157 -> 184 [label = "+1", weight=1];
-  157 -> 185 [label = "A>T[1]", weight=1];
+  139 -> 225 [label = "A>T[1]", weight=1];
+  139 -> 228 [label = "A>T[2]", weight=1];
+  139 -> 229 [label = "A>T[3]", weight=1];
+  140 -> "140X" [label = "+1"];
+  "140X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  140 -> 230 [label = "A>T[1]", weight=1];
+  140 -> 231 [label = "A>T[2]", weight=1];
+  140 -> 232 [label = "A>T[3]", weight=1];
+  141 -> "141X" [label = "+1"];
+  "141X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  141 -> 231 [label = "A>T[1]", weight=1];
+  141 -> 233 [label = "A>T[2]", weight=1];
+  141 -> 234 [label = "A>T[3]", weight=1];
+  142 -> "142X" [label = "+1"];
+  "142X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  142 -> 232 [label = "A>T[1]", weight=1];
+  142 -> 234 [label = "A>T[2]", weight=1];
+  142 -> 235 [label = "A>T[3]", weight=1];
+  143 -> "143X" [label = "+1"];
+  "143X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  143 -> 236 [label = "A>T[1]", weight=1];
+  143 -> 237 [label = "A>T[2]", weight=1];
+  143 -> 238 [label = "A>T[3]", weight=1];
+  144 -> "144X" [label = "+1"];
+  "144X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  144 -> 237 [label = "A>T[1]", weight=1];
+  144 -> 239 [label = "A>T[2]", weight=1];
+  144 -> 240 [label = "A>T[3]", weight=1];
+  145 -> "145X" [label = "+1"];
+  "145X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  145 -> 238 [label = "A>T[1]", weight=1];
+  145 -> 240 [label = "A>T[2]", weight=1];
+  145 -> 241 [label = "A>T[3]", weight=1];
+  146 -> "146X" [label = "+1"];
+  "146X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  146 -> 242 [label = "A>T[1]", weight=1];
+  146 -> 243 [label = "A>T[2]", weight=1];
+  146 -> 244 [label = "A>T[3]", weight=1];
+  147 -> "147X" [label = "+1"];
+  "147X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  147 -> 243 [label = "A>T[1]", weight=1];
+  147 -> 245 [label = "A>T[2]", weight=1];
+  147 -> 246 [label = "A>T[3]", weight=1];
+  148 -> "148X" [label = "+1"];
+  "148X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  148 -> 244 [label = "A>T[1]", weight=1];
+  148 -> 246 [label = "A>T[2]", weight=1];
+  148 -> 247 [label = "A>T[3]", weight=1];
+  149 -> "149X" [label = "+1"];
+  "149X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  149 -> 248 [label = "A>T[1]", weight=1];
+  149 -> 249 [label = "A>T[2]", weight=1];
+  149 -> 250 [label = "A>T[3]", weight=1];
+  150 -> "150X" [label = "+1"];
+  "150X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  150 -> 249 [label = "A>T[1]", weight=1];
+  150 -> 251 [label = "A>T[2]", weight=1];
+  150 -> 252 [label = "A>T[3]", weight=1];
+  151 -> "151X" [label = "+1"];
+  "151X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  151 -> 250 [label = "A>T[1]", weight=1];
+  151 -> 252 [label = "A>T[2]", weight=1];
+  151 -> 253 [label = "A>T[3]", weight=1];
+  152 -> "152X" [label = "+1"];
+  "152X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  152 -> 251 [label = "A>T[1]", weight=1];
+  152 -> 254 [label = "A>T[2]", weight=1];
+  152 -> 255 [label = "A>T[3]", weight=1];
+  153 -> "153X" [label = "+1"];
+  "153X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  153 -> 252 [label = "A>T[1]", weight=1];
+  153 -> 255 [label = "A>T[2]", weight=1];
+  153 -> 256 [label = "A>T[3]", weight=1];
+  154 -> "154X" [label = "+1"];
+  "154X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  154 -> 253 [label = "A>T[1]", weight=1];
+  154 -> 256 [label = "A>T[2]", weight=1];
+  154 -> 257 [label = "A>T[3]", weight=1];
+  155 -> "155X" [label = "+1"];
+  "155X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  155 -> 258 [label = "A>T[1]", weight=1];
+  155 -> 259 [label = "A>T[2]", weight=1];
+  155 -> 260 [label = "A>T[3]", weight=1];
+  156 -> "156X" [label = "+1"];
+  "156X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  156 -> 259 [label = "A>T[1]", weight=1];
+  156 -> 261 [label = "A>T[2]", weight=1];
+  156 -> 262 [label = "A>T[3]", weight=1];
+  157 -> "157X" [label = "+1"];
+  "157X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  157 -> 260 [label = "A>T[1]", weight=1];
+  157 -> 262 [label = "A>T[2]", weight=1];
+  157 -> 263 [label = "A>T[3]", weight=1];
   158 -> "158X" [label = "+1"];
   "158X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  158 -> 185 [label = "A>T[2]", weight=1];
-  159 -> 186 [label = "+1", weight=1];
-  159 -> 187 [label = "A>T[1]", weight=1];
-  159 -> "159X" [label = "A>T[3]"];
+  158 -> 264 [label = "A>T[1]", weight=1];
+  158 -> 265 [label = "A>T[2]", weight=1];
+  158 -> 266 [label = "A>T[3]", weight=1];
+  159 -> "159X" [label = "+1"];
   "159X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  159 -> 188 [label = "A>T[2]", weight=1];
-  160 -> 189 [label = "U>T[1,3,2,]", weight=1];
-  161 -> 159 [label = "U>T[3,]"];
-  162 -> 190 [label = "+1", weight=1];
-  163 -> 191 [label = "+1", weight=1];
-  164 -> 159 [label = "U>T[2,]"];
-  165 -> 192 [label = "+1", weight=1];
+  159 -> 265 [label = "A>T[1]", weight=1];
+  159 -> 267 [label = "A>T[2]", weight=1];
+  159 -> 268 [label = "A>T[3]", weight=1];
+  160 -> "160X" [label = "+1"];
+  "160X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  160 -> 266 [label = "A>T[1]", weight=1];
+  160 -> 268 [label = "A>T[2]", weight=1];
+  160 -> 269 [label = "A>T[3]", weight=1];
+  161 -> "161X" [label = "+1"];
+  "161X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  161 -> 270 [label = "A>T[1]", weight=1];
+  161 -> 271 [label = "A>T[2]", weight=1];
+  161 -> 272 [label = "A>T[3]", weight=1];
+  162 -> "162X" [label = "+1"];
+  "162X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  162 -> 271 [label = "A>T[1]", weight=1];
+  162 -> 273 [label = "A>T[2]", weight=1];
+  162 -> 274 [label = "A>T[3]", weight=1];
+  163 -> "163X" [label = "+1"];
+  "163X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  163 -> 272 [label = "A>T[1]", weight=1];
+  163 -> 274 [label = "A>T[2]", weight=1];
+  163 -> 275 [label = "A>T[3]", weight=1];
+  164 -> "164X" [label = "+1"];
+  "164X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  164 -> 273 [label = "A>T[1]", weight=1];
+  164 -> 276 [label = "A>T[2]", weight=1];
+  164 -> 277 [label = "A>T[3]", weight=1];
+  165 -> "165X" [label = "+1"];
+  "165X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  165 -> 274 [label = "A>T[1]", weight=1];
+  165 -> 277 [label = "A>T[2]", weight=1];
+  165 -> 278 [label = "A>T[3]", weight=1];
   166 -> "166X" [label = "+1"];
   "166X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  166 -> 193 [label = "A>T[1]", weight=1];
-  166 -> 194 [label = "A>T[2]", weight=1];
-  166 -> "166X" [label = "A>T[3]"];
-  "166X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  167 -> 195 [label = "+1", weight=1];
-  167 -> 196 [label = "A>T[2]", weight=1];
-  167 -> 197 [label = "A>T[3]", weight=1];
-  168 -> 198 [label = "+1", weight=1];
-  168 -> 196 [label = "A>T[1]", weight=1];
-  168 -> 199 [label = "A>T[3]", weight=1];
-  169 -> 200 [label = "+1", weight=1];
-  169 -> 197 [label = "A>T[1]", weight=1];
-  169 -> 199 [label = "A>T[2]", weight=1];
-  170 -> 201 [label = "+1", weight=1];
-  170 -> 202 [label = "A>T[2]", weight=1];
-  170 -> "170X" [label = "A>T[3]"];
+  166 -> 275 [label = "A>T[1]", weight=1];
+  166 -> 278 [label = "A>T[2]", weight=1];
+  166 -> 279 [label = "A>T[3]", weight=1];
+  167 -> "167X" [label = "+1"];
+  "167X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  167 -> 280 [label = "A>T[1]", weight=1];
+  167 -> 281 [label = "A>T[2]", weight=1];
+  167 -> 282 [label = "A>T[3]", weight=1];
+  168 -> "168X" [label = "+1"];
+  "168X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  168 -> 281 [label = "A>T[1]", weight=1];
+  168 -> 283 [label = "A>T[2]", weight=1];
+  168 -> 284 [label = "A>T[3]", weight=1];
+  169 -> "169X" [label = "+1"];
+  "169X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  169 -> 282 [label = "A>T[1]", weight=1];
+  169 -> 284 [label = "A>T[2]", weight=1];
+  169 -> 285 [label = "A>T[3]", weight=1];
+  170 -> "170X" [label = "+1"];
   "170X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  171 -> 170 [label = "U>T[3,1,]"];
-  172 -> 170 [label = "U>T[1,]"];
-  173 -> 170 [label = "U>T[2,1,]"];
-  174 -> 203 [label = "+1", weight=1];
-  174 -> 204 [label = "A>T[1]", weight=1];
-  174 -> 205 [label = "A>T[3]", weight=1];
-  174 -> 206 [label = "A>T[2]", weight=1];
-  175 -> 207 [label = "U>T[3,2,1,]", weight=1];
-  176 -> 208 [label = "U>T[3,1,]", weight=1];
+  171 -> "171X" [label = "+1"];
+  "171X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  172 -> "172X" [label = "+1"];
+  "172X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  173 -> "173X" [label = "+1"];
+  "173X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  174 -> "174X" [label = "+1"];
+  "174X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  175 -> "175X" [label = "+1"];
+  "175X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  176 -> "176X" [label = "+1"];
+  "176X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   177 -> "177X" [label = "+1"];
   "177X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  177 -> 209 [label = "A>T[1]", weight=1];
-  177 -> 210 [label = "A>T[2]", weight=1];
-  177 -> 211 [label = "A>T[3]", weight=1];
-  178 -> 212 [label = "+1", weight=1];
-  178 -> 213 [label = "A>T[2]", weight=1];
-  178 -> 214 [label = "A>T[3]", weight=1];
-  179 -> 215 [label = "+1", weight=1];
-  179 -> 213 [label = "A>T[1]", weight=1];
-  179 -> 216 [label = "A>T[3]", weight=1];
-  180 -> 217 [label = "+1", weight=1];
-  180 -> 214 [label = "A>T[1]", weight=1];
-  180 -> 216 [label = "A>T[2]", weight=1];
-  181 -> 208 [label = "U>T[1,]", weight=1];
-  182 -> 207 [label = "U>T[1,2,]", weight=1];
-  183 -> 189 [label = "U>T[3,1,2,]", weight=1];
-  184 -> 159 [label = "U>T[2,]"];
-  185 -> 218 [label = "+1", weight=1];
+  178 -> "178X" [label = "+1"];
+  "178X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  179 -> "179X" [label = "+1"];
+  "179X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  180 -> "180X" [label = "+1"];
+  "180X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  180 -> 286 [label = "A>T[1]", weight=1];
+  180 -> 287 [label = "A>T[2]", weight=1];
+  180 -> 288 [label = "A>T[3]", weight=1];
+  181 -> "181X" [label = "+1"];
+  "181X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  181 -> 287 [label = "A>T[1]", weight=1];
+  181 -> 289 [label = "A>T[2]", weight=1];
+  181 -> 290 [label = "A>T[3]", weight=1];
+  182 -> "182X" [label = "+1"];
+  "182X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  182 -> 288 [label = "A>T[1]", weight=1];
+  182 -> 290 [label = "A>T[2]", weight=1];
+  182 -> 291 [label = "A>T[3]", weight=1];
+  183 -> "183X" [label = "+1"];
+  "183X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  183 -> 289 [label = "A>T[1]", weight=1];
+  183 -> 292 [label = "A>T[2]", weight=1];
+  183 -> 293 [label = "A>T[3]", weight=1];
+  184 -> "184X" [label = "+1"];
+  "184X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  184 -> 290 [label = "A>T[1]", weight=1];
+  184 -> 293 [label = "A>T[2]", weight=1];
+  184 -> 294 [label = "A>T[3]", weight=1];
+  185 -> "185X" [label = "+1"];
+  "185X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  185 -> 291 [label = "A>T[1]", weight=1];
+  185 -> 294 [label = "A>T[2]", weight=1];
+  185 -> 295 [label = "A>T[3]", weight=1];
   186 -> "186X" [label = "+1"];
   "186X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  186 -> 219 [label = "A>T[1]", weight=1];
-  186 -> "186X" [label = "A>T[3]"];
-  "186X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  186 -> 220 [label = "A>T[2]", weight=1];
-  187 -> 221 [label = "+1", weight=1];
-  187 -> "187X" [label = "A>T[3]"];
+  186 -> 296 [label = "A>T[1]", weight=1];
+  186 -> 297 [label = "A>T[2]", weight=1];
+  186 -> 298 [label = "A>T[3]", weight=1];
+  187 -> "187X" [label = "+1"];
   "187X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  187 -> 222 [label = "A>T[2]", weight=1];
-  188 -> 223 [label = "+1", weight=1];
-  188 -> 222 [label = "A>T[1]", weight=1];
-  188 -> "188X" [label = "A>T[3]"];
+  187 -> 297 [label = "A>T[1]", weight=1];
+  187 -> 299 [label = "A>T[2]", weight=1];
+  187 -> 300 [label = "A>T[3]", weight=1];
+  188 -> "188X" [label = "+1"];
   "188X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  189 -> 224 [label = "+1", weight=1];
-  189 -> "189X" [label = "A>T[3]"];
+  188 -> 298 [label = "A>T[1]", weight=1];
+  188 -> 300 [label = "A>T[2]", weight=1];
+  188 -> 301 [label = "A>T[3]", weight=1];
+  189 -> "189X" [label = "+1"];
   "189X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  189 -> 225 [label = "A>T[2]", weight=1];
-  190 -> 189 [label = "U>T[3,1,]"];
-  191 -> 189 [label = "U>T[1,]"];
-  192 -> 189 [label = "U>T[1,2,]"];
+  189 -> 302 [label = "A>T[1]", weight=1];
+  189 -> 303 [label = "A>T[2]", weight=1];
+  189 -> 304 [label = "A>T[3]", weight=1];
+  190 -> "190X" [label = "+1"];
+  "190X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  190 -> 303 [label = "A>T[1]", weight=1];
+  190 -> 305 [label = "A>T[2]", weight=1];
+  190 -> 306 [label = "A>T[3]", weight=1];
+  191 -> "191X" [label = "+1"];
+  "191X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  191 -> 304 [label = "A>T[1]", weight=1];
+  191 -> 306 [label = "A>T[2]", weight=1];
+  191 -> 307 [label = "A>T[3]", weight=1];
+  192 -> "192X" [label = "+1"];
+  "192X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  192 -> 308 [label = "A>T[1]", weight=1];
+  192 -> 309 [label = "A>T[2]", weight=1];
+  192 -> 310 [label = "A>T[3]", weight=1];
   193 -> "193X" [label = "+1"];
   "193X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  193 -> 226 [label = "A>T[2]", weight=1];
-  193 -> "193X" [label = "A>T[3]"];
-  "193X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  193 -> 309 [label = "A>T[1]", weight=1];
+  193 -> 311 [label = "A>T[2]", weight=1];
+  193 -> 312 [label = "A>T[3]", weight=1];
   194 -> "194X" [label = "+1"];
   "194X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  194 -> 226 [label = "A>T[1]", weight=1];
-  194 -> "194X" [label = "A>T[3]"];
-  "194X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  195 -> 227 [label = "U>T[1,]", weight=1];
-  196 -> 228 [label = "+1", weight=1];
-  196 -> 229 [label = "A>T[3]", weight=1];
-  197 -> 230 [label = "+1", weight=1];
-  197 -> 229 [label = "A>T[2]", weight=1];
-  198 -> 231 [label = "U>T[2,]", weight=1];
-  199 -> 232 [label = "+1", weight=1];
-  199 -> 229 [label = "A>T[1]", weight=1];
-  200 -> 233 [label = "U>T[3,]", weight=1];
+  194 -> 310 [label = "A>T[1]", weight=1];
+  194 -> 312 [label = "A>T[2]", weight=1];
+  194 -> 313 [label = "A>T[3]", weight=1];
+  195 -> "195X" [label = "+1"];
+  "195X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  195 -> 311 [label = "A>T[1]", weight=1];
+  195 -> 314 [label = "A>T[2]", weight=1];
+  195 -> 315 [label = "A>T[3]", weight=1];
+  196 -> "196X" [label = "+1"];
+  "196X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  196 -> 312 [label = "A>T[1]", weight=1];
+  196 -> 315 [label = "A>T[2]", weight=1];
+  196 -> 316 [label = "A>T[3]", weight=1];
+  197 -> "197X" [label = "+1"];
+  "197X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  197 -> 313 [label = "A>T[1]", weight=1];
+  197 -> 316 [label = "A>T[2]", weight=1];
+  197 -> 317 [label = "A>T[3]", weight=1];
+  198 -> "198X" [label = "+1"];
+  "198X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  198 -> 318 [label = "A>T[1]", weight=1];
+  198 -> 319 [label = "A>T[2]", weight=1];
+  198 -> 320 [label = "A>T[3]", weight=1];
+  199 -> "199X" [label = "+1"];
+  "199X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  199 -> 319 [label = "A>T[1]", weight=1];
+  199 -> 321 [label = "A>T[2]", weight=1];
+  199 -> 322 [label = "A>T[3]", weight=1];
+  200 -> "200X" [label = "+1"];
+  "200X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  200 -> 320 [label = "A>T[1]", weight=1];
+  200 -> 322 [label = "A>T[2]", weight=1];
+  200 -> 323 [label = "A>T[3]", weight=1];
   201 -> "201X" [label = "+1"];
   "201X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  201 -> 234 [label = "A>T[2]", weight=1];
-  201 -> "201X" [label = "A>T[3]"];
-  "201X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  202 -> 235 [label = "+1", weight=1];
-  202 -> "202X" [label = "A>T[3]"];
+  202 -> "202X" [label = "+1"];
   "202X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   203 -> "203X" [label = "+1"];
   "203X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  203 -> 236 [label = "A>T[1]", weight=1];
-  203 -> 237 [label = "A>T[3]", weight=1];
-  203 -> 238 [label = "A>T[2]", weight=1];
-  204 -> 239 [label = "+1", weight=1];
-  204 -> 240 [label = "A>T[3]", weight=1];
-  204 -> 241 [label = "A>T[2]", weight=1];
-  205 -> 242 [label = "+1", weight=1];
-  205 -> 240 [label = "A>T[1]", weight=1];
-  205 -> 243 [label = "A>T[2]", weight=1];
-  206 -> 244 [label = "+1", weight=1];
-  206 -> 241 [label = "A>T[1]", weight=1];
-  206 -> 243 [label = "A>T[3]", weight=1];
-  207 -> 245 [label = "+1", weight=1];
-  207 -> 246 [label = "A>T[3]", weight=1];
-  207 -> 247 [label = "A>T[2]", weight=1];
-  208 -> 248 [label = "+1", weight=1];
-  208 -> 249 [label = "A>T[2]", weight=1];
-  208 -> 250 [label = "A>T[3]", weight=1];
+  204 -> "204X" [label = "+1"];
+  "204X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  205 -> "205X" [label = "+1"];
+  "205X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  206 -> "206X" [label = "+1"];
+  "206X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  207 -> "207X" [label = "+1"];
+  "207X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  208 -> "208X" [label = "+1"];
+  "208X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   209 -> "209X" [label = "+1"];
   "209X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  209 -> 251 [label = "A>T[2]", weight=1];
-  209 -> 252 [label = "A>T[3]", weight=1];
   210 -> "210X" [label = "+1"];
   "210X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  210 -> 251 [label = "A>T[1]", weight=1];
-  210 -> 253 [label = "A>T[3]", weight=1];
   211 -> "211X" [label = "+1"];
   "211X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  211 -> 252 [label = "A>T[1]", weight=1];
-  211 -> 253 [label = "A>T[2]", weight=1];
-  212 -> 254 [label = "U>T[1,]", weight=1];
-  213 -> 255 [label = "+1", weight=1];
-  213 -> 256 [label = "A>T[3]", weight=1];
-  214 -> 257 [label = "+1", weight=1];
-  214 -> 256 [label = "A>T[2]", weight=1];
-  215 -> 258 [label = "U>T[2,]", weight=1];
-  216 -> 259 [label = "+1", weight=1];
-  216 -> 256 [label = "A>T[1]", weight=1];
-  217 -> 260 [label = "U>T[3,]", weight=1];
-  218 -> 189 [label = "U>T[1,2,]"];
+  211 -> 324 [label = "A>T[1]", weight=1];
+  211 -> 325 [label = "A>T[2]", weight=1];
+  211 -> 326 [label = "A>T[3]", weight=1];
+  212 -> "212X" [label = "+1"];
+  "212X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  212 -> 325 [label = "A>T[1]", weight=1];
+  212 -> 327 [label = "A>T[2]", weight=1];
+  212 -> 328 [label = "A>T[3]", weight=1];
+  213 -> "213X" [label = "+1"];
+  "213X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  213 -> 326 [label = "A>T[1]", weight=1];
+  213 -> 328 [label = "A>T[2]", weight=1];
+  213 -> 329 [label = "A>T[3]", weight=1];
+  214 -> "214X" [label = "+1"];
+  "214X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  214 -> 327 [label = "A>T[1]", weight=1];
+  214 -> 330 [label = "A>T[2]", weight=1];
+  214 -> 331 [label = "A>T[3]", weight=1];
+  215 -> "215X" [label = "+1"];
+  "215X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  215 -> 328 [label = "A>T[1]", weight=1];
+  215 -> 331 [label = "A>T[2]", weight=1];
+  215 -> 332 [label = "A>T[3]", weight=1];
+  216 -> "216X" [label = "+1"];
+  "216X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  216 -> 329 [label = "A>T[1]", weight=1];
+  216 -> 332 [label = "A>T[2]", weight=1];
+  216 -> 333 [label = "A>T[3]", weight=1];
+  217 -> "217X" [label = "+1"];
+  "217X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  217 -> 334 [label = "A>T[1]", weight=1];
+  217 -> 335 [label = "A>T[2]", weight=1];
+  217 -> 336 [label = "A>T[3]", weight=1];
+  218 -> "218X" [label = "+1"];
+  "218X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  218 -> 335 [label = "A>T[1]", weight=1];
+  218 -> 337 [label = "A>T[2]", weight=1];
+  218 -> 338 [label = "A>T[3]", weight=1];
   219 -> "219X" [label = "+1"];
   "219X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  219 -> "219X" [label = "A>T[3]"];
-  "219X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  219 -> 261 [label = "A>T[2]", weight=1];
+  219 -> 336 [label = "A>T[1]", weight=1];
+  219 -> 338 [label = "A>T[2]", weight=1];
+  219 -> 339 [label = "A>T[3]", weight=1];
   220 -> "220X" [label = "+1"];
   "220X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  220 -> 261 [label = "A>T[1]", weight=1];
-  220 -> "220X" [label = "A>T[3]"];
-  "220X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  221 -> 262 [label = "U>T[1,]", weight=1];
-  222 -> 263 [label = "+1", weight=1];
-  222 -> "222X" [label = "A>T[3]"];
+  221 -> "221X" [label = "+1"];
+  "221X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  222 -> "222X" [label = "+1"];
   "222X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  223 -> 264 [label = "U>T[2,]", weight=1];
+  223 -> "223X" [label = "+1"];
+  "223X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   224 -> "224X" [label = "+1"];
   "224X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  224 -> "224X" [label = "A>T[3]"];
-  "224X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  224 -> 265 [label = "A>T[2]", weight=1];
-  225 -> 266 [label = "+1", weight=1];
-  225 -> "225X" [label = "A>T[3]"];
+  225 -> "225X" [label = "+1"];
   "225X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   226 -> "226X" [label = "+1"];
   "226X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  226 -> "226X" [label = "A>T[3]"];
-  "226X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   227 -> "227X" [label = "+1"];
   "227X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  227 -> 267 [label = "A>T[2]", weight=1];
-  227 -> "227X" [label = "A>T[3]"];
-  "227X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  228 -> 268 [label = "U>T[1,2,]", weight=1];
-  229 -> 269 [label = "+1", weight=1];
-  230 -> 270 [label = "U>T[1,3,]", weight=1];
+  228 -> "228X" [label = "+1"];
+  "228X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  229 -> "229X" [label = "+1"];
+  "229X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  230 -> "230X" [label = "+1"];
+  "230X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  230 -> 340 [label = "A>T[1]", weight=1];
+  230 -> 341 [label = "A>T[2]", weight=1];
+  230 -> 342 [label = "A>T[3]", weight=1];
   231 -> "231X" [label = "+1"];
   "231X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  231 -> 271 [label = "A>T[1]", weight=1];
-  231 -> "231X" [label = "A>T[3]"];
-  "231X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  232 -> 272 [label = "U>T[2,3,]", weight=1];
+  231 -> 341 [label = "A>T[1]", weight=1];
+  231 -> 343 [label = "A>T[2]", weight=1];
+  231 -> 344 [label = "A>T[3]", weight=1];
+  232 -> "232X" [label = "+1"];
+  "232X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  232 -> 342 [label = "A>T[1]", weight=1];
+  232 -> 344 [label = "A>T[2]", weight=1];
+  232 -> 345 [label = "A>T[3]", weight=1];
   233 -> "233X" [label = "+1"];
   "233X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  233 -> 273 [label = "A>T[1]", weight=1];
-  233 -> 274 [label = "A>T[2]", weight=1];
+  233 -> 343 [label = "A>T[1]", weight=1];
+  233 -> 346 [label = "A>T[2]", weight=1];
+  233 -> 347 [label = "A>T[3]", weight=1];
   234 -> "234X" [label = "+1"];
   "234X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  234 -> "234X" [label = "A>T[3]"];
-  "234X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  235 -> 275 [label = "U>T[2,]", weight=1];
+  234 -> 344 [label = "A>T[1]", weight=1];
+  234 -> 347 [label = "A>T[2]", weight=1];
+  234 -> 348 [label = "A>T[3]", weight=1];
+  235 -> "235X" [label = "+1"];
+  "235X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  235 -> 345 [label = "A>T[1]", weight=1];
+  235 -> 348 [label = "A>T[2]", weight=1];
+  235 -> 349 [label = "A>T[3]", weight=1];
   236 -> "236X" [label = "+1"];
   "236X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  236 -> 276 [label = "A>T[3]", weight=1];
-  236 -> 277 [label = "A>T[2]", weight=1];
+  236 -> 350 [label = "A>T[1]", weight=1];
+  236 -> 351 [label = "A>T[2]", weight=1];
+  236 -> 352 [label = "A>T[3]", weight=1];
   237 -> "237X" [label = "+1"];
   "237X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  237 -> 276 [label = "A>T[1]", weight=1];
-  237 -> 278 [label = "A>T[2]", weight=1];
+  237 -> 351 [label = "A>T[1]", weight=1];
+  237 -> 353 [label = "A>T[2]", weight=1];
+  237 -> 354 [label = "A>T[3]", weight=1];
   238 -> "238X" [label = "+1"];
   "238X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  238 -> 277 [label = "A>T[1]", weight=1];
-  238 -> 278 [label = "A>T[3]", weight=1];
-  239 -> 279 [label = "U>T[1,]", weight=1];
-  240 -> 280 [label = "+1", weight=1];
-  240 -> 281 [label = "A>T[2]", weight=1];
-  241 -> 282 [label = "+1", weight=1];
-  241 -> 281 [label = "A>T[3]", weight=1];
-  242 -> 283 [label = "U>T[3,]", weight=1];
-  243 -> 284 [label = "+1", weight=1];
-  243 -> 281 [label = "A>T[1]", weight=1];
-  244 -> 258 [label = "U>T[2,]", weight=1];
+  238 -> 352 [label = "A>T[1]", weight=1];
+  238 -> 354 [label = "A>T[2]", weight=1];
+  238 -> 355 [label = "A>T[3]", weight=1];
+  239 -> "239X" [label = "+1"];
+  "239X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  239 -> 353 [label = "A>T[1]", weight=1];
+  239 -> 356 [label = "A>T[2]", weight=1];
+  239 -> 357 [label = "A>T[3]", weight=1];
+  240 -> "240X" [label = "+1"];
+  "240X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  240 -> 354 [label = "A>T[1]", weight=1];
+  240 -> 357 [label = "A>T[2]", weight=1];
+  240 -> 358 [label = "A>T[3]", weight=1];
+  241 -> "241X" [label = "+1"];
+  "241X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  241 -> 355 [label = "A>T[1]", weight=1];
+  241 -> 358 [label = "A>T[2]", weight=1];
+  241 -> 359 [label = "A>T[3]", weight=1];
+  242 -> "242X" [label = "+1"];
+  "242X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  242 -> 360 [label = "A>T[1]", weight=1];
+  242 -> 361 [label = "A>T[2]", weight=1];
+  242 -> 362 [label = "A>T[3]", weight=1];
+  243 -> "243X" [label = "+1"];
+  "243X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  243 -> 361 [label = "A>T[1]", weight=1];
+  243 -> 363 [label = "A>T[2]", weight=1];
+  243 -> 364 [label = "A>T[3]", weight=1];
+  244 -> "244X" [label = "+1"];
+  "244X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  244 -> 362 [label = "A>T[1]", weight=1];
+  244 -> 364 [label = "A>T[2]", weight=1];
+  244 -> 365 [label = "A>T[3]", weight=1];
   245 -> "245X" [label = "+1"];
   "245X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  245 -> 285 [label = "A>T[3]", weight=1];
-  245 -> 286 [label = "A>T[2]", weight=1];
-  246 -> 287 [label = "+1", weight=1];
-  246 -> 288 [label = "A>T[2]", weight=1];
-  247 -> 289 [label = "+1", weight=1];
-  247 -> 288 [label = "A>T[3]", weight=1];
+  245 -> 363 [label = "A>T[1]", weight=1];
+  245 -> 366 [label = "A>T[2]", weight=1];
+  245 -> 367 [label = "A>T[3]", weight=1];
+  246 -> "246X" [label = "+1"];
+  "246X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  246 -> 364 [label = "A>T[1]", weight=1];
+  246 -> 367 [label = "A>T[2]", weight=1];
+  246 -> 368 [label = "A>T[3]", weight=1];
+  247 -> "247X" [label = "+1"];
+  "247X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  247 -> 365 [label = "A>T[1]", weight=1];
+  247 -> 368 [label = "A>T[2]", weight=1];
+  247 -> 369 [label = "A>T[3]", weight=1];
   248 -> "248X" [label = "+1"];
   "248X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  248 -> 290 [label = "A>T[2]", weight=1];
-  248 -> 291 [label = "A>T[3]", weight=1];
-  249 -> 292 [label = "+1", weight=1];
-  249 -> 293 [label = "A>T[3]", weight=1];
-  250 -> 294 [label = "+1", weight=1];
-  250 -> 293 [label = "A>T[2]", weight=1];
+  249 -> "249X" [label = "+1"];
+  "249X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  250 -> "250X" [label = "+1"];
+  "250X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   251 -> "251X" [label = "+1"];
   "251X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  251 -> 295 [label = "A>T[3]", weight=1];
   252 -> "252X" [label = "+1"];
   "252X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  252 -> 295 [label = "A>T[2]", weight=1];
   253 -> "253X" [label = "+1"];
   "253X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  253 -> 295 [label = "A>T[1]", weight=1];
   254 -> "254X" [label = "+1"];
   "254X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  254 -> 296 [label = "A>T[2]", weight=1];
-  254 -> 297 [label = "A>T[3]", weight=1];
-  255 -> 298 [label = "U>T[1,2,]", weight=1];
-  256 -> 299 [label = "+1", weight=1];
-  257 -> 300 [label = "U>T[1,3,]", weight=1];
+  255 -> "255X" [label = "+1"];
+  "255X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  256 -> "256X" [label = "+1"];
+  "256X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  257 -> "257X" [label = "+1"];
+  "257X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   258 -> "258X" [label = "+1"];
   "258X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  258 -> 301 [label = "A>T[1]", weight=1];
-  258 -> 302 [label = "A>T[3]", weight=1];
-  259 -> 303 [label = "U>T[2,3,]", weight=1];
+  258 -> 370 [label = "A>T[1]", weight=1];
+  258 -> 371 [label = "A>T[2]", weight=1];
+  258 -> 372 [label = "A>T[3]", weight=1];
+  259 -> "259X" [label = "+1"];
+  "259X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  259 -> 371 [label = "A>T[1]", weight=1];
+  259 -> 373 [label = "A>T[2]", weight=1];
+  259 -> 374 [label = "A>T[3]", weight=1];
   260 -> "260X" [label = "+1"];
   "260X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  260 -> 304 [label = "A>T[1]", weight=1];
-  260 -> 305 [label = "A>T[2]", weight=1];
+  260 -> 372 [label = "A>T[1]", weight=1];
+  260 -> 374 [label = "A>T[2]", weight=1];
+  260 -> 375 [label = "A>T[3]", weight=1];
   261 -> "261X" [label = "+1"];
   "261X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  261 -> "261X" [label = "A>T[3]"];
-  "261X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  261 -> 373 [label = "A>T[1]", weight=1];
+  261 -> 376 [label = "A>T[2]", weight=1];
+  261 -> 377 [label = "A>T[3]", weight=1];
   262 -> "262X" [label = "+1"];
   "262X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  262 -> "262X" [label = "A>T[3]"];
-  "262X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  262 -> 306 [label = "A>T[2]", weight=1];
-  263 -> 307 [label = "U>T[2,1,]", weight=1];
+  262 -> 374 [label = "A>T[1]", weight=1];
+  262 -> 377 [label = "A>T[2]", weight=1];
+  262 -> 378 [label = "A>T[3]", weight=1];
+  263 -> "263X" [label = "+1"];
+  "263X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  263 -> 375 [label = "A>T[1]", weight=1];
+  263 -> 378 [label = "A>T[2]", weight=1];
+  263 -> 379 [label = "A>T[3]", weight=1];
   264 -> "264X" [label = "+1"];
   "264X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  264 -> 308 [label = "A>T[1]", weight=1];
-  264 -> "264X" [label = "A>T[3]"];
-  "264X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  264 -> 380 [label = "A>T[1]", weight=1];
+  264 -> 381 [label = "A>T[2]", weight=1];
+  264 -> 382 [label = "A>T[3]", weight=1];
   265 -> "265X" [label = "+1"];
   "265X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  265 -> "265X" [label = "A>T[3]"];
-  "265X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  266 -> 275 [label = "U>T[2,]", weight=1];
+  265 -> 381 [label = "A>T[1]", weight=1];
+  265 -> 383 [label = "A>T[2]", weight=1];
+  265 -> 384 [label = "A>T[3]", weight=1];
+  266 -> "266X" [label = "+1"];
+  "266X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  266 -> 382 [label = "A>T[1]", weight=1];
+  266 -> 384 [label = "A>T[2]", weight=1];
+  266 -> 385 [label = "A>T[3]", weight=1];
   267 -> "267X" [label = "+1"];
   "267X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  267 -> "267X" [label = "A>T[3]"];
-  "267X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  267 -> 383 [label = "A>T[1]", weight=1];
+  267 -> 386 [label = "A>T[2]", weight=1];
+  267 -> 387 [label = "A>T[3]", weight=1];
   268 -> "268X" [label = "+1"];
   "268X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  268 -> "268X" [label = "A>T[3]"];
-  "268X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  269 -> 309 [label = "U>T[1,3,2,]", weight=1];
+  268 -> 384 [label = "A>T[1]", weight=1];
+  268 -> 387 [label = "A>T[2]", weight=1];
+  268 -> 388 [label = "A>T[3]", weight=1];
+  269 -> "269X" [label = "+1"];
+  "269X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  269 -> 385 [label = "A>T[1]", weight=1];
+  269 -> 388 [label = "A>T[2]", weight=1];
+  269 -> 389 [label = "A>T[3]", weight=1];
   270 -> "270X" [label = "+1"];
   "270X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  270 -> 310 [label = "A>T[2]", weight=1];
   271 -> "271X" [label = "+1"];
-  "271X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  271 -> "271X" [label = "A>T[3]"];
   "271X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   272 -> "272X" [label = "+1"];
   "272X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  272 -> 311 [label = "A>T[1]", weight=1];
   273 -> "273X" [label = "+1"];
   "273X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  273 -> 312 [label = "A>T[2]", weight=1];
   274 -> "274X" [label = "+1"];
   "274X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  274 -> 312 [label = "A>T[1]", weight=1];
   275 -> "275X" [label = "+1"];
   "275X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  275 -> 313 [label = "A>T[3]", weight=1];
   276 -> "276X" [label = "+1"];
   "276X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  276 -> 314 [label = "A>T[2]", weight=1];
   277 -> "277X" [label = "+1"];
   "277X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  277 -> 314 [label = "A>T[3]", weight=1];
   278 -> "278X" [label = "+1"];
   "278X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  278 -> 314 [label = "A>T[1]", weight=1];
   279 -> "279X" [label = "+1"];
   "279X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  279 -> "279X" [label = "A>T[3]"];
-  "279X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  279 -> 315 [label = "A>T[2]", weight=1];
-  280 -> 316 [label = "U>T[3,1,]", weight=1];
-  281 -> 317 [label = "+1", weight=1];
-  282 -> 298 [label = "U>T[1,2,]", weight=1];
+  280 -> "280X" [label = "+1"];
+  "280X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  280 -> 390 [label = "A>T[1]", weight=1];
+  280 -> 391 [label = "A>T[2]", weight=1];
+  280 -> 392 [label = "A>T[3]", weight=1];
+  281 -> "281X" [label = "+1"];
+  "281X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  281 -> 391 [label = "A>T[1]", weight=1];
+  281 -> 393 [label = "A>T[2]", weight=1];
+  281 -> 394 [label = "A>T[3]", weight=1];
+  282 -> "282X" [label = "+1"];
+  "282X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  282 -> 392 [label = "A>T[1]", weight=1];
+  282 -> 394 [label = "A>T[2]", weight=1];
+  282 -> 395 [label = "A>T[3]", weight=1];
   283 -> "283X" [label = "+1"];
   "283X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  283 -> 318 [label = "A>T[1]", weight=1];
-  283 -> 319 [label = "A>T[2]", weight=1];
-  284 -> 303 [label = "U>T[2,3,]", weight=1];
+  283 -> 393 [label = "A>T[1]", weight=1];
+  283 -> 396 [label = "A>T[2]", weight=1];
+  283 -> 397 [label = "A>T[3]", weight=1];
+  284 -> "284X" [label = "+1"];
+  "284X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  284 -> 394 [label = "A>T[1]", weight=1];
+  284 -> 397 [label = "A>T[2]", weight=1];
+  284 -> 398 [label = "A>T[3]", weight=1];
   285 -> "285X" [label = "+1"];
   "285X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  285 -> 320 [label = "A>T[2]", weight=1];
+  285 -> 395 [label = "A>T[1]", weight=1];
+  285 -> 398 [label = "A>T[2]", weight=1];
+  285 -> 399 [label = "A>T[3]", weight=1];
   286 -> "286X" [label = "+1"];
   "286X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  286 -> 320 [label = "A>T[3]", weight=1];
-  287 -> 321 [label = "U>T[3,]", weight=1];
-  288 -> 322 [label = "+1", weight=1];
-  289 -> 275 [label = "U>T[2,]"];
+  287 -> "287X" [label = "+1"];
+  "287X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  288 -> "288X" [label = "+1"];
+  "288X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  289 -> "289X" [label = "+1"];
+  "289X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   290 -> "290X" [label = "+1"];
   "290X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  290 -> 323 [label = "A>T[3]", weight=1];
   291 -> "291X" [label = "+1"];
   "291X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  291 -> 323 [label = "A>T[2]", weight=1];
-  292 -> 275 [label = "U>T[2,]"];
-  293 -> 324 [label = "+1", weight=1];
-  294 -> 325 [label = "U>T[3,]", weight=1];
-  295 -> 326 [label = "+1", weight=1];
+  292 -> "292X" [label = "+1"];
+  "292X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  293 -> "293X" [label = "+1"];
+  "293X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  294 -> "294X" [label = "+1"];
+  "294X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  295 -> "295X" [label = "+1"];
+  "295X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   296 -> "296X" [label = "+1"];
   "296X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  296 -> 327 [label = "A>T[3]", weight=1];
+  296 -> 400 [label = "A>T[1]", weight=1];
+  296 -> 401 [label = "A>T[2]", weight=1];
+  296 -> 402 [label = "A>T[3]", weight=1];
   297 -> "297X" [label = "+1"];
   "297X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  297 -> 327 [label = "A>T[2]", weight=1];
+  297 -> 401 [label = "A>T[1]", weight=1];
+  297 -> 403 [label = "A>T[2]", weight=1];
+  297 -> 404 [label = "A>T[3]", weight=1];
   298 -> "298X" [label = "+1"];
   "298X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  298 -> "298X" [label = "A>T[3]"];
-  "298X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  299 -> 328 [label = "U>T[1,3,2,]", weight=1];
+  298 -> 402 [label = "A>T[1]", weight=1];
+  298 -> 404 [label = "A>T[2]", weight=1];
+  298 -> 405 [label = "A>T[3]", weight=1];
+  299 -> "299X" [label = "+1"];
+  "299X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  299 -> 403 [label = "A>T[1]", weight=1];
+  299 -> 406 [label = "A>T[2]", weight=1];
+  299 -> 407 [label = "A>T[3]", weight=1];
   300 -> "300X" [label = "+1"];
   "300X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  300 -> 329 [label = "A>T[2]", weight=1];
+  300 -> 404 [label = "A>T[1]", weight=1];
+  300 -> 407 [label = "A>T[2]", weight=1];
+  300 -> 408 [label = "A>T[3]", weight=1];
   301 -> "301X" [label = "+1"];
   "301X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  301 -> 330 [label = "A>T[3]", weight=1];
+  301 -> 405 [label = "A>T[1]", weight=1];
+  301 -> 408 [label = "A>T[2]", weight=1];
+  301 -> 409 [label = "A>T[3]", weight=1];
   302 -> "302X" [label = "+1"];
   "302X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  302 -> 330 [label = "A>T[1]", weight=1];
+  302 -> 410 [label = "A>T[1]", weight=1];
+  302 -> 411 [label = "A>T[2]", weight=1];
+  302 -> 412 [label = "A>T[3]", weight=1];
   303 -> "303X" [label = "+1"];
   "303X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  303 -> 331 [label = "A>T[1]", weight=1];
+  303 -> 411 [label = "A>T[1]", weight=1];
+  303 -> 413 [label = "A>T[2]", weight=1];
+  303 -> 414 [label = "A>T[3]", weight=1];
   304 -> "304X" [label = "+1"];
   "304X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  304 -> 332 [label = "A>T[2]", weight=1];
+  304 -> 412 [label = "A>T[1]", weight=1];
+  304 -> 414 [label = "A>T[2]", weight=1];
+  304 -> 415 [label = "A>T[3]", weight=1];
   305 -> "305X" [label = "+1"];
   "305X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  305 -> 332 [label = "A>T[1]", weight=1];
+  305 -> 413 [label = "A>T[1]", weight=1];
+  305 -> 416 [label = "A>T[2]", weight=1];
+  305 -> 417 [label = "A>T[3]", weight=1];
   306 -> "306X" [label = "+1"];
   "306X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  306 -> "306X" [label = "A>T[3]"];
-  "306X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  306 -> 414 [label = "A>T[1]", weight=1];
+  306 -> 417 [label = "A>T[2]", weight=1];
+  306 -> 418 [label = "A>T[3]", weight=1];
   307 -> "307X" [label = "+1"];
   "307X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  307 -> "307X" [label = "A>T[3]"];
-  "307X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  307 -> 415 [label = "A>T[1]", weight=1];
+  307 -> 418 [label = "A>T[2]", weight=1];
+  307 -> 419 [label = "A>T[3]", weight=1];
   308 -> "308X" [label = "+1"];
   "308X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  308 -> "308X" [label = "A>T[3]"];
-  "308X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  309 -> 333 [label = "+1", weight=1];
-  310 -> 334 [label = "+1", weight=1];
-  311 -> 335 [label = "+1", weight=1];
-  312 -> 336 [label = "+1", weight=1];
-  313 -> 337 [label = "+1", weight=1];
-  314 -> 338 [label = "+1", weight=1];
+  309 -> "309X" [label = "+1"];
+  "309X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  310 -> "310X" [label = "+1"];
+  "310X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  311 -> "311X" [label = "+1"];
+  "311X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  312 -> "312X" [label = "+1"];
+  "312X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  313 -> "313X" [label = "+1"];
+  "313X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  314 -> "314X" [label = "+1"];
+  "314X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   315 -> "315X" [label = "+1"];
-  "315X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  315 -> "315X" [label = "A>T[3]"];
   "315X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   316 -> "316X" [label = "+1"];
   "316X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  316 -> 339 [label = "A>T[2]", weight=1];
-  317 -> 328 [label = "U>T[3,1,2,]", weight=1];
+  317 -> "317X" [label = "+1"];
+  "317X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   318 -> "318X" [label = "+1"];
   "318X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  318 -> 340 [label = "A>T[2]", weight=1];
+  318 -> 420 [label = "A>T[1]", weight=1];
+  318 -> 421 [label = "A>T[2]", weight=1];
+  318 -> 422 [label = "A>T[3]", weight=1];
   319 -> "319X" [label = "+1"];
   "319X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  319 -> 340 [label = "A>T[1]", weight=1];
-  320 -> 341 [label = "+1", weight=1];
+  319 -> 421 [label = "A>T[1]", weight=1];
+  319 -> 423 [label = "A>T[2]", weight=1];
+  319 -> 424 [label = "A>T[3]", weight=1];
+  320 -> "320X" [label = "+1"];
+  "320X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  320 -> 422 [label = "A>T[1]", weight=1];
+  320 -> 424 [label = "A>T[2]", weight=1];
+  320 -> 425 [label = "A>T[3]", weight=1];
   321 -> "321X" [label = "+1"];
   "321X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  321 -> 342 [label = "A>T[2]", weight=1];
-  322 -> 343 [label = "U>T[2,3,]", weight=1];
-  323 -> 344 [label = "+1", weight=1];
-  324 -> 343 [label = "U>T[2,3,]", weight=1];
+  321 -> 423 [label = "A>T[1]", weight=1];
+  321 -> 426 [label = "A>T[2]", weight=1];
+  321 -> 427 [label = "A>T[3]", weight=1];
+  322 -> "322X" [label = "+1"];
+  "322X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  322 -> 424 [label = "A>T[1]", weight=1];
+  322 -> 427 [label = "A>T[2]", weight=1];
+  322 -> 428 [label = "A>T[3]", weight=1];
+  323 -> "323X" [label = "+1"];
+  "323X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  323 -> 425 [label = "A>T[1]", weight=1];
+  323 -> 428 [label = "A>T[2]", weight=1];
+  323 -> 429 [label = "A>T[3]", weight=1];
+  324 -> "324X" [label = "+1"];
+  "324X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   325 -> "325X" [label = "+1"];
   "325X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  325 -> 345 [label = "A>T[2]", weight=1];
-  326 -> 346 [label = "U>T[1,3,2,]", weight=1];
-  327 -> 347 [label = "+1", weight=1];
-  328 -> 348 [label = "+1", weight=1];
-  329 -> 349 [label = "+1", weight=1];
-  330 -> 350 [label = "+1", weight=1];
-  331 -> 351 [label = "+1", weight=1];
-  332 -> 352 [label = "+1", weight=1];
-  333 -> 353 [label = "+1", weight=1];
-  333 -> "333X" [label = "A>T[3]"];
+  326 -> "326X" [label = "+1"];
+  "326X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  327 -> "327X" [label = "+1"];
+  "327X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  328 -> "328X" [label = "+1"];
+  "328X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  329 -> "329X" [label = "+1"];
+  "329X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  330 -> "330X" [label = "+1"];
+  "330X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  331 -> "331X" [label = "+1"];
+  "331X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  332 -> "332X" [label = "+1"];
+  "332X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  333 -> "333X" [label = "+1"];
   "333X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  333 -> 354 [label = "A>T[2]", weight=1];
-  333 -> 355 [label = "A>T[1]", weight=1];
-  334 -> 356 [label = "U>T[2,]", weight=1];
-  335 -> 357 [label = "U>T[1,]", weight=1];
-  336 -> 357 [label = "U>T[1,2,]", weight=1];
-  337 -> 358 [label = "U>T[3,]", weight=1];
-  338 -> 346 [label = "U>T[1,3,2,]", weight=1];
-  339 -> 359 [label = "+1", weight=1];
-  340 -> 360 [label = "+1", weight=1];
-  341 -> 358 [label = "U>T[3,2,]", weight=1];
-  342 -> 361 [label = "+1", weight=1];
-  343 -> 358 [label = "+1", weight=1];
-  344 -> 358 [label = "U>T[2,3,]", weight=1];
-  345 -> 362 [label = "+1", weight=1];
-  346 -> 363 [label = "+1", weight=1];
-  346 -> "346X" [label = "A>T[3]"];
+  334 -> "334X" [label = "+1"];
+  "334X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  334 -> 430 [label = "A>T[1]", weight=1];
+  334 -> 431 [label = "A>T[2]", weight=1];
+  334 -> 432 [label = "A>T[3]", weight=1];
+  335 -> "335X" [label = "+1"];
+  "335X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  335 -> 431 [label = "A>T[1]", weight=1];
+  335 -> 433 [label = "A>T[2]", weight=1];
+  335 -> 434 [label = "A>T[3]", weight=1];
+  336 -> "336X" [label = "+1"];
+  "336X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  336 -> 432 [label = "A>T[1]", weight=1];
+  336 -> 434 [label = "A>T[2]", weight=1];
+  336 -> 435 [label = "A>T[3]", weight=1];
+  337 -> "337X" [label = "+1"];
+  "337X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  337 -> 433 [label = "A>T[1]", weight=1];
+  337 -> 436 [label = "A>T[2]", weight=1];
+  337 -> 437 [label = "A>T[3]", weight=1];
+  338 -> "338X" [label = "+1"];
+  "338X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  338 -> 434 [label = "A>T[1]", weight=1];
+  338 -> 437 [label = "A>T[2]", weight=1];
+  338 -> 438 [label = "A>T[3]", weight=1];
+  339 -> "339X" [label = "+1"];
+  "339X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  339 -> 435 [label = "A>T[1]", weight=1];
+  339 -> 438 [label = "A>T[2]", weight=1];
+  339 -> 439 [label = "A>T[3]", weight=1];
+  340 -> "340X" [label = "+1"];
+  "340X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  341 -> "341X" [label = "+1"];
+  "341X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  342 -> "342X" [label = "+1"];
+  "342X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  343 -> "343X" [label = "+1"];
+  "343X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  344 -> "344X" [label = "+1"];
+  "344X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  345 -> "345X" [label = "+1"];
+  "345X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  346 -> "346X" [label = "+1"];
   "346X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  346 -> 364 [label = "A>T[1]", weight=1];
-  346 -> 365 [label = "A>T[2]", weight=1];
-  347 -> 356 [label = "U>T[2,3,]", weight=1];
-  348 -> 366 [label = "+1", weight=1];
-  348 -> 367 [label = "A>T[2]", weight=1];
-  348 -> "348X" [label = "A>T[3]"];
+  347 -> "347X" [label = "+1"];
+  "347X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  348 -> "348X" [label = "+1"];
   "348X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  348 -> 368 [label = "A>T[1]", weight=1];
-  349 -> 356 [label = "U>T[2,]", weight=1];
-  350 -> 346 [label = "U>T[1,3,]"];
-  351 -> 346 [label = "U>T[1,]"];
-  352 -> 346 [label = "U>T[1,2,]"];
+  349 -> "349X" [label = "+1"];
+  "349X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  350 -> "350X" [label = "+1"];
+  "350X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  351 -> "351X" [label = "+1"];
+  "351X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  352 -> "352X" [label = "+1"];
+  "352X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   353 -> "353X" [label = "+1"];
   "353X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  353 -> "353X" [label = "A>T[3]"];
-  "353X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  353 -> 369 [label = "A>T[2]", weight=1];
-  353 -> 370 [label = "A>T[1]", weight=1];
-  354 -> 371 [label = "+1", weight=1];
-  354 -> "354X" [label = "A>T[3]"];
+  354 -> "354X" [label = "+1"];
   "354X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  354 -> 372 [label = "A>T[1]", weight=1];
-  355 -> 373 [label = "+1", weight=1];
-  355 -> "355X" [label = "A>T[3]"];
+  355 -> "355X" [label = "+1"];
   "355X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  355 -> 372 [label = "A>T[2]", weight=1];
-  356 -> 374 [label = "+1", weight=1];
-  356 -> 375 [label = "A>T[3]", weight=1];
-  356 -> 376 [label = "A>T[2]", weight=1];
-  356 -> 377 [label = "A>T[1]", weight=1];
-  357 -> 378 [label = "+1", weight=1];
-  357 -> "357X" [label = "A>T[3]"];
+  356 -> "356X" [label = "+1"];
+  "356X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  357 -> "357X" [label = "+1"];
   "357X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  357 -> 379 [label = "A>T[2]", weight=1];
-  357 -> 380 [label = "A>T[1]", weight=1];
-  358 -> 381 [label = "+1", weight=1];
-  358 -> 382 [label = "A>T[1]", weight=1];
-  358 -> 383 [label = "A>T[2]", weight=1];
-  358 -> 384 [label = "A>T[3]", weight=1];
-  359 -> 356 [label = "U>T[2,]"];
-  360 -> 346 [label = "U>T[1,2,]"];
-  361 -> 358 [label = "U>T[2,]"];
-  362 -> 358 [label = "U>T[2,]"];
+  358 -> "358X" [label = "+1"];
+  "358X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  359 -> "359X" [label = "+1"];
+  "359X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  360 -> "360X" [label = "+1"];
+  "360X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  361 -> "361X" [label = "+1"];
+  "361X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  362 -> "362X" [label = "+1"];
+  "362X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   363 -> "363X" [label = "+1"];
   "363X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  363 -> "363X" [label = "A>T[3]"];
-  "363X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  363 -> 385 [label = "A>T[1]", weight=1];
-  363 -> 386 [label = "A>T[2]", weight=1];
-  364 -> 387 [label = "+1", weight=1];
-  364 -> "364X" [label = "A>T[3]"];
+  364 -> "364X" [label = "+1"];
   "364X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  364 -> 388 [label = "A>T[2]", weight=1];
-  365 -> 389 [label = "+1", weight=1];
-  365 -> "365X" [label = "A>T[3]"];
+  365 -> "365X" [label = "+1"];
   "365X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  365 -> 388 [label = "A>T[1]", weight=1];
   366 -> "366X" [label = "+1"];
   "366X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  366 -> 390 [label = "A>T[2]", weight=1];
-  366 -> "366X" [label = "A>T[3]"];
-  "366X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  366 -> 391 [label = "A>T[1]", weight=1];
-  367 -> 392 [label = "+1", weight=1];
-  367 -> "367X" [label = "A>T[3]"];
+  367 -> "367X" [label = "+1"];
   "367X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  367 -> 393 [label = "A>T[1]", weight=1];
-  368 -> 394 [label = "+1", weight=1];
-  368 -> 393 [label = "A>T[2]", weight=1];
-  368 -> "368X" [label = "A>T[3]"];
+  368 -> "368X" [label = "+1"];
   "368X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   369 -> "369X" [label = "+1"];
   "369X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  369 -> "369X" [label = "A>T[3]"];
-  "369X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  369 -> 395 [label = "A>T[1]", weight=1];
   370 -> "370X" [label = "+1"];
   "370X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  370 -> "370X" [label = "A>T[3]"];
-  "370X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  370 -> 395 [label = "A>T[2]", weight=1];
-  371 -> 396 [label = "U>T[2,]", weight=1];
-  372 -> 397 [label = "+1", weight=1];
-  372 -> "372X" [label = "A>T[3]"];
+  371 -> "371X" [label = "+1"];
+  "371X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  372 -> "372X" [label = "+1"];
   "372X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  373 -> 398 [label = "U>T[1,]", weight=1];
+  373 -> "373X" [label = "+1"];
+  "373X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   374 -> "374X" [label = "+1"];
   "374X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  374 -> 399 [label = "A>T[3]", weight=1];
-  374 -> 400 [label = "A>T[2]", weight=1];
-  374 -> 401 [label = "A>T[1]", weight=1];
-  375 -> 402 [label = "+1", weight=1];
-  375 -> 403 [label = "A>T[2]", weight=1];
-  375 -> 404 [label = "A>T[1]", weight=1];
-  376 -> 405 [label = "+1", weight=1];
-  376 -> 403 [label = "A>T[3]", weight=1];
-  376 -> 406 [label = "A>T[1]", weight=1];
-  377 -> 407 [label = "+1", weight=1];
-  377 -> 404 [label = "A>T[3]", weight=1];
-  377 -> 406 [label = "A>T[2]", weight=1];
+  375 -> "375X" [label = "+1"];
+  "375X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  376 -> "376X" [label = "+1"];
+  "376X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  377 -> "377X" [label = "+1"];
+  "377X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   378 -> "378X" [label = "+1"];
   "378X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  378 -> "378X" [label = "A>T[3]"];
-  "378X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  378 -> 408 [label = "A>T[2]", weight=1];
-  378 -> 409 [label = "A>T[1]", weight=1];
-  379 -> 410 [label = "+1", weight=1];
-  379 -> "379X" [label = "A>T[3]"];
+  379 -> "379X" [label = "+1"];
   "379X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  379 -> 411 [label = "A>T[1]", weight=1];
-  380 -> 412 [label = "+1", weight=1];
-  380 -> "380X" [label = "A>T[3]"];
+  380 -> "380X" [label = "+1"];
   "380X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  380 -> 411 [label = "A>T[2]", weight=1];
   381 -> "381X" [label = "+1"];
   "381X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  381 -> 413 [label = "A>T[1]", weight=1];
-  381 -> 414 [label = "A>T[2]", weight=1];
-  381 -> "381X" [label = "A>T[3]"];
-  "381X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  382 -> 415 [label = "+1", weight=1];
-  382 -> 416 [label = "A>T[2]", weight=1];
-  382 -> 417 [label = "A>T[3]", weight=1];
-  383 -> 418 [label = "+1", weight=1];
-  383 -> 416 [label = "A>T[1]", weight=1];
-  383 -> 419 [label = "A>T[3]", weight=1];
-  384 -> 420 [label = "+1", weight=1];
-  384 -> 417 [label = "A>T[1]", weight=1];
-  384 -> 419 [label = "A>T[2]", weight=1];
+  382 -> "382X" [label = "+1"];
+  "382X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  383 -> "383X" [label = "+1"];
+  "383X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  384 -> "384X" [label = "+1"];
+  "384X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   385 -> "385X" [label = "+1"];
   "385X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  385 -> "385X" [label = "A>T[3]"];
-  "385X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  385 -> 421 [label = "A>T[2]", weight=1];
   386 -> "386X" [label = "+1"];
   "386X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  386 -> "386X" [label = "A>T[3]"];
-  "386X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  386 -> 421 [label = "A>T[1]", weight=1];
-  387 -> 422 [label = "U>T[1,]", weight=1];
-  388 -> 423 [label = "+1", weight=1];
-  388 -> "388X" [label = "A>T[3]"];
+  387 -> "387X" [label = "+1"];
+  "387X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  388 -> "388X" [label = "+1"];
   "388X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  389 -> 424 [label = "U>T[2,]", weight=1];
+  389 -> "389X" [label = "+1"];
+  "389X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   390 -> "390X" [label = "+1"];
   "390X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  390 -> "390X" [label = "A>T[3]"];
-  "390X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  390 -> 425 [label = "A>T[1]", weight=1];
   391 -> "391X" [label = "+1"];
   "391X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  391 -> 425 [label = "A>T[2]", weight=1];
-  391 -> "391X" [label = "A>T[3]"];
-  "391X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  392 -> 396 [label = "U>T[2,]", weight=1];
-  393 -> 426 [label = "+1", weight=1];
-  393 -> "393X" [label = "A>T[3]"];
+  392 -> "392X" [label = "+1"];
+  "392X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  393 -> "393X" [label = "+1"];
   "393X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  394 -> 422 [label = "U>T[1,]", weight=1];
+  394 -> "394X" [label = "+1"];
+  "394X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   395 -> "395X" [label = "+1"];
-  "395X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  395 -> "395X" [label = "A>T[3]"];
   "395X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   396 -> "396X" [label = "+1"];
   "396X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  396 -> 427 [label = "A>T[3]", weight=1];
-  396 -> 428 [label = "A>T[1]", weight=1];
-  397 -> 429 [label = "U>T[2,1,]", weight=1];
+  397 -> "397X" [label = "+1"];
+  "397X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   398 -> "398X" [label = "+1"];
   "398X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  398 -> "398X" [label = "A>T[3]"];
-  "398X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  398 -> 430 [label = "A>T[2]", weight=1];
   399 -> "399X" [label = "+1"];
   "399X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  399 -> 431 [label = "A>T[2]", weight=1];
-  399 -> 432 [label = "A>T[1]", weight=1];
   400 -> "400X" [label = "+1"];
   "400X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  400 -> 431 [label = "A>T[3]", weight=1];
-  400 -> 433 [label = "A>T[1]", weight=1];
   401 -> "401X" [label = "+1"];
   "401X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  401 -> 432 [label = "A>T[3]", weight=1];
-  401 -> 433 [label = "A>T[2]", weight=1];
-  402 -> 434 [label = "U>T[3,]", weight=1];
-  403 -> 435 [label = "+1", weight=1];
-  403 -> 436 [label = "A>T[1]", weight=1];
-  404 -> 437 [label = "+1", weight=1];
-  404 -> 436 [label = "A>T[2]", weight=1];
-  405 -> 396 [label = "U>T[2,]"];
-  406 -> 438 [label = "+1", weight=1];
-  406 -> 436 [label = "A>T[3]", weight=1];
-  407 -> 439 [label = "U>T[1,]", weight=1];
+  402 -> "402X" [label = "+1"];
+  "402X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  403 -> "403X" [label = "+1"];
+  "403X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  404 -> "404X" [label = "+1"];
+  "404X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  405 -> "405X" [label = "+1"];
+  "405X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  406 -> "406X" [label = "+1"];
+  "406X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  407 -> "407X" [label = "+1"];
+  "407X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   408 -> "408X" [label = "+1"];
   "408X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  408 -> "408X" [label = "A>T[3]"];
-  "408X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  408 -> 440 [label = "A>T[1]", weight=1];
   409 -> "409X" [label = "+1"];
   "409X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  409 -> "409X" [label = "A>T[3]"];
-  "409X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  409 -> 440 [label = "A>T[2]", weight=1];
-  410 -> 424 [label = "U>T[2,]", weight=1];
-  411 -> 441 [label = "+1", weight=1];
-  411 -> "411X" [label = "A>T[3]"];
+  410 -> "410X" [label = "+1"];
+  "410X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  411 -> "411X" [label = "+1"];
   "411X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  412 -> 398 [label = "U>T[1,]"];
+  412 -> "412X" [label = "+1"];
+  "412X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   413 -> "413X" [label = "+1"];
-  "413X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  413 -> 442 [label = "A>T[2]", weight=1];
-  413 -> "413X" [label = "A>T[3]"];
   "413X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   414 -> "414X" [label = "+1"];
   "414X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  414 -> 442 [label = "A>T[1]", weight=1];
-  414 -> "414X" [label = "A>T[3]"];
-  "414X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  415 -> 443 [label = "U>T[1,]", weight=1];
-  416 -> 444 [label = "+1", weight=1];
-  416 -> 445 [label = "A>T[3]", weight=1];
-  417 -> 446 [label = "+1", weight=1];
-  417 -> 445 [label = "A>T[2]", weight=1];
-  418 -> 447 [label = "U>T[2,]", weight=1];
-  419 -> 448 [label = "+1", weight=1];
-  419 -> 445 [label = "A>T[1]", weight=1];
-  420 -> 449 [label = "U>T[3,]", weight=1];
+  415 -> "415X" [label = "+1"];
+  "415X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  416 -> "416X" [label = "+1"];
+  "416X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  417 -> "417X" [label = "+1"];
+  "417X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  418 -> "418X" [label = "+1"];
+  "418X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  419 -> "419X" [label = "+1"];
+  "419X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  420 -> "420X" [label = "+1"];
+  "420X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   421 -> "421X" [label = "+1"];
-  "421X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  421 -> "421X" [label = "A>T[3]"];
   "421X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   422 -> "422X" [label = "+1"];
   "422X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  422 -> "422X" [label = "A>T[3]"];
-  "422X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  422 -> 450 [label = "A>T[2]", weight=1];
-  423 -> 451 [label = "U>T[2,1,]", weight=1];
+  423 -> "423X" [label = "+1"];
+  "423X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   424 -> "424X" [label = "+1"];
   "424X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  424 -> 452 [label = "A>T[3]", weight=1];
-  424 -> 453 [label = "A>T[1]", weight=1];
   425 -> "425X" [label = "+1"];
   "425X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  425 -> "425X" [label = "A>T[3]"];
-  "425X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  426 -> 429 [label = "U>T[1,2,]", weight=1];
-  427 -> 454 [label = "+1", weight=1];
-  427 -> 455 [label = "A>T[1]", weight=1];
+  426 -> "426X" [label = "+1"];
+  "426X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  427 -> "427X" [label = "+1"];
+  "427X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   428 -> "428X" [label = "+1"];
   "428X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  428 -> 455 [label = "A>T[3]", weight=1];
   429 -> "429X" [label = "+1"];
-  "429X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  429 -> "429X" [label = "A>T[3]"];
   "429X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   430 -> "430X" [label = "+1"];
   "430X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  430 -> "430X" [label = "A>T[3]"];
-  "430X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  431 -> 456 [label = "+1", weight=1];
-  431 -> 457 [label = "A>T[1]", weight=1];
+  431 -> "431X" [label = "+1"];
+  "431X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   432 -> "432X" [label = "+1"];
   "432X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  432 -> 457 [label = "A>T[2]", weight=1];
   433 -> "433X" [label = "+1"];
   "433X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  433 -> 457 [label = "A>T[3]", weight=1];
   434 -> "434X" [label = "+1"];
   "434X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  434 -> 458 [label = "A>T[2]", weight=1];
-  434 -> 459 [label = "A>T[1]", weight=1];
-  435 -> 460 [label = "U>T[2,3,]", weight=1];
-  436 -> 461 [label = "+1", weight=1];
-  437 -> 462 [label = "U>T[1,3,]", weight=1];
-  438 -> 429 [label = "U>T[2,1,]"];
+  435 -> "435X" [label = "+1"];
+  "435X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  436 -> "436X" [label = "+1"];
+  "436X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  437 -> "437X" [label = "+1"];
+  "437X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
+  438 -> "438X" [label = "+1"];
+  "438X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
   439 -> "439X" [label = "+1"];
   "439X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  439 -> "439X" [label = "A>T[3]"];
-  "439X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  439 -> 463 [label = "A>T[2]", weight=1];
-  440 -> "440X" [label = "+1"];
-  "440X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  440 -> "440X" [label = "A>T[3]"];
-  "440X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  441 -> 451 [label = "U>T[2,1,]", weight=1];
-  442 -> "442X" [label = "+1"];
-  "442X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  442 -> "442X" [label = "A>T[3]"];
-  "442X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  443 -> "443X" [label = "+1"];
-  "443X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  443 -> 464 [label = "A>T[2]", weight=1];
-  443 -> "443X" [label = "A>T[3]"];
-  "443X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  444 -> 465 [label = "U>T[1,2,]", weight=1];
-  445 -> 466 [label = "+1", weight=1];
-  446 -> 467 [label = "U>T[1,3,]", weight=1];
-  447 -> "447X" [label = "+1"];
-  "447X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  447 -> 468 [label = "A>T[1]", weight=1];
-  447 -> "447X" [label = "A>T[3]"];
-  "447X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  448 -> 469 [label = "U>T[2,3,]", weight=1];
-  449 -> "449X" [label = "+1"];
-  "449X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  449 -> 470 [label = "A>T[1]", weight=1];
-  449 -> 471 [label = "A>T[2]", weight=1];
-  450 -> "450X" [label = "+1"];
-  "450X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  450 -> "450X" [label = "A>T[3]"];
-  "450X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  451 -> "451X" [label = "+1"];
-  "451X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  451 -> 472 [label = "A>T[3]", weight=1];
-  452 -> 473 [label = "+1", weight=1];
-  452 -> 474 [label = "A>T[1]", weight=1];
-  453 -> "453X" [label = "+1"];
-  "453X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  453 -> 474 [label = "A>T[3]", weight=1];
-  454 -> 475 [label = "U>T[3,]", weight=1];
-  455 -> 476 [label = "+1", weight=1];
-  456 -> 475 [label = "U>T[2,3,]", weight=1];
-  457 -> 477 [label = "+1", weight=1];
-  458 -> 478 [label = "+1", weight=1];
-  458 -> 479 [label = "A>T[1]", weight=1];
-  459 -> "459X" [label = "+1"];
-  "459X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  459 -> 479 [label = "A>T[2]", weight=1];
-  460 -> 475 [label = "+1", weight=1];
-  460 -> 480 [label = "A>T[1]", weight=1];
-  461 -> 481 [label = "U>T[1,2,3,]", weight=1];
-  462 -> "462X" [label = "+1"];
-  "462X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  462 -> 482 [label = "A>T[2]", weight=1];
-  463 -> "463X" [label = "+1"];
-  "463X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  463 -> "463X" [label = "A>T[3]"];
-  "463X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  464 -> "464X" [label = "+1"];
-  "464X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  464 -> "464X" [label = "A>T[3]"];
-  "464X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  465 -> "465X" [label = "+1"];
-  "465X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  465 -> "465X" [label = "A>T[3]"];
-  "465X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  466 -> 483 [label = "U>T[1,3,2,]", weight=1];
-  467 -> "467X" [label = "+1"];
-  "467X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  467 -> 484 [label = "A>T[2]", weight=1];
-  468 -> "468X" [label = "+1"];
-  "468X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  468 -> "468X" [label = "A>T[3]"];
-  "468X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  469 -> 485 [label = "+1", weight=1];
-  469 -> 486 [label = "A>T[1]", weight=1];
-  470 -> "470X" [label = "+1"];
-  "470X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  470 -> 487 [label = "A>T[2]", weight=1];
-  471 -> 488 [label = "+1", weight=1];
-  471 -> 487 [label = "A>T[1]", weight=1];
-  472 -> 489 [label = "+1", weight=1];
-  473 -> 490 [label = "U>T[3,]", weight=1];
-  474 -> 491 [label = "+1", weight=1];
-  475 -> "475X" [label = "+1"];
-  "475X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  475 -> 492 [label = "A>T[1]", weight=1];
-  475 -> "475X" [label = "A>T[3]"];
-  "475X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  475 -> 493 [label = "A>T[2]", weight=1];
-  476 -> 494 [label = "U>T[1,3,]", weight=1];
-  477 -> 494 [label = "U>T[2,3,1,]", weight=1];
-  478 -> 475 [label = "U>T[2,]"];
-  479 -> 495 [label = "+1", weight=1];
-  480 -> 496 [label = "+1", weight=1];
-  481 -> 497 [label = "+1", weight=1];
-  482 -> 498 [label = "+1", weight=1];
-  483 -> 499 [label = "+1", weight=1];
-  484 -> 500 [label = "+1", weight=1];
-  485 -> "485X" [label = "+1"];
-  "485X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  485 -> 501 [label = "A>T[1]", weight=1];
-  485 -> 502 [label = "A>T[2]", weight=1];
-  485 -> "485X" [label = "A>T[3]"];
-  "485X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  486 -> 503 [label = "+1", weight=1];
-  487 -> 504 [label = "+1", weight=1];
-  488 -> 485 [label = "U>T[2,]"];
-  489 -> 505 [label = "U>T[3,]", weight=1];
-  490 -> "490X" [label = "+1"];
-  "490X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  490 -> 506 [label = "A>T[1]", weight=1];
-  490 -> 507 [label = "A>T[3]", weight=1];
-  490 -> 508 [label = "A>T[2]", weight=1];
-  491 -> 509 [label = "U>T[1,3,]", weight=1];
-  492 -> 510 [label = "+1", weight=1];
-  492 -> "492X" [label = "A>T[3]"];
-  "492X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  492 -> 511 [label = "A>T[2]", weight=1];
-  493 -> "493X" [label = "+1"];
-  "493X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  493 -> 511 [label = "A>T[1]", weight=1];
-  493 -> "493X" [label = "A>T[3]"];
-  "493X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  494 -> 512 [label = "+1", weight=1];
-  494 -> "494X" [label = "A>T[3]"];
-  "494X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  494 -> 513 [label = "A>T[2]", weight=1];
-  495 -> 494 [label = "U>T[1,2,]"];
-  496 -> 494 [label = "U>T[1,]"];
-  497 -> 514 [label = "+1", weight=1];
-  497 -> "497X" [label = "A>T[3]"];
-  "497X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  497 -> 515 [label = "A>T[2]", weight=1];
-  498 -> 66 [label = "U>T[2,]"];
-  499 -> 516 [label = "+1", weight=1];
-  499 -> 517 [label = "A>T[2]", weight=1];
-  499 -> "499X" [label = "A>T[3]"];
-  "499X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  500 -> 66 [label = "U>T[2,]"];
-  501 -> 518 [label = "+1", weight=1];
-  501 -> 519 [label = "A>T[2]", weight=1];
-  501 -> "501X" [label = "A>T[3]"];
-  "501X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  502 -> "502X" [label = "+1"];
-  "502X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  502 -> 519 [label = "A>T[1]", weight=1];
-  502 -> "502X" [label = "A>T[3]"];
-  "502X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  503 -> 520 [label = "U>T[1,]", weight=1];
-  504 -> 520 [label = "U>T[1,2,]", weight=1];
-  505 -> 521 [label = "+1", weight=1];
-  505 -> 522 [label = "A>T[3]", weight=1];
-  505 -> 523 [label = "A>T[2]", weight=1];
-  506 -> 524 [label = "+1", weight=1];
-  506 -> 525 [label = "A>T[3]", weight=1];
-  506 -> 526 [label = "A>T[2]", weight=1];
-  507 -> "507X" [label = "+1"];
-  "507X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  507 -> 525 [label = "A>T[1]", weight=1];
-  507 -> 527 [label = "A>T[2]", weight=1];
-  508 -> "508X" [label = "+1"];
-  "508X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  508 -> 526 [label = "A>T[1]", weight=1];
-  508 -> 527 [label = "A>T[3]", weight=1];
-  509 -> 528 [label = "+1", weight=1];
-  509 -> "509X" [label = "A>T[3]"];
-  "509X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  509 -> 529 [label = "A>T[2]", weight=1];
-  510 -> 530 [label = "U>T[1,]", weight=1];
-  511 -> 531 [label = "+1", weight=1];
-  511 -> "511X" [label = "A>T[3]"];
-  "511X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  512 -> "512X" [label = "+1"];
-  "512X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  512 -> "512X" [label = "A>T[3]"];
-  "512X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  512 -> 532 [label = "A>T[2]", weight=1];
-  512 -> 533 [label = "A>T[1]", weight=1];
-  513 -> 534 [label = "+1", weight=1];
-  513 -> "513X" [label = "A>T[3]"];
-  "513X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  514 -> "514X" [label = "+1"];
-  "514X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  514 -> "514X" [label = "A>T[3]"];
-  "514X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  514 -> 535 [label = "A>T[2]", weight=1];
-  514 -> 536 [label = "A>T[1]", weight=1];
-  515 -> 537 [label = "+1", weight=1];
-  515 -> "515X" [label = "A>T[3]"];
-  "515X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  516 -> "516X" [label = "+1"];
-  "516X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  516 -> 538 [label = "A>T[2]", weight=1];
-  516 -> "516X" [label = "A>T[3]"];
-  "516X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  516 -> 539 [label = "A>T[1]", weight=1];
-  517 -> 540 [label = "+1", weight=1];
-  517 -> "517X" [label = "A>T[3]"];
-  "517X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  518 -> 541 [label = "U>T[1,]", weight=1];
-  519 -> 542 [label = "+1", weight=1];
-  519 -> "519X" [label = "A>T[3]"];
-  "519X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  520 -> 543 [label = "+1", weight=1];
-  520 -> 544 [label = "A>T[2]", weight=1];
-  520 -> "520X" [label = "A>T[3]"];
-  "520X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  521 -> "521X" [label = "+1"];
-  "521X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  521 -> "521X" [label = "A>T[3]"];
-  "521X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  521 -> 545 [label = "A>T[2]", weight=1];
-  521 -> 546 [label = "A>T[1]", weight=1];
-  522 -> 547 [label = "+1", weight=1];
-  522 -> 548 [label = "A>T[2]", weight=1];
-  523 -> 549 [label = "+1", weight=1];
-  523 -> 548 [label = "A>T[3]", weight=1];
-  524 -> 550 [label = "U>T[1,]", weight=1];
-  525 -> 551 [label = "+1", weight=1];
-  525 -> 552 [label = "A>T[2]", weight=1];
-  526 -> 553 [label = "+1", weight=1];
-  526 -> 552 [label = "A>T[3]", weight=1];
-  527 -> "527X" [label = "+1"];
-  "527X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  527 -> 552 [label = "A>T[1]", weight=1];
-  528 -> "528X" [label = "+1"];
-  "528X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  528 -> "528X" [label = "A>T[3]"];
-  "528X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  528 -> 554 [label = "A>T[2]", weight=1];
-  528 -> 555 [label = "A>T[1]", weight=1];
-  529 -> 556 [label = "+1", weight=1];
-  529 -> "529X" [label = "A>T[3]"];
-  "529X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  530 -> "530X" [label = "+1"];
-  "530X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  530 -> "530X" [label = "A>T[3]"];
-  "530X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  530 -> 557 [label = "A>T[2]", weight=1];
-  530 -> 558 [label = "A>T[1]", weight=1];
-  531 -> 559 [label = "U>T[2,1,]", weight=1];
-  532 -> "532X" [label = "+1"];
-  "532X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  532 -> "532X" [label = "A>T[3]"];
-  "532X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  532 -> 560 [label = "A>T[1]", weight=1];
-  533 -> "533X" [label = "+1"];
-  "533X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  533 -> "533X" [label = "A>T[3]"];
-  "533X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  533 -> 560 [label = "A>T[2]", weight=1];
-  534 -> 92 [label = "U>T[2,]"];
-  535 -> "535X" [label = "+1"];
-  "535X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  535 -> "535X" [label = "A>T[3]"];
-  "535X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  535 -> 561 [label = "A>T[1]", weight=1];
-  536 -> "536X" [label = "+1"];
-  "536X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  536 -> "536X" [label = "A>T[3]"];
-  "536X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  536 -> 561 [label = "A>T[2]", weight=1];
-  537 -> 110 [label = "U>T[2,]"];
-  538 -> "538X" [label = "+1"];
-  "538X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  538 -> "538X" [label = "A>T[3]"];
-  "538X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  538 -> 562 [label = "A>T[1]", weight=1];
-  539 -> "539X" [label = "+1"];
-  "539X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  539 -> 562 [label = "A>T[2]", weight=1];
-  539 -> "539X" [label = "A>T[3]"];
-  "539X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  540 -> 110 [label = "U>T[2,]"];
-  541 -> "541X" [label = "+1"];
-  "541X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  541 -> 563 [label = "A>T[2]", weight=1];
-  541 -> "541X" [label = "A>T[3]"];
-  "541X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  541 -> 564 [label = "A>T[1]", weight=1];
-  542 -> 565 [label = "U>T[2,1,]", weight=1];
-  543 -> "543X" [label = "+1"];
-  "543X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  543 -> 566 [label = "A>T[2]", weight=1];
-  543 -> "543X" [label = "A>T[3]"];
-  "543X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  543 -> 567 [label = "A>T[1]", weight=1];
-  544 -> 568 [label = "+1", weight=1];
-  544 -> "544X" [label = "A>T[3]"];
-  "544X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  545 -> "545X" [label = "+1"];
-  "545X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  545 -> "545X" [label = "A>T[3]"];
-  "545X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  545 -> 569 [label = "A>T[1]", weight=1];
-  546 -> "546X" [label = "+1"];
-  "546X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  546 -> "546X" [label = "A>T[3]"];
-  "546X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  546 -> 569 [label = "A>T[2]", weight=1];
-  547 -> 570 [label = "U>T[3,]", weight=1];
-  548 -> 571 [label = "+1", weight=1];
-  549 -> 110 [label = "U>T[2,]"];
-  550 -> "550X" [label = "+1"];
-  "550X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  550 -> "550X" [label = "A>T[3]"];
-  "550X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  550 -> 572 [label = "A>T[2]", weight=1];
-  550 -> 573 [label = "A>T[1]", weight=1];
-  551 -> 574 [label = "U>T[3,1,]", weight=1];
-  552 -> 575 [label = "+1", weight=1];
-  553 -> 576 [label = "U>T[1,2,]", weight=1];
-  554 -> "554X" [label = "+1"];
-  "554X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  554 -> "554X" [label = "A>T[3]"];
-  "554X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  554 -> 577 [label = "A>T[1]", weight=1];
-  555 -> "555X" [label = "+1"];
-  "555X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  555 -> "555X" [label = "A>T[3]"];
-  "555X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  555 -> 577 [label = "A>T[2]", weight=1];
-  556 -> 92 [label = "U>T[2,]"];
-  557 -> "557X" [label = "+1"];
-  "557X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  557 -> "557X" [label = "A>T[3]"];
-  "557X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  557 -> 578 [label = "A>T[1]", weight=1];
-  558 -> "558X" [label = "+1"];
-  "558X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  558 -> "558X" [label = "A>T[3]"];
-  "558X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  558 -> 578 [label = "A>T[2]", weight=1];
-  559 -> "559X" [label = "+1"];
-  "559X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  559 -> "559X" [label = "A>T[3]"];
-  "559X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  559 -> 579 [label = "A>T[1]", weight=1];
-  560 -> "560X" [label = "+1"];
-  "560X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  560 -> "560X" [label = "A>T[3]"];
-  "560X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  561 -> "561X" [label = "+1"];
-  "561X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  561 -> "561X" [label = "A>T[3]"];
-  "561X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  562 -> "562X" [label = "+1"];
-  "562X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  562 -> "562X" [label = "A>T[3]"];
-  "562X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  563 -> "563X" [label = "+1"];
-  "563X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  563 -> "563X" [label = "A>T[3]"];
-  "563X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  563 -> 580 [label = "A>T[1]", weight=1];
-  564 -> "564X" [label = "+1"];
-  "564X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  564 -> 580 [label = "A>T[2]", weight=1];
-  564 -> "564X" [label = "A>T[3]"];
-  "564X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  565 -> "565X" [label = "+1"];
-  "565X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  565 -> "565X" [label = "A>T[3]"];
-  "565X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  565 -> 581 [label = "A>T[1]", weight=1];
-  566 -> "566X" [label = "+1"];
-  "566X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  566 -> "566X" [label = "A>T[3]"];
-  "566X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  566 -> 582 [label = "A>T[1]", weight=1];
-  567 -> "567X" [label = "+1"];
-  "567X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  567 -> 582 [label = "A>T[2]", weight=1];
-  567 -> "567X" [label = "A>T[3]"];
-  "567X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  568 -> 92 [label = "U>T[2,]"];
-  569 -> "569X" [label = "+1"];
-  "569X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  569 -> "569X" [label = "A>T[3]"];
-  "569X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  570 -> "570X" [label = "+1"];
-  "570X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  570 -> 583 [label = "A>T[2]", weight=1];
-  570 -> 584 [label = "A>T[1]", weight=1];
-  571 -> 137 [label = "U>T[2,3,]"];
-  572 -> "572X" [label = "+1"];
-  "572X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  572 -> "572X" [label = "A>T[3]"];
-  "572X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  572 -> 585 [label = "A>T[1]", weight=1];
-  573 -> "573X" [label = "+1"];
-  "573X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  573 -> "573X" [label = "A>T[3]"];
-  "573X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  573 -> 585 [label = "A>T[2]", weight=1];
-  574 -> "574X" [label = "+1"];
-  "574X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  574 -> 586 [label = "A>T[2]", weight=1];
-  574 -> 587 [label = "A>T[1]", weight=1];
-  575 -> 588 [label = "U>T[3,1,2,]", weight=1];
-  576 -> "576X" [label = "+1"];
-  "576X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  576 -> "576X" [label = "A>T[3]"];
-  "576X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  576 -> 589 [label = "A>T[1]", weight=1];
-  577 -> "577X" [label = "+1"];
-  "577X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  577 -> "577X" [label = "A>T[3]"];
-  "577X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  578 -> "578X" [label = "+1"];
-  "578X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  578 -> "578X" [label = "A>T[3]"];
-  "578X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  579 -> "579X" [label = "+1"];
-  "579X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  579 -> "579X" [label = "A>T[3]"];
-  "579X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  580 -> "580X" [label = "+1"];
-  "580X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  580 -> "580X" [label = "A>T[3]"];
-  "580X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  581 -> "581X" [label = "+1"];
-  "581X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  581 -> "581X" [label = "A>T[3]"];
-  "581X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  582 -> "582X" [label = "+1"];
-  "582X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  582 -> "582X" [label = "A>T[3]"];
-  "582X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  583 -> 590 [label = "+1", weight=1];
-  583 -> 591 [label = "A>T[1]", weight=1];
-  584 -> "584X" [label = "+1"];
-  "584X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  584 -> 591 [label = "A>T[2]", weight=1];
-  585 -> "585X" [label = "+1"];
-  "585X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  585 -> "585X" [label = "A>T[3]"];
-  "585X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  586 -> 592 [label = "+1", weight=1];
-  586 -> 593 [label = "A>T[1]", weight=1];
-  587 -> "587X" [label = "+1"];
-  "587X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  587 -> 593 [label = "A>T[2]", weight=1];
-  588 -> 594 [label = "+1", weight=1];
-  588 -> 595 [label = "A>T[1]", weight=1];
-  589 -> "589X" [label = "+1"];
-  "589X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  589 -> "589X" [label = "A>T[3]"];
-  "589X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  590 -> 159 [label = "U>T[2,]"];
-  591 -> 596 [label = "+1", weight=1];
-  592 -> 174 [label = "U>T[2,]"];
-  593 -> 597 [label = "+1", weight=1];
-  594 -> 598 [label = "+1", weight=1];
-  594 -> 599 [label = "A>T[1]", weight=1];
-  594 -> 600 [label = "A>T[2]", weight=1];
-  594 -> "594X" [label = "A>T[3]"];
-  "594X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  595 -> 601 [label = "+1", weight=1];
-  596 -> 189 [label = "U>T[1,2,]"];
-  597 -> 207 [label = "U>T[2,1,]"];
-  598 -> "598X" [label = "+1"];
-  "598X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  598 -> 602 [label = "A>T[1]", weight=1];
-  598 -> 603 [label = "A>T[2]", weight=1];
-  598 -> "598X" [label = "A>T[3]"];
-  "598X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  599 -> 604 [label = "+1", weight=1];
-  599 -> 605 [label = "A>T[2]", weight=1];
-  599 -> "599X" [label = "A>T[3]"];
-  "599X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  600 -> 606 [label = "+1", weight=1];
-  600 -> 605 [label = "A>T[1]", weight=1];
-  600 -> "600X" [label = "A>T[3]"];
-  "600X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  601 -> 607 [label = "U>T[1,]", weight=1];
-  602 -> "602X" [label = "+1"];
-  "602X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  602 -> 608 [label = "A>T[2]", weight=1];
-  602 -> "602X" [label = "A>T[3]"];
-  "602X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  603 -> "603X" [label = "+1"];
-  "603X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  603 -> 608 [label = "A>T[1]", weight=1];
-  603 -> "603X" [label = "A>T[3]"];
-  "603X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  604 -> 609 [label = "U>T[1,]", weight=1];
-  605 -> 610 [label = "+1", weight=1];
-  605 -> "605X" [label = "A>T[3]"];
-  "605X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  606 -> 258 [label = "U>T[2,]"];
-  607 -> 611 [label = "+1", weight=1];
-  607 -> 612 [label = "A>T[2]", weight=1];
-  607 -> "607X" [label = "A>T[3]"];
-  "607X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  608 -> "608X" [label = "+1"];
-  "608X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  608 -> "608X" [label = "A>T[3]"];
-  "608X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  609 -> "609X" [label = "+1"];
-  "609X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  609 -> 613 [label = "A>T[2]", weight=1];
-  609 -> "609X" [label = "A>T[3]"];
-  "609X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  610 -> 298 [label = "U>T[1,2,]"];
-  611 -> "611X" [label = "+1"];
-  "611X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  611 -> 614 [label = "A>T[2]", weight=1];
-  611 -> "611X" [label = "A>T[3]"];
-  "611X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  612 -> 615 [label = "+1", weight=1];
-  612 -> "612X" [label = "A>T[3]"];
-  "612X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  613 -> "613X" [label = "+1"];
-  "613X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  613 -> "613X" [label = "A>T[3]"];
-  "613X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  614 -> "614X" [label = "+1"];
-  "614X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  614 -> "614X" [label = "A>T[3]"];
-  "614X" [shape=circle, fontsize=7, style=filled, fillcolor=orange, width=0.3, height=0.3]
-  615 -> 275 [label = "U>T[2,]"];
-  66 [shape=diamond]
-  258 [shape=diamond]
-  92 [shape=diamond]
-  110 [shape=diamond]
-  174 [shape=diamond]
 }

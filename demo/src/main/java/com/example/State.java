@@ -1,10 +1,13 @@
 package com.example;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map.Entry;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -158,7 +161,7 @@ public class State implements InitializingConfigs {
       for (Event updateEvent : eventSet.getUpdates()) {
         for (EventSet sourceEventSet : source.getEventSetQueue()) {
           if (sourceEventSet.getEventSetTime() < updateEvent.getTime()) {
-            HashSet<Event> sourceArrivals = sourceEventSet.getArrivals();
+            TreeSet<Event> sourceArrivals = sourceEventSet.getArrivals();
             for (Event sourceArrival : sourceArrivals) {
               int taskId = sourceArrival.getTaskId();
               Task task = getTaskById(taskId);
@@ -218,7 +221,153 @@ public class State implements InitializingConfigs {
       }    
     }
   }
-  
+
+  private void prophecy() {
+    TreeSet <Integer> grayTasks = findGrayTasks(actuators, 0);
+    isFeasible(grayTasks);
+
+  }
+
+  private TreeSet<Integer> findGrayTasks(ArrayList<Integer> givenTasks, int forecomingExecutionTime) {
+    TreeSet<Integer> resultedTasks = new TreeSet<>();
+    resultedTasks.addAll(givenTasks);
+    HashMap<Integer, Integer> waitingTimes = calculateWaitingTimes(givenTasks, stateTime);
+    for (Integer givenTask : givenTasks) {
+      ArrayList<Integer> badTasks = new ArrayList<>();
+      int taskDuaration = getTaskById(givenTask).getDuration();
+      int totalSpentTime = taskDuaration + forecomingExecutionTime + waitingTimes.get(givenTask);
+      Set<Integer> badPorts = new HashSet<>();
+      for (Entry<SimpleImmutableEntry<Integer, Integer>, TreeSet<Integer>> dataOnPort : 
+      tasksBody.get(givenTask).getDataDelivered().entrySet()) {
+        if (badPorts.contains(dataOnPort.getKey().getKey())) {
+          continue;
+        }
+        boolean badData = dataOnPort.getValue().stream()
+        .anyMatch(version -> stateTime + totalSpentTime - version > timingConstraints.get(2));
+        if (badData) {
+          int badPort = dataOnPort.getKey().getKey();
+          badPorts.add(badPort);
+          badTasks.addAll(linkList.stream()
+          .filter(link -> link.getToTask() == givenTask && link.getToPort() == badPort)
+          .map(Link::getFromTask)
+          .collect(Collectors.toList()));
+        }
+      }
+      resultedTasks.addAll(findGrayTasks(badTasks, totalSpentTime));
+    }
+    return resultedTasks;
+  }
+
+  private boolean isFeasible(TreeSet<Integer> grayTasks) {
+    int abstractCpus = this.idleProcessors;
+    HashSet<Integer> globalQueue = new HashSet<>(grayTasks);
+    HashMap<Integer, List<Integer>> parentsMap = calculateParents(grayTasks);
+    HashMap<Integer, Integer> totalResponseTime = new HashMap<>();
+    while (!globalQueue.isEmpty()) {
+      boolean progress = false;
+      for (Integer grayTask : grayTasks) {
+        if (globalQueue.contains(grayTask)) {
+          boolean hasUnresolvedParents = false;
+          for (Integer parent : parentsMap.getOrDefault(grayTask, Collections.emptyList())) {
+            if (globalQueue.contains(parent)) {
+              hasUnresolvedParents = true;
+              break;
+            }
+          }
+          if (!hasUnresolvedParents) {
+            // taskDuaration + maxWaitingTime + 
+            globalQueue.remove(grayTask);
+            progress = true;
+          }
+        }
+      }
+      if (!progress) {
+        // If no progress was made in this iteration, then there's a circular dependency
+        return false;
+      }
+    }
+    // If we exit the loop, all tasks were resolved
+    return true;
+  }
+
+  private boolean isFeasible2(TreeSet<Integer> grayTasks) {
+    int abstractCpus = this.idleProcessors;
+    HashSet<Integer> globalQueue = new HashSet<>(grayTasks);
+    HashMap<Integer, List<Integer>> parentsMap = calculateParents(grayTasks);
+    HashMap<Integer, Integer> totalResponseTime = new HashMap<>();
+    PriorityQueue<EventSet> abstractUpdates = getAllUpdates(eventSetQueue);
+    for (int abstractTime = stateTime; abstractTime <= stateTime + timingConstraints.get(2); abstractTime++) {
+      if (abstractCpus == 0) {
+        TreeSet<Event> nextUpdates = abstractUpdates.poll().getUpdates();
+        abstractCpus += nextUpdates.size();
+        abstractTime = nextUpdates.first().getTime();
+      }
+      HashMap<Integer, Integer> waitingTimes = calculateWaitingTimes(new ArrayList<Integer>(globalQueue), abstractTime);
+      for (Integer grayTask : grayTasks) {
+        if (globalQueue.contains(grayTask)) {
+          boolean hasUnresolvedParents = false;
+          for (Integer parent : parentsMap.getOrDefault(grayTask, Collections.emptyList())) {
+            if (globalQueue.contains(parent)) {
+              hasUnresolvedParents = true;
+              break;
+            }
+          }
+          if (!hasUnresolvedParents && waitingTimes.get(grayTask) == 0) {
+            // taskDuaration + maxWaitingTime + 
+            globalQueue.remove(grayTask);
+            // progress = true;
+          }
+        }
+      }      
+    }
+    if (globalQueue.isEmpty()) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  private HashMap<Integer, Integer> calculateWaitingTimes(ArrayList<Integer> givenTasks, int refrenceTime) {
+    HashMap<Integer, Integer> result = new HashMap<>();
+    PriorityQueue<EventSet> copyQueue = eventSetQueue;
+    while (!copyQueue.isEmpty()) {
+      EventSet eventSet = copyQueue.poll();
+      for (int givenTask : givenTasks){
+        if (!result.containsKey(givenTask)) {
+          for (Event event : eventSet.getArrivals()) {
+            if (event.getTaskId() == givenTask) {
+              int waitingTime = Math.max(0, event.getTime() - refrenceTime);
+              result.put(givenTask, waitingTime);
+              break;
+            }
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  private PriorityQueue<EventSet> getAllUpdates(PriorityQueue<EventSet> eventSetQueue2) {
+    PriorityQueue<EventSet> result = new PriorityQueue<>();
+    for (EventSet eventSet : eventSetQueue2) {
+      if (eventSet.getEventSetTime() >= stateTime) {
+        EventSet newEventSet = new EventSet(eventSet.getEventSetTime());
+        newEventSet.setUpdates(eventSet.getUpdates());
+        result.add(newEventSet);
+      }
+    }
+    return result;
+  }
+
+  private HashMap<Integer, List<Integer>> calculateParents(TreeSet<Integer> grayTasks) {
+    HashMap<Integer, List<Integer>> result = new HashMap<>();
+    for (Integer grayTask : grayTasks) {
+      result.put(grayTask, TaskSet.getParents(grayTask));
+    }
+    return result;
+  }
+
   private void addVersion(HashMap<Integer, HashSet<Integer>> producedSensorsData, int sensorId, int version) {
     HashSet<Integer> sensorVersions =  producedSensorsData.computeIfAbsent(sensorId, k -> new HashSet<Integer>());
     sensorVersions.add(version);    

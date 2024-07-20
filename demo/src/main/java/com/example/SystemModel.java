@@ -89,7 +89,7 @@ public class SystemModel implements InitializingConfigs {
         TreeSet<Event> pastUpdates = new TreeSet<>();
         ArrayList<Event> pastArrivals = new ArrayList<>();
         PriorityQueue<EventSet> stateQueue = currentState.getEventSetQueue();
-        separatePastEvents(stateQueue, pastUpdates, pastArrivals, futureQueue);
+        separateEvents(stateQueue, pastUpdates, pastArrivals, futureQueue);
 
         if(!pastUpdates.isEmpty()) {
             TreeSet<Event> wpastUpdates = (TreeSet<Event>) pastUpdates.descendingSet();
@@ -135,7 +135,7 @@ public class SystemModel implements InitializingConfigs {
         }
     }    
 
-    private void separatePastEvents(PriorityQueue<EventSet> stateQueue, TreeSet<Event> pastUpdates, ArrayList<Event> pastArrivals, PriorityQueue<EventSet> futureQueue) {
+    private void separateEvents(PriorityQueue<EventSet> stateQueue, TreeSet<Event> pastUpdates, ArrayList<Event> pastArrivals, PriorityQueue<EventSet> futureQueue) {
         for (EventSet eventSet : stateQueue) {
             if (eventSet.getEventSetTime() <= currentStateTime) {
                 pastUpdates.addAll(eventSet.getUpdates());
@@ -213,8 +213,8 @@ public class SystemModel implements InitializingConfigs {
         }    
         if (targetEventSet != null) {
             Event.EventType eventType = event.getType();
-            HashSet<Event> updateEvents = new HashSet<>(targetEventSet.getUpdates());
-            HashSet<Event> arrivalEvents = new HashSet<>(targetEventSet.getArrivals());
+            TreeSet<Event> updateEvents = new TreeSet<>(targetEventSet.getUpdates());
+            TreeSet<Event> arrivalEvents = new TreeSet<>(targetEventSet.getArrivals());
             EventSet newEventSet = new EventSet(event.getTime());
             if (addEvent) {
                 switch (eventType) {
@@ -380,12 +380,12 @@ public class SystemModel implements InitializingConfigs {
         return true;
     }
 
-    private boolean compareEvents(HashSet<Event> list1, HashSet<Event> list2) {
+    private boolean compareEvents(TreeSet<Event> list1, TreeSet<Event> list2) {
         if (list1.size() != list2.size()) {
             return false;
         }
 
-        Set<Integer> taskIds = new HashSet<>();
+        Set<Integer> taskIds = new TreeSet<>();
         for (Event event : list1) {
             taskIds.add(event.getTaskId());
         }
