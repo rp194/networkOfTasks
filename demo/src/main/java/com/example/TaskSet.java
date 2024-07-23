@@ -18,7 +18,7 @@ public abstract class TaskSet {
     adjList.get(source).add(destination);
   }
 
-  public List<Integer> getAdjVertices(int vertex) {
+  public static List<Integer> getAdjVertices(int vertex) {
     return adjList.get(vertex);
   }
 

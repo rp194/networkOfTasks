@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map.Entry;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.Iterator;
 import java.util.List;
@@ -35,6 +34,9 @@ public class State implements InitializingConfigs {
     this.idleProcessors = idleProcessors;
     this.stateTime = stateTime;
     this.eventSetQueue.addAll(eventSetQueue);
+    boolean criticState = this.getStateID() == 112;
+    boolean[] myflag = {true};
+    boolean ffllgg = getAllUpdates().isEmpty();
     if (source.getEventSetQueue().isEmpty()) {
       this.sourceIds.add(-1);
     } else {
@@ -42,10 +44,13 @@ public class State implements InitializingConfigs {
       copyProducedSensorsData(this.producedEventSensorsData, source.getProducedEventSensorsData());
     }
 
-    copyTasksBody(source, tasksChanges);
+    copyTasksBody(source, tasksChanges, myflag);
 
     executionAndSchedulityRegulator(source);
     policiesChecker(source);
+    if (!this.eventSetQueue.isEmpty() && ffllgg) {
+      prophecy();
+    }
   }
 
   private <K, V> void 
@@ -61,7 +66,7 @@ public class State implements InitializingConfigs {
     }
   }
 
-  private void copyTasksBody(State source, Map<Integer, TaskBody> tasksChanges) {
+  private void copyTasksBody(State source, Map<Integer, TaskBody> tasksChanges, boolean[] myflag) {
     TreeMap<Integer, TaskBody> sortedMap = new TreeMap<>(Comparator.reverseOrder());
     sortedMap.putAll(source.getTasksBody());
     this.tasksBody.putAll(tasksChanges);  
@@ -71,6 +76,9 @@ public class State implements InitializingConfigs {
       if (!tasksChanges.containsKey(key)) {
         TaskBody newTaskBody = new TaskBody(sourceTaskBody);
         this.tasksBody.put(key, newTaskBody);
+      }
+      else if (tasksChanges.get(key).getTaskID() != 0) {
+        myflag[0] = false;
       }
       else if (tasksChanges.get(key).getTaskID() == 0) {
         tasksChanges.get(key).setTaskID(key);
@@ -161,7 +169,7 @@ public class State implements InitializingConfigs {
       for (Event updateEvent : eventSet.getUpdates()) {
         for (EventSet sourceEventSet : source.getEventSetQueue()) {
           if (sourceEventSet.getEventSetTime() < updateEvent.getTime()) {
-            TreeSet<Event> sourceArrivals = sourceEventSet.getArrivals();
+            HashSet<Event> sourceArrivals = sourceEventSet.getArrivals();
             for (Event sourceArrival : sourceArrivals) {
               int taskId = sourceArrival.getTaskId();
               Task task = getTaskById(taskId);
@@ -223,29 +231,51 @@ public class State implements InitializingConfigs {
   }
 
   private void prophecy() {
-    TreeSet <Integer> grayTasks = findGrayTasks(actuators, 0);
-    isFeasible(grayTasks);
-
+    List<Integer> taskIds = taskList.stream().map(task -> task.getId()).collect(Collectors.toList());
+    HashMap<Integer, Integer> waitingTimes = calculateWaitingTimes(taskIds, stateTime);
+    HashSet <Integer> grayTasks = findGrayTasks(actuators, 0, 0, waitingTimes);
+    if (!isFeasible(grayTasks)) {
+      this.eventSetQueue.clear();
+    }
   }
 
-  private TreeSet<Integer> findGrayTasks(ArrayList<Integer> givenTasks, int forecomingExecutionTime) {
-    TreeSet<Integer> resultedTasks = new TreeSet<>();
+  private HashSet<Integer> findGrayTasks(
+    ArrayList<Integer> givenTasks, int forecomingExecutionTime, int nextTask, HashMap<Integer, Integer> waitingTimes
+    ) {
+    HashSet<Integer> resultedTasks = new HashSet<>();
     resultedTasks.addAll(givenTasks);
-    HashMap<Integer, Integer> waitingTimes = calculateWaitingTimes(givenTasks, stateTime);
     for (Integer givenTask : givenTasks) {
       ArrayList<Integer> badTasks = new ArrayList<>();
       int taskDuaration = getTaskById(givenTask).getDuration();
-      int totalSpentTime = taskDuaration + forecomingExecutionTime + waitingTimes.get(givenTask);
+      int taskResponseTime = taskDuaration + Math.max(0, waitingTimes.get(givenTask));
+      int toBeWaitingTime = taskResponseTime;
+      if (nextTask != 0) {
+        toBeWaitingTime = Math.max(taskResponseTime, waitingTimes.get(nextTask));
+      }
+      int dataAge = toBeWaitingTime + forecomingExecutionTime;
+      forecomingExecutionTime += taskDuaration;
       Set<Integer> badPorts = new HashSet<>();
+      if (statusSensors.contains(givenTask)) {
+        if (dataAge > timingConstraints.get(2)) {
+          resultedTasks.add(0);
+          break;
+        }
+        continue;
+      }
       for (Entry<SimpleImmutableEntry<Integer, Integer>, TreeSet<Integer>> dataOnPort : 
       tasksBody.get(givenTask).getDataDelivered().entrySet()) {
-        if (badPorts.contains(dataOnPort.getKey().getKey())) {
+        SimpleImmutableEntry<Integer, Integer> portNoAndSensorId = dataOnPort.getKey();
+        if (badPorts.contains(portNoAndSensorId.getKey()) && !statusSensors.contains(portNoAndSensorId.getValue())) {
           continue;
         }
-        boolean badData = dataOnPort.getValue().stream()
-        .anyMatch(version -> stateTime + totalSpentTime - version > timingConstraints.get(2));
-        if (badData) {
-          int badPort = dataOnPort.getKey().getKey();
+        TreeSet<Integer> versions = new TreeSet<>(dataOnPort.getValue());
+        if (versions.isEmpty()) {
+          versions.add(0);
+        }
+        boolean hasBadData = versions.stream()
+        .anyMatch(version -> stateTime + dataAge - version > timingConstraints.get(2));
+        if (hasBadData) {
+          int badPort = portNoAndSensorId.getKey();
           badPorts.add(badPort);
           badTasks.addAll(linkList.stream()
           .filter(link -> link.getToTask() == givenTask && link.getToPort() == badPort)
@@ -253,92 +283,72 @@ public class State implements InitializingConfigs {
           .collect(Collectors.toList()));
         }
       }
-      resultedTasks.addAll(findGrayTasks(badTasks, totalSpentTime));
+      resultedTasks.addAll(findGrayTasks(badTasks, forecomingExecutionTime, givenTask, waitingTimes));
+      if (resultedTasks.contains(0)) {
+        break;        
+      }
     }
     return resultedTasks;
   }
 
-  private boolean isFeasible(TreeSet<Integer> grayTasks) {
-    int abstractCpus = this.idleProcessors;
-    HashSet<Integer> globalQueue = new HashSet<>(grayTasks);
-    HashMap<Integer, List<Integer>> parentsMap = calculateParents(grayTasks);
-    HashMap<Integer, Integer> totalResponseTime = new HashMap<>();
-    while (!globalQueue.isEmpty()) {
-      boolean progress = false;
-      for (Integer grayTask : grayTasks) {
-        if (globalQueue.contains(grayTask)) {
-          boolean hasUnresolvedParents = false;
-          for (Integer parent : parentsMap.getOrDefault(grayTask, Collections.emptyList())) {
-            if (globalQueue.contains(parent)) {
-              hasUnresolvedParents = true;
-              break;
-            }
-          }
-          if (!hasUnresolvedParents) {
-            // taskDuaration + maxWaitingTime + 
-            globalQueue.remove(grayTask);
-            progress = true;
-          }
-        }
-      }
-      if (!progress) {
-        // If no progress was made in this iteration, then there's a circular dependency
-        return false;
-      }
+  private boolean isFeasible(HashSet<Integer> grayTasks) {
+    if (grayTasks.contains(0)) {
+      return false;
     }
-    // If we exit the loop, all tasks were resolved
-    return true;
-  }
-
-  private boolean isFeasible2(TreeSet<Integer> grayTasks) {
-    int abstractCpus = this.idleProcessors;
-    HashSet<Integer> globalQueue = new HashSet<>(grayTasks);
+    HashSet<Integer> tasksQueue = new HashSet<>(grayTasks);
     HashMap<Integer, List<Integer>> parentsMap = calculateParents(grayTasks);
-    HashMap<Integer, Integer> totalResponseTime = new HashMap<>();
-    PriorityQueue<EventSet> abstractUpdates = getAllUpdates(eventSetQueue);
+    HashMap<Integer, Set<Integer>> onExecutionTasks = getAllUpdates();
     for (int abstractTime = stateTime; abstractTime <= stateTime + timingConstraints.get(2); abstractTime++) {
-      if (abstractCpus == 0) {
-        TreeSet<Event> nextUpdates = abstractUpdates.poll().getUpdates();
-        abstractCpus += nextUpdates.size();
-        abstractTime = nextUpdates.first().getTime();
+      if (onExecutionTasks.containsKey(abstractTime)) {
+        tasksQueue.removeAll(onExecutionTasks.get(abstractTime));
+        onExecutionTasks.remove(abstractTime);
       }
-      HashMap<Integer, Integer> waitingTimes = calculateWaitingTimes(new ArrayList<Integer>(globalQueue), abstractTime);
+      HashMap<Integer, Integer> waitingTimes = calculateWaitingTimes(new ArrayList<Integer>(tasksQueue), abstractTime);
       for (Integer grayTask : grayTasks) {
-        if (globalQueue.contains(grayTask)) {
-          boolean hasUnresolvedParents = false;
-          for (Integer parent : parentsMap.getOrDefault(grayTask, Collections.emptyList())) {
-            if (globalQueue.contains(parent)) {
-              hasUnresolvedParents = true;
-              break;
+        boolean onExecution = onExecutionTasks.values().stream().anyMatch(pendings -> pendings.contains(grayTask));
+        if (!onExecution && tasksQueue.contains(grayTask)) {
+          boolean hasUnresolvedParents = parentsMap
+          .getOrDefault(grayTask, Collections.emptyList()).stream()
+          .anyMatch(parent -> tasksQueue.contains(parent));
+          int givenWaitingTime = waitingTimes.get(grayTask);
+          if (!hasUnresolvedParents && givenWaitingTime <= 0) {
+            if (isSchedulable(grayTask, givenWaitingTime)) {
+              Set<Integer> futureOnExecutionTasks = onExecutionTasks
+              .computeIfAbsent(abstractTime + getTaskById(grayTask).getDuration(), k -> new HashSet<Integer>());
+              futureOnExecutionTasks.add(grayTask);
             }
-          }
-          if (!hasUnresolvedParents && waitingTimes.get(grayTask) == 0) {
-            // taskDuaration + maxWaitingTime + 
-            globalQueue.remove(grayTask);
-            // progress = true;
+            else {
+              return false;
+            }
           }
         }
       }      
     }
-    if (globalQueue.isEmpty()) {
-      return true;
-    }
-    else {
+    if (!tasksQueue.isEmpty()) {
       return false;
     }
+    return true;
   }
 
-  private HashMap<Integer, Integer> calculateWaitingTimes(ArrayList<Integer> givenTasks, int refrenceTime) {
+  private boolean isSchedulable(Integer givenTask, int givenWaitingTime) {
+    int givenExecutionTime = getTaskById(givenTask).getDuration();
+    int relativeDeadline = getTaskById(givenTask).getDeadline();
+    if (givenWaitingTime - givenExecutionTime < - relativeDeadline) {
+      return false;
+    }
+    return true;
+  }
+
+  private HashMap<Integer, Integer> calculateWaitingTimes(List<Integer> givenTasks, int refrenceTime) {
     HashMap<Integer, Integer> result = new HashMap<>();
-    PriorityQueue<EventSet> copyQueue = eventSetQueue;
+    PriorityQueue<EventSet> copyQueue = new PriorityQueue<>(this.eventSetQueue);
     while (!copyQueue.isEmpty()) {
       EventSet eventSet = copyQueue.poll();
       for (int givenTask : givenTasks){
         if (!result.containsKey(givenTask)) {
           for (Event event : eventSet.getArrivals()) {
             if (event.getTaskId() == givenTask) {
-              int waitingTime = Math.max(0, event.getTime() - refrenceTime);
-              result.put(givenTask, waitingTime);
+              result.put(givenTask, event.getTime() - refrenceTime);
               break;
             }
           }
@@ -348,22 +358,25 @@ public class State implements InitializingConfigs {
     return result;
   }
 
-  private PriorityQueue<EventSet> getAllUpdates(PriorityQueue<EventSet> eventSetQueue2) {
-    PriorityQueue<EventSet> result = new PriorityQueue<>();
-    for (EventSet eventSet : eventSetQueue2) {
+  private HashMap<Integer, Set<Integer>> getAllUpdates() {
+    HashMap<Integer, Set<Integer>> result = new HashMap<>();
+    for (EventSet eventSet : eventSetQueue) {
       if (eventSet.getEventSetTime() >= stateTime) {
-        EventSet newEventSet = new EventSet(eventSet.getEventSetTime());
-        newEventSet.setUpdates(eventSet.getUpdates());
-        result.add(newEventSet);
+        if (eventSet.getUpdates().size() != 0) {
+          result.put(eventSet.getEventSetTime(), eventSet.getUpdates()
+          .stream()
+          .map(updateEvent ->updateEvent.getTaskId())
+          .collect(Collectors.toSet()));
+        }
       }
     }
     return result;
   }
 
-  private HashMap<Integer, List<Integer>> calculateParents(TreeSet<Integer> grayTasks) {
+  private HashMap<Integer, List<Integer>> calculateParents(HashSet<Integer> givenTasks) {
     HashMap<Integer, List<Integer>> result = new HashMap<>();
-    for (Integer grayTask : grayTasks) {
-      result.put(grayTask, TaskSet.getParents(grayTask));
+    for (Integer givenTask : givenTasks) {
+      result.put(givenTask, TaskSet.getParents(givenTask));
     }
     return result;
   }

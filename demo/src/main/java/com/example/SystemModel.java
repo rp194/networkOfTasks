@@ -65,8 +65,8 @@ public class SystemModel implements InitializingConfigs {
 
     public void stateSpaceGenerator(int endTime) {
         int stateIterator = 0;
-        while (true) {
-        // while(turningStates.size() < 2) {
+        // while (true) {
+        while(turningStates.size() < 1) {
             int stateSize = states.size();
             if (stateSize <= stateIterator) {
                 break;
@@ -213,8 +213,8 @@ public class SystemModel implements InitializingConfigs {
         }    
         if (targetEventSet != null) {
             Event.EventType eventType = event.getType();
-            TreeSet<Event> updateEvents = new TreeSet<>(targetEventSet.getUpdates());
-            TreeSet<Event> arrivalEvents = new TreeSet<>(targetEventSet.getArrivals());
+            HashSet<Event> updateEvents = new HashSet<>(targetEventSet.getUpdates());
+            HashSet<Event> arrivalEvents = new HashSet<>(targetEventSet.getArrivals());
             EventSet newEventSet = new EventSet(event.getTime());
             if (addEvent) {
                 switch (eventType) {
@@ -380,12 +380,12 @@ public class SystemModel implements InitializingConfigs {
         return true;
     }
 
-    private boolean compareEvents(TreeSet<Event> list1, TreeSet<Event> list2) {
+    private boolean compareEvents(HashSet<Event> list1, HashSet<Event> list2) {
         if (list1.size() != list2.size()) {
             return false;
         }
 
-        Set<Integer> taskIds = new TreeSet<>();
+        Set<Integer> taskIds = new HashSet<>();
         for (Event event : list1) {
             taskIds.add(event.getTaskId());
         }
@@ -449,10 +449,10 @@ public class SystemModel implements InitializingConfigs {
             HashSet<Integer> turningStates = new HashSet<>();
             bufferedWriter.write("digraph state_space {");
             bufferedWriter.write("\n"
-                                    + "  size = \"1,1.9\";\n"
+                                    + "  size = \"1,1.3\";\n"
                                     + "  ratio=\"fill\";\n"
                                     + "  node [shape=box, fontsize=90, style=filled, fillcolor=lightblue, width=2, height=1];\n"
-                                    + "  edge [fontsize=80, style=bold];\n"
+                                    + "  edge [fontsize=60, style=bold];\n"
                                     + "  splines = true;\n"
                                     + "  overlap = false;");
             for(Entry<Integer, ArrayList<String>> transition : transitions.entrySet()) {

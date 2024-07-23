@@ -1,12 +1,12 @@
 package com.example;
 
-import java.util.TreeSet;
+import java.util.HashSet;
+import java.util.HashSet;
 public class EventSet implements Comparable<EventSet> {
   private int eventSetTime;
-  private TreeSet<Event> updates = new TreeSet<>();
-  private TreeSet<Event> arrivals = new TreeSet<>();
-  private TreeSet<Event> starts = new TreeSet<>();
-  private TreeSet<Event> allEvents = new TreeSet<>();  
+  private HashSet<Event> updates = new HashSet<>();
+  private HashSet<Event> arrivals = new HashSet<>();
+  private HashSet<Event> allEvents = new HashSet<>();  
 
   public EventSet(int time) {
     this.eventSetTime = time;
@@ -23,11 +23,11 @@ public class EventSet implements Comparable<EventSet> {
     }
   }
 
-  public void setArrivals(TreeSet<Event> arrivalEvents) {
+  public void setArrivals(HashSet<Event> arrivalEvents) {
     this.arrivals = arrivalEvents;
   }
 
-  public void setUpdates(TreeSet<Event> updateEvents) {
+  public void setUpdates(HashSet<Event> updateEvents) {
     this.updates = updateEvents;
   }
   
@@ -47,21 +47,18 @@ public class EventSet implements Comparable<EventSet> {
     return eventSetTime;
   }
 
-  public TreeSet<Event> getAllEvents(){
+  public HashSet<Event> getAllEvents(){
     return allEvents;
   }
 
-  public TreeSet<Event> getUpdates() {
+  public HashSet<Event> getUpdates() {
     return updates;
   }
 
-  public TreeSet<Event> getArrivals() {
+  public HashSet<Event> getArrivals() {
     return arrivals;
   }
 
-  public TreeSet<Event> getStarts() {
-    return starts;
-  }
 
   public int getEventSetSize() {
     return allEvents.size();
