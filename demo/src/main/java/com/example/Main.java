@@ -3,7 +3,7 @@ package com.example;
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        SystemModel systemModel = new SystemModel(2);
+        SystemModel systemModel = new SystemModel(1);
         systemModel.stateSpaceGenerator(55);
         systemModel.createLogFile();
         systemModel.createDotFile();

@@ -34,9 +34,6 @@ public class State implements InitializingConfigs {
     this.idleProcessors = idleProcessors;
     this.stateTime = stateTime;
     this.eventSetQueue.addAll(eventSetQueue);
-    boolean criticState = this.getStateID() == 112;
-    boolean[] myflag = {true};
-    boolean ffllgg = getAllUpdates().isEmpty();
     if (source.getEventSetQueue().isEmpty()) {
       this.sourceIds.add(-1);
     } else {
@@ -44,11 +41,11 @@ public class State implements InitializingConfigs {
       copyProducedSensorsData(this.producedEventSensorsData, source.getProducedEventSensorsData());
     }
 
-    copyTasksBody(source, tasksChanges, myflag);
+    copyTasksBody(source, tasksChanges);
 
     executionAndSchedulityRegulator(source);
     policiesChecker(source);
-    if (!this.eventSetQueue.isEmpty() && ffllgg) {
+    if (!this.eventSetQueue.isEmpty()) {
       prophecy();
     }
   }
@@ -66,7 +63,7 @@ public class State implements InitializingConfigs {
     }
   }
 
-  private void copyTasksBody(State source, Map<Integer, TaskBody> tasksChanges, boolean[] myflag) {
+  private void copyTasksBody(State source, Map<Integer, TaskBody> tasksChanges) {
     TreeMap<Integer, TaskBody> sortedMap = new TreeMap<>(Comparator.reverseOrder());
     sortedMap.putAll(source.getTasksBody());
     this.tasksBody.putAll(tasksChanges);  
@@ -76,9 +73,6 @@ public class State implements InitializingConfigs {
       if (!tasksChanges.containsKey(key)) {
         TaskBody newTaskBody = new TaskBody(sourceTaskBody);
         this.tasksBody.put(key, newTaskBody);
-      }
-      else if (tasksChanges.get(key).getTaskID() != 0) {
-        myflag[0] = false;
       }
       else if (tasksChanges.get(key).getTaskID() == 0) {
         tasksChanges.get(key).setTaskID(key);
@@ -233,28 +227,89 @@ public class State implements InitializingConfigs {
   private void prophecy() {
     List<Integer> taskIds = taskList.stream().map(task -> task.getId()).collect(Collectors.toList());
     HashMap<Integer, Integer> waitingTimes = calculateWaitingTimes(taskIds, stateTime);
-    HashSet <Integer> grayTasks = findGrayTasks(actuators, 0, 0, waitingTimes);
-    if (!isFeasible(grayTasks)) {
+    laxityChecker(waitingTimes);
+    HashSet <Integer> grayTasks = findGrayTasks(actuators, 0, 0, waitingTimes, getAllUpdates());
+    if (!this.eventSetQueue.isEmpty() && !isFeasible(grayTasks)) {
       this.eventSetQueue.clear();
     }
   }
 
+  private void laxityChecker(HashMap<Integer, Integer> waitingTimes) {
+    if (this.sourceIds.contains(55)) {
+      System.out.println("here");
+    }
+    HashMap<Integer, Integer> slackTimes = calculateSlackTimes(waitingTimes);
+    TreeMap<Integer, HashSet<Integer>> onExecutionTasks = getAllUpdates();
+    boolean isCritical = true;
+    int interceptionPoint = this.stateTime;
+    int abstractIdleCPUs = this.idleProcessors;
+    int interceptionRange = 0;
+    while (isCritical) {
+      if (onExecutionTasks.containsKey(interceptionPoint)) {
+        abstractIdleCPUs += onExecutionTasks.get(interceptionPoint).size();
+        onExecutionTasks.remove(interceptionPoint);
+      }
+      HashSet<Integer> criticalCpuRequests = new HashSet<>();
+      for (Entry<Integer, Integer> slackTimeEntry : slackTimes.entrySet()) {
+        slackTimes.put(slackTimeEntry.getKey() , slackTimeEntry.getValue() - interceptionRange);
+        if (slackTimeEntry.getValue() == 0) {
+          criticalCpuRequests.add(slackTimeEntry.getKey());
+        }
+        else if (slackTimeEntry.getValue() < 0) {
+          this.eventSetQueue.clear();
+          return;
+        }
+      }
+      if (criticalCpuRequests.size() > abstractIdleCPUs) {
+        this.eventSetQueue.clear();
+        return;
+      }
+      for (int taskId : criticalCpuRequests) {
+        Task task = getTaskById(taskId);
+        int newSlackTime = slackTimes.get(taskId) + task.getDeadline();
+        slackTimes.put(taskId, newSlackTime);
+        HashSet<Integer> tasksToFinishUpdate = onExecutionTasks.computeIfAbsent(interceptionPoint + task.getDuration(), k-> new HashSet<Integer>());
+        tasksToFinishUpdate.add(taskId);
+      }
+      abstractIdleCPUs -= criticalCpuRequests.size();
+      if (isCritical && abstractIdleCPUs == 0) {
+        interceptionRange = onExecutionTasks.firstKey() - interceptionPoint;
+        interceptionPoint += interceptionRange;
+      }
+      else {
+        isCritical = false;
+      }
+    }
+  }
+
   private HashSet<Integer> findGrayTasks(
-    ArrayList<Integer> givenTasks, int forecomingExecutionTime, int nextTask, HashMap<Integer, Integer> waitingTimes
+    ArrayList<Integer> givenTasks, int forecomingExecutionTime, int nextTask, 
+    HashMap<Integer, Integer> waitingTimes, TreeMap<Integer, HashSet<Integer>> onExecutionTasks
     ) {
     HashSet<Integer> resultedTasks = new HashSet<>();
     resultedTasks.addAll(givenTasks);
     for (Integer givenTask : givenTasks) {
       ArrayList<Integer> badTasks = new ArrayList<>();
       int taskDuaration = getTaskById(givenTask).getDuration();
-      int taskResponseTime = taskDuaration + Math.max(0, waitingTimes.get(givenTask));
-      int toBeWaitingTime = taskResponseTime;
+      int remainingTaskResponseTime = 0;
+      boolean hasUpdate = false;
+      for (Entry<Integer, HashSet<Integer>> updateTimeEntry : onExecutionTasks.entrySet()) {
+        if (updateTimeEntry.getValue().contains(givenTask)) {
+          remainingTaskResponseTime = updateTimeEntry.getKey() - stateTime;
+          hasUpdate = true;
+          break;
+        }
+      }
+      if (!hasUpdate) {
+        remainingTaskResponseTime = taskDuaration + Math.max(0, waitingTimes.get(givenTask));
+      }
+      int toBeWaitingTime = remainingTaskResponseTime;
       if (nextTask != 0) {
-        toBeWaitingTime = Math.max(taskResponseTime, waitingTimes.get(nextTask));
+        toBeWaitingTime = Math.max(remainingTaskResponseTime, waitingTimes.get(nextTask));
       }
       int dataAge = toBeWaitingTime + forecomingExecutionTime;
       forecomingExecutionTime += taskDuaration;
-      Set<Integer> badPorts = new HashSet<>();
+      HashSet<Integer> badPorts = new HashSet<>();
       if (statusSensors.contains(givenTask)) {
         if (dataAge > timingConstraints.get(2)) {
           resultedTasks.add(0);
@@ -283,12 +338,24 @@ public class State implements InitializingConfigs {
           .collect(Collectors.toList()));
         }
       }
-      resultedTasks.addAll(findGrayTasks(badTasks, forecomingExecutionTime, givenTask, waitingTimes));
+      resultedTasks.addAll(findGrayTasks(badTasks, forecomingExecutionTime, givenTask, waitingTimes, onExecutionTasks));
       if (resultedTasks.contains(0)) {
         break;        
       }
     }
     return resultedTasks;
+  }
+
+  private HashMap<Integer, Integer> calculateSlackTimes(HashMap<Integer, Integer> waitingTimes) {
+    HashMap<Integer, Integer> result = new HashMap<>();
+    for (Entry<Integer, Integer> waitingTimeEntry : waitingTimes.entrySet()) {
+      Task task = getTaskById(waitingTimeEntry.getKey());
+      int relativeDeadline = task.getDeadline();
+      int taskDuaration = task.getDuration();
+      int toBeWaitingTime = waitingTimeEntry.getValue();
+      result.put(waitingTimeEntry.getKey(), toBeWaitingTime + relativeDeadline - taskDuaration);
+    }
+    return result;
   }
 
   private boolean isFeasible(HashSet<Integer> grayTasks) {
@@ -297,12 +364,20 @@ public class State implements InitializingConfigs {
     }
     HashSet<Integer> tasksQueue = new HashSet<>(grayTasks);
     HashMap<Integer, List<Integer>> parentsMap = calculateParents(grayTasks);
-    HashMap<Integer, Set<Integer>> onExecutionTasks = getAllUpdates();
-    for (int abstractTime = stateTime; abstractTime <= stateTime + timingConstraints.get(2); abstractTime++) {
-      if (onExecutionTasks.containsKey(abstractTime)) {
-        tasksQueue.removeAll(onExecutionTasks.get(abstractTime));
-        onExecutionTasks.remove(abstractTime);
+    TreeMap<Integer, HashSet<Integer>> onExecutionTasks = getAllUpdates();
+    int timeLimit = stateTime + timingConstraints.get(2);
+    for (int abstractTime = stateTime; abstractTime <= timeLimit; abstractTime++) {
+      HashSet<Integer> tasksToFinishUpdate = onExecutionTasks.getOrDefault(abstractTime, new HashSet<Integer>());
+      Set<Integer> tasksToExlude = new HashSet<>();
+      for (int taskId : tasksToFinishUpdate) {
+        if (parentsMap.getOrDefault(taskId, Collections.emptyList()).stream().anyMatch(parent -> grayTasks.contains(parent))
+         && !tasksQueue.contains(-taskId)) {
+          tasksToExlude.add(taskId);
+        }
       }
+      tasksToFinishUpdate.removeAll(tasksToExlude);      
+      tasksQueue.removeIf(taskId -> tasksToFinishUpdate.contains(Math.abs(taskId)));
+      onExecutionTasks.remove(abstractTime);  
       HashMap<Integer, Integer> waitingTimes = calculateWaitingTimes(new ArrayList<Integer>(tasksQueue), abstractTime);
       for (Integer grayTask : grayTasks) {
         boolean onExecution = onExecutionTasks.values().stream().anyMatch(pendings -> pendings.contains(grayTask));
@@ -313,7 +388,8 @@ public class State implements InitializingConfigs {
           int givenWaitingTime = waitingTimes.get(grayTask);
           if (!hasUnresolvedParents && givenWaitingTime <= 0) {
             if (isSchedulable(grayTask, givenWaitingTime)) {
-              Set<Integer> futureOnExecutionTasks = onExecutionTasks
+              tasksQueue.add(-grayTask);
+              HashSet<Integer> futureOnExecutionTasks = onExecutionTasks
               .computeIfAbsent(abstractTime + getTaskById(grayTask).getDuration(), k -> new HashSet<Integer>());
               futureOnExecutionTasks.add(grayTask);
             }
@@ -358,15 +434,15 @@ public class State implements InitializingConfigs {
     return result;
   }
 
-  private HashMap<Integer, Set<Integer>> getAllUpdates() {
-    HashMap<Integer, Set<Integer>> result = new HashMap<>();
+  private TreeMap<Integer, HashSet<Integer>> getAllUpdates() {
+    TreeMap<Integer, HashSet<Integer>> result = new TreeMap<>();
     for (EventSet eventSet : eventSetQueue) {
       if (eventSet.getEventSetTime() >= stateTime) {
         if (eventSet.getUpdates().size() != 0) {
           result.put(eventSet.getEventSetTime(), eventSet.getUpdates()
           .stream()
           .map(updateEvent ->updateEvent.getTaskId())
-          .collect(Collectors.toSet()));
+          .collect(Collectors.toCollection(HashSet::new)));
         }
       }
     }
