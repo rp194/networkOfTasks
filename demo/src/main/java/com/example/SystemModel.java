@@ -65,8 +65,8 @@ public class SystemModel implements InitializingConfigs {
 
     public void stateSpaceGenerator(int endTime) {
         int stateIterator = 0;
-        // while (true) {
-        while(turningStates.size() < 1) {
+        while (true) {
+        // while(turningStates.size() < 1) {
             int stateSize = states.size();
             if (stateSize <= stateIterator) {
                 break;

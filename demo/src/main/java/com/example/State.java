@@ -235,7 +235,7 @@ public class State implements InitializingConfigs {
   }
 
   private void laxityChecker(HashMap<Integer, Integer> waitingTimes) {
-    if (this.sourceIds.contains(55)) {
+    if (this.sourceIds.contains(184)) {
       System.out.println("here");
     }
     HashMap<Integer, Integer> slackTimes = calculateSlackTimes(waitingTimes);
@@ -286,6 +286,9 @@ public class State implements InitializingConfigs {
     ArrayList<Integer> givenTasks, int forecomingExecutionTime, int nextTask, 
     HashMap<Integer, Integer> waitingTimes, TreeMap<Integer, HashSet<Integer>> onExecutionTasks
     ) {
+    if (this.sourceIds.contains(204)) {
+      System.out.println("here");
+    }
     HashSet<Integer> resultedTasks = new HashSet<>();
     resultedTasks.addAll(givenTasks);
     for (Integer givenTask : givenTasks) {
@@ -361,6 +364,9 @@ public class State implements InitializingConfigs {
   private boolean isFeasible(HashSet<Integer> grayTasks) {
     if (grayTasks.contains(0)) {
       return false;
+    }
+    if (this.sourceIds.contains(204)) {
+      System.out.println("here");
     }
     HashSet<Integer> tasksQueue = new HashSet<>(grayTasks);
     HashMap<Integer, List<Integer>> parentsMap = calculateParents(grayTasks);

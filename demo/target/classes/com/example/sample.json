@@ -13,8 +13,8 @@
       "id": 2,
       "name": "Task2",
       "duration": 1,
-      "deadline": 2,
-      "period": 2,
+      "deadline": 3,
+      "period": 3,
       "inports": [1],
       "outports": [6]
     },
